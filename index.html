@@ -1,0 +1,699 @@
+<!doctype html>
+<!--
+  Game project site. Structure is not changed by hand:
+  app.js and tyokalut/tee_lataukset.js rely on the class names,
+  the data-* attributes and the shape of the week cards.
+
+  Site language: English. Instructor material stays in Finnish (sisalto.js: opettaja).
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1b5e20">
+  <meta name="description" content="Game project: the Ping Pong Tanks tank arena is built from its own GDD, one week at a time, and the MVP ships on 4 December 2026.">
+  <title>Ping Pong Tanks – game project</title>
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script src="sisalto.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Ping Pong Tanks, back to top">
+      <span class="brand-mark" aria-hidden="true"><span>◉</span></span>
+      <span><strong>Ping Pong Tanks</strong><small>Game project</small></span>
+    </a>
+    <nav class="top-nav" aria-label="Main navigation">
+      <a href="#how-to-use">How to use this page</a>
+      <a href="#brief">The brief</a>
+      <a href="#plan">Plan</a>
+      <a href="#weeks">Weeks</a>
+      <a href="#method">Way of working</a>
+      <a href="#ai">AI</a>
+    </nav>
+    <button class="button button-ghost print-button" type="button" data-print>▣ Print this page</button>
+  </header>
+
+  <div class="page-shell" id="top">
+    <aside class="progress-rail" aria-label="Your progress">
+      <div class="progress-card">
+        <p class="eyebrow">Your progress</p>
+        <div class="progress-ring" aria-hidden="true"><strong data-progress-number>0%</strong></div>
+        <p class="progress-copy" data-progress-copy>0 / 0 tasks done</p>
+        <div class="linear-progress" aria-hidden="true"><span data-progress-bar></span></div>
+        <p class="progress-note">The tick boxes are your own working memory. The actual work goes into the Git repository.</p>
+        <button class="button button-primary button-full" type="button" data-continue>Start building</button>
+      </div>
+
+      <nav class="week-nav" aria-label="Weeks">
+        <p class="eyebrow">How the game comes together</p>
+        <div class="week-links" data-week-links></div>
+      </nav>
+
+      <div class="deadline-card">
+        <span class="deadline-label">Due no later than</span>
+        <strong>Fri 4 Dec 2026</strong>
+        <span>Week 49</span>
+      </div>
+    </aside>
+
+    <main id="content">
+      <section class="hero section-pad" aria-labelledby="hero-title">
+        <div class="hero-copy reveal">
+          <p class="eyebrow eyebrow-accent">Game project · 31 Aug – 4 Dec 2026</p>
+          <h1 id="hero-title">The GDD is done.<br><em>Now you build it.</em></h1>
+          <p class="lead">You already have the design: Ping Pong Tanks, a two-player tank arena with bouncing shells. In this project the GDD is split into tasks and built in Unity one week at a time, so that the game is playable at the end of every week. What gets judged here is the engineering — code, testing, version control and the release — not how fun the game is. The project journal is written on this page and pushed to Git every week.</p>
+          <div class="hero-actions">
+            <button class="button button-primary" type="button" data-continue>Start building</button>
+            <a class="button button-secondary" href="downloads/pingpongtanks-tyopaketti.pdf" download>Download the printable schedule</a>
+          </div>
+          <ul class="fact-row" aria-label="Key project facts">
+            <li><strong>13</strong><span>project weeks</span></li>
+            <li data-fact="loma"><strong>week 42</strong><span>autumn break</span></li>
+            <li><strong>v1.0</strong><span>in week 48</span></li>
+          </ul>
+        </div>
+
+        <figure class="hero-visual reveal" data-delay="1">
+          <div class="image-stage image-stage-wide">
+            <img src="assets/tyokierto.svg" width="1672" height="941" alt="The weekly loop: issue, build, playtest, commit, record">
+          </div>
+          <figcaption><strong>The same loop every week.</strong> A feature is not done when it works — it is done when it has been tested, committed and written up.</figcaption>
+        </figure>
+      </section>
+
+      <section class="start-guide section-pad" id="how-to-use" aria-labelledby="start-guide-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Read this before week 36</p>
+          <h2 id="start-guide-title">One project, one place to write</h2>
+          <p>You do not write the same things twice into a separate Word template. The project journal on this site is the project's plan, work diary and index of what you produced.</p>
+        </div>
+        <div class="workplace-map reveal" role="list" aria-label="Where each part of the project lives">
+          <article role="listitem"><span>1</span><h3>Build in the Unity project</h3><p>The game itself lives in a Unity project that is in the Git repository the whole time. Scenes, scripts and prefabs sit at the repository root, documents in project-docs.</p><small>Builds do not go into Git — .gitignore handles that.</small></article>
+          <article role="listitem"><span>2</span><h3>Steer the work with Git</h3><p>Tasks are GitHub issues. Finished work shows up as small committed changes.</p><small>One issue is usually half a day to a day of work.</small></article>
+          <article role="listitem"><span>3</span><h3>Write on this page</h3><p>At the end of every week you answer three questions: what and how, why, and where the work is.</p><small>The fields are saved in this browser only.</small></article>
+          <article role="listitem"><span>4</span><h3>Push the journal to Git</h3><p>Download the whole project journal at the end of every week and replace the old file in the repository.</p><small>File: <code>project-docs/project-journal.md</code>. The repository is public: no personal data goes into the journal.</small></article>
+        </div>
+        <div class="start-checklist reveal">
+          <div>
+            <p class="eyebrow">Do this once, at the start</p>
+            <ol>
+              <li>Create <code>project-docs</code> and its subfolders (<code>meetings</code>, <code>chains</code>) in the repository.</li>
+              <li>Open week 36 and do one task at a time.</li>
+              <li>Write the three project journal fields at the end of the week.</li>
+              <li>Press <strong>Download the whole journal</strong>, move the file into <code>project-docs</code> and commit.</li>
+            </ol>
+          </div>
+          <div class="journal-export-card">
+            <strong>Project journal + AI log</strong>
+            <p>Export your answers regularly. Browser storage does not move to another device and does not replace what is in Git.</p>
+            <button class="button button-primary" type="button" data-export-journal>Download the whole journal (.md)</button>
+            <span class="save-status" data-journal-summary aria-live="polite">0 / 13 weeks written</span>
+          </div>
+        </div>
+        <details class="source-role reveal">
+          <summary>What are the printable work pack and the original Word template for?</summary>
+          <p><strong>The printable work pack</strong> is a schedule and a checklist for situations where this page is not open. You do not need to write the same answers into it again.</p>
+          <p><strong>The original Word template</strong> is the source material for this path. Its topics have been moved into the weekly tasks and the project journal on this site. Fill in the Word template separately only if your instructor gives you a specific instruction to do so.</p>
+        </details>
+        <p class="browser-state-note reveal"><strong>Remember:</strong> the tick boxes and text fields on this site are your own working memory. They are stored in this browser only and they do not reach your instructor. A tick is not a submission. Tick a box once the work has been tested and is in the Git repository.</p>
+      </section>
+
+      <section class="project-brief section-pad reveal" id="brief" aria-labelledby="brief-title">
+        <div class="brief-main">
+          <p class="eyebrow">The original brief · issued 31 August 2026</p>
+          <h2 id="brief-title">Build the game you designed — and prove it works</h2>
+          <div class="full-assignment">
+            <p>I have read your Game Design Document for Ping Pong Tanks, and I am commissioning exactly the game it describes: a fast top-down tank arena for two players on one keyboard. My terms are simple. I am not buying a promise, I am buying a working build with its test log. Two players, one keyboard, and the tanks must feel responsive from the first week. I expect the game to be playable at the end of every single week — a little better each time — and the whole project to live in a public GitHub repository I can open whenever I want.</p>
+            <p>The design lives or dies on its core loop, so follow the GDD’s own rules to the letter: one shell per tank, endless ricochets, roughly ten seconds of life, and no point awarded if both tanks die within five seconds of each other. The bouncing shell is the soul of this game — if the ricochet feels wrong, nothing else matters. A round of Ping Pong Tanks should take seconds, not minutes — quick deaths, quick restarts. Randomly generated mazes are what keep the matches fresh — no two rounds should look the same. And chaotic power-ups keep every match fresh — but the player must always see who has what.</p>
+            <p>I will not wait until December to see the game. Halfway through, I want to see the game and decide with you what actually fits before the deadline — the GDD holds more ideas than thirteen weeks can carry, and cutting together is part of the job. When I give feedback, act on it in a branch and show me the merge: feedback only counts when I can point at the commit that answers it. When you tell me the game is chaotic but fair — that balance is proven with a test log, not with a feeling.</p>
+            <p>The MVP is due on Friday 4 December 2026. Keep the interface out of the way: low clutter — menus should get the players into the match, not stand in their way. Before you call it released, hand the build to someone outside the project on another machine: if a stranger cannot start the game from your written instructions alone, it is not released — it is just on your machine. Version 1.0 means I can hand the link to anyone at school and it just works. After that, the last week belongs to the handover — in the final week you are not building the game anymore, you are proving what you know.</p>
+          </div>
+        </div>
+        <div class="brief-aside">
+          <div class="technology-box">
+            <p class="eyebrow">Agreed implementation</p>
+            <p>Unity (the version is locked with your instructor in week 36 — the GDD’s “Unity 5” gets checked) and C#, 2D physics with Unity’s own Rigidbody and Collider components. A public GitHub repository, work tracked as issues and small commits. Arena and power-up data is kept outside the code (ScriptableObject/JSON — compared in week 40).</p>
+            <p>P0 minimum content: a two-player match, a bouncing shell, rounds and scoring with the 5 s rule, a DFS-generated 10×10 maze, three power-ups, a menu path and a released v1.0. Released as a GitHub Release (or on itch.io — the instructor decides).</p>
+          </div>
+          <div class="scope-box">
+            <p class="eyebrow">Hold the scope</p>
+            <p>These are NOT built without the week 43 prioritisation decision: homing missile, cluster bomb, laser, triple shot, special tiles (water, smoke, one-way, portal), the Forest and Snow themes, sound and music, merged power-ups and online play. They are in the GDD — they are not in the MVP. Three half-finished features are worse than one finished one.</p>
+          </div>
+          <div class="decision-box">
+            <p class="eyebrow">Agree these with your instructor</p>
+            <ul>
+              <li>Which Unity version is locked for the whole project?</li>
+              <li>Which licence goes into the repository (LICENSE), and where do the sounds come from if audio is chosen?</li>
+              <li>Is it released as a GitHub Release or on itch.io?</li>
+              <li>Under which name do you appear in the public repository — and is guardian consent needed?</li>
+            </ul>
+            <p>You do not decide these yourself and you do not decide them with AI. An empty field in the plan means “open item”, and that is the correct answer until your instructor has answered.</p>
+          </div>
+          <div class="graphics-box">
+            <p class="eyebrow">Graphics, sound and libraries</p>
+            <p>The GDD keeps the graphics simple: a square body, a round turret, tile textures — draw them yourself in Unity or an image editor. If you use sprite packs (Kenney, OpenGameArt), record the source and the licence in a CREDITS file. Sound only if the prioritisation picked it, sources with licences. AI does not produce P0 code and it does not make game design decisions — it may explain errors and suggest tests, and significant help goes into the AI log.</p>
+          </div>
+        </div>
+        <div class="traceability-card">
+          <div>
+            <p class="eyebrow">Keep the thread visible</p>
+            <h3>Brief → issue → done-when → test → work in the repo</h3>
+          </div>
+          <div class="traceability-example" role="group" aria-label="Example of tracing one requirement">
+            <span><small>From the brief</small>a working build with its test log</span>
+            <b aria-hidden="true">→</b>
+            <span><small>Issue</small>#14 Shell despawns after 10 s</span>
+            <b aria-hidden="true">→</b>
+            <span><small>Done when</small>the shell disappears after 10 s, also while ricocheting</span>
+            <b aria-hidden="true">→</b>
+            <span><small>Test and commit</small>T07 in tests.md + a commit whose message references the test</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="plan-section section-pad" id="plan" aria-labelledby="plan-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow">GDD → implementation plan · week 36</p>
+          <h2 id="plan-title">From the GDD to a buildable plan</h2>
+          <p>The Game Design Document is already written — you do not write it again. This form derives an implementation plan from it: the P0 scope, your own technical decisions with reasoning, and the things to agree with your instructor. The pre-filled sections are taken from your GDD.</p>
+          <p class="plan-timing"><strong>Timing:</strong> fill this in during week 36, alongside the issue backlog. Come back to it in week 43, once the review prioritisation decision has been made.</p>
+        </div>
+        <figure class="plan-visual reveal">
+          <div class="image-stage"><img src="assets/suunnitelma-luonnos.svg" width="1128" height="540" alt="Sketch: the GDD feature list split into P0, P1 and P2 buckets"></div>
+          <figcaption><strong>A GDD is not a task list.</strong> It only becomes buildable once the features have been prioritised and spread across the weeks.</figcaption>
+        </figure>
+        <div class="plan-layout">
+          <div class="plan-prefilled reveal" aria-label="Pre-filled sections of the plan">
+            <p class="eyebrow">Pre-filled · included in the downloaded file</p>
+            <article>
+              <h3>1 · Core of the game (from the GDD, chapters 1–2)</h3>
+              <p>Ping Pong Tanks is a two-player top-down arena game on one keyboard. The tanks fire bouncing shells inside a procedurally generated maze. One hit destroys a tank; the survivor scores a point; if both are destroyed within 5 seconds, no point is awarded. One shell per player, lifetime about 10 s.</p>
+              <small>This section comes from your GDD — it is not rewritten.</small>
+            </article>
+            <article>
+              <h3>3 · P1/P2 reminder</h3>
+              <p>The remaining GDD power-ups, special tiles, themes, audio and online play are not part of the MVP without the week 43 prioritisation decision. They live as issues, not in the plan.</p>
+            </article>
+            <article>
+              <h3>5 · Game team and weekly meeting</h3>
+              <p>Weekly meeting on Mondays (15 min): what got finished, what is happening this week, what is stuck. Notes go in <code>project-docs/meetings/</code>.</p>
+            </article>
+            <article>
+              <h3>6 · Controls (GDD, chapter 3)</h3>
+              <p>P1: WASD + Space · P2: arrow keys + M. Player 2’s fire key may change based on playtests — record the change in the plan and in the GDD.</p>
+            </article>
+            <article>
+              <h3>7 · Open items — owned by the instructor</h3>
+              <p>Unity version, licence, release channel and the author name in the public repository. An empty field goes into the file marked “NOT AGREED YET — open item”.</p>
+              <small class="plan-open-note">You do not decide these yourself or with AI — you ask your instructor.</small>
+            </article>
+          </div>
+          <form class="plan-form reveal" data-plan-form data-delay="1">
+            <div class="plan-form-heading">
+              <div><p class="eyebrow">Your own decisions</p><h3>Implementation decisions</h3><p>The GDD says what gets built. Here you decide and justify how — and these decisions are tested in your own work.</p></div>
+              <span data-plan-status>Not started</span>
+            </div>
+            <fieldset>
+              <legend>A · Basics</legend>
+              <div class="plan-fields">
+                <label>Name of the game<input type="text" data-plan-field="nimi" placeholder="Ping Pong Tanks"></label>
+                <label>Author (agreed public name)<input type="text" data-plan-field="tekija" placeholder="Agree with your instructor which name goes in the public repo"></label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>B · Your own decisions — these are tested in your work</legend>
+              <div class="plan-fields">
+                <label class="plan-wide">MVP goal in your own words<textarea rows="3" data-plan-field="mvpTavoite" placeholder="What can a player do in the version released on 4 December? Do not copy the GDD — condense it."></textarea><small>One paragraph. If you cannot say this, P0 is still unclear.</small></label>
+                <label class="plan-wide">P0 scope — agreed with your instructor in week 36<textarea rows="4" data-plan-field="p0Rajaus" placeholder="List the features that ARE in the MVP. Everything else is P1/P2."></textarea></label>
+                <label class="plan-wide">Data store choice and reasoning<textarea rows="3" data-plan-field="tietovarasto" placeholder="ScriptableObject vs JSON vs PlayerPrefs — what goes where and why (week 40)."></textarea></label>
+                <label class="plan-wide">Game team<input type="text" data-plan-field="peliryhma" placeholder="You + 2 classmates + the instructor — names"></label>
+              </div>
+              <p class="plan-calibration"><strong>Not enough:</strong> “the MVP is a fun tank game”, or an AI-written summary with none of your own features. <strong>Enough:</strong> “In the MVP two players play matches in a 10×10 maze: a bouncing shell, scoring with the 5 s rule, speed/slow/shield and a menu — no themes and no missiles, those are P1.”</p>
+            </fieldset>
+            <fieldset>
+              <legend>C · Your instructor’s decisions — ask, do not invent</legend>
+              <div class="plan-fields">
+                <label>Unity version (locked)<input type="text" data-plan-field="unityVersio" placeholder="Ask your instructor — the GDD’s Unity 5 gets checked"></label>
+                <label>Licence<input type="text" data-plan-field="lisenssi" placeholder="E.g. MIT — the instructor decides"></label>
+                <label>Release channel<input type="text" data-plan-field="julkaisukanava" placeholder="GitHub Release / itch.io"></label>
+                <label>Public author name<input type="text" data-plan-field="tekijanimi" placeholder="+ guardian consent if under 18"></label>
+              </div>
+            </fieldset>
+            <div class="plan-actions">
+              <button class="button button-primary" type="button" data-plan-export>Download gdd-implementation-plan.md</button>
+              <small>Save the file as <code>project-docs/gdd-implementation-plan.md</code> and commit it. Update it when your instructor answers the open items.</small>
+            </div>
+            <p class="plan-ai-note"><strong>Remember:</strong> do not let AI decide for you. The items your instructor owns are not decided by you or by AI. If you used AI to generate ideas, record it in the AI log.</p>
+          </form>
+        </div>
+      </section>
+
+      <section class="kickoff section-pad" aria-labelledby="kickoff-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Getting started</p>
+          <h2 id="kickoff-title">The first phase at a glance</h2>
+          <p>This is not a separate task list. The same steps are in the week cards 36–38. The point of the first week: the GDD turns into an issue backlog and an empty Unity project compiles in the repository.</p>
+        </div>
+        <ol class="day-path">
+          <li class="reveal"><span>Day 1</span><strong>The need</strong><p>Read the brief and your own GDD side by side. Write a question list for the client: what is expected of the MVP on 4 December?</p></li>
+          <li class="reveal" data-delay="1"><span>Day 2</span><strong>Scope</strong><p>Scope P0 with your instructor: what from the GDD must be in the MVP, what is P1/P2. Record the decision.</p></li>
+          <li class="reveal" data-delay="2"><span>Day 3</span><strong>Tooling</strong><p>Create the Unity project with the agreed version, a .gitignore and a public GitHub repository. Run the privacy check.</p></li>
+          <li class="reveal" data-delay="3"><span>Day 4</span><strong>Plan</strong><p>Split P0 into issues (0.5–1 day each, a done-when condition in every one). Walk the breakdown through with the game team.</p></li>
+          <li class="reveal" data-delay="4"><span>Day 5</span><strong>First commit</strong><p>An empty scene compiles and runs. Push, and the first weekly meeting note into project-docs.</p></li>
+        </ol>
+      </section>
+
+      <section class="learning-path section-pad" id="weeks" aria-labelledby="path-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow">How the game comes together</p>
+          <h2 id="path-title">The game gets finished one feature at a time</h2>
+          <p>Open only the current week. Read the top of the week first: what is in the game after this week, what it leaves behind in the repository, and why the week exists. Do the steps in order, test the done-when condition and fill in the week's project journal.</p>
+        </div>
+
+        <figure class="path-visual reveal">
+          <div class="image-stage"><img src="assets/vaiheet.svg" width="1129" height="369" alt="Four phases: core, arena and powers, finishing, release"></div>
+          <figcaption><strong>Four phases.</strong> The core makes the game playable, phase B makes it Ping Pong Tanks, C makes it finished and D ships it.</figcaption>
+        </figure>
+
+        <div class="phase-block" id="vaihe-a">
+          <div class="phase-heading"><span>A</span><div><p>Weeks 36–39</p><h3>Core game: GDD into tasks, and a playable round</h3></div></div>
+            <details class="week-card" id="week-36" data-week="36" open>
+              <summary><span class="week-number">36</span><span class="week-title"><small>31 Aug – 4 Sep</small><strong>GDD into tasks, project set up</strong></span><span class="week-status">0 / 4</span></summary>
+              <div class="week-content">
+                <label><input type="checkbox" data-task="36-1"> <span>Read the brief and your own GDD side by side and write a question list for the client.</span></label>
+                <label><input type="checkbox" data-task="36-2"> <span>Scope P0 with your instructor and split it into issues, each with a done-when condition.</span></label>
+                <label><input type="checkbox" data-task="36-3"> <span>Set up the Unity project with the agreed version and a public GitHub repository — run the privacy check.</span></label>
+                <label><input type="checkbox" data-task="36-4"> <span>Name the game team, hold the first weekly meeting and put the implementation plan into project-docs.</span></label>
+                <div class="lesson-instructions">
+                  <p class="lesson-label"><span>Guided work</span> How to proceed</p>
+                  <ol>
+                    <li><strong>Read the brief and the GDD side by side.</strong> Underline the client's requirements and turn everything the GDD does not settle into questions.</li>
+                    <li><strong>Scope P0 with your instructor.</strong> Go through the feature list and record the decision.</li>
+                    <li><strong>Set up the Unity project and the repository.</strong> Agreed version, Unity .gitignore, public repository, privacy check.</li>
+                    <li><strong>Split P0 into issues.</strong> Half a day to a day each, a done-when condition in every one.</li>
+                    <li><strong>Name the game team and hold the first weekly meeting.</strong> Note in project-docs/meetings/week36.md.</li>
+                  </ol>
+                  <p class="checkpoint"><strong>Done when:</strong> An outsider can see from the repository what is being built and in which order.</p>
+                </div>
+                <p class="evidence"><strong>In the repo:</strong> a public repository whose README, P0 milestone and first commit say what is being built — plus the question list with answers and the meeting note in project-docs.</p>
+              </div>
+            </details>
+            <details class="week-card" id="week-37" data-week="37">
+              <summary><span class="week-number">37</span><span class="week-title"><small>7–11 Sep</small><strong>Tanks move — two players, one keyboard</strong></span><span class="week-status">0 / 3</span></summary>
+              <div class="week-content">
+                <label><input type="checkbox" data-task="37-1"> <span>Build the tank prefab (square body and round turret) with a Rigidbody2D and colliders.</span></label>
+                <label><input type="checkbox" data-task="37-2"> <span>Implement two-player movement on one keyboard: WASD and the arrow keys.</span></label>
+                <label><input type="checkbox" data-task="37-3"> <span>Record tests T01–T02 with their expectations before running them, and run them — plus the weekly meeting note.</span></label>
+                <div class="lesson-instructions">
+                  <p class="lesson-label"><span>Guided work</span> How to proceed</p>
+                  <ol>
+                    <li><strong>Build the tank prefab.</strong> Square + turret per the GDD, about a third of a tile. One prefab, two instances.</li>
+                    <li><strong>Implement movement with physics.</strong> Input in Update(), movement in FixedUpdate() through the Rigidbody2D.</li>
+                    <li><strong>Map the two players.</strong> P1: WASD. P2: arrow keys. Reserve the fire keys now.</li>
+                    <li><strong>Record 2 tests before running them.</strong> T01 normal, T02 boundary — expectations into tests.md first.</li>
+                    <li><strong>Weekly meeting and commit.</strong> Show the moving tanks to the game team.</li>
+                  </ol>
+                  <p class="checkpoint"><strong>Done when:</strong> Two players can move at the same time on one keyboard without the keys interfering, and the tanks stop at a wall without jittering.</p>
+                </div>
+                <p class="evidence"><strong>In the repo:</strong> a playable build with two tanks moving, tests T01–T02 with results in tests.md, and the movement commits.</p>
+              </div>
+            </details>
+            <details class="week-card" id="week-38" data-week="38">
+              <summary><span class="week-number">38</span><span class="week-title"><small>14–18 Sep</small><strong>The bouncing shell</strong></span><span class="week-status">0 / 4</span></summary>
+              <div class="week-content">
+                <label><input type="checkbox" data-task="38-1"> <span>Build the Projectile prefab with a physics material: Bounciness 1, Friction 0.</span></label>
+                <label><input type="checkbox" data-task="38-2"> <span>Implement shooting: one shell per player on the field, slightly faster than the tank.</span></label>
+                <label><input type="checkbox" data-task="38-3"> <span>Implement a ~10 s despawn and hits — including on your own tank (friendly fire).</span></label>
+                <label><input type="checkbox" data-task="38-4"> <span>Record tests T03–T05 before running them: direct hit, ricochet chain, despawn time.</span></label>
+                <div class="lesson-instructions">
+                  <p class="lesson-label"><span>Guided work</span> How to proceed</p>
+                  <ol>
+                    <li><strong>Build the Projectile prefab.</strong> Small circle, Rigidbody2D (Gravity 0, Continuous), CircleCollider2D, Physics Material 2D.</li>
+                    <li><strong>Implement shooting.</strong> One shell per player — block a new shot until the previous one is gone.</li>
+                    <li><strong>Implement despawn and hits.</strong> ~10 s timer; a hit on any tank, including the shooter, destroys it.</li>
+                    <li><strong>Record 3 tests before running them.</strong> T03 normal, T04 and T05 boundary.</li>
+                    <li><strong>Weekly meeting and commit.</strong> Play with the game team: does the ricochet feel right?</li>
+                  </ol>
+                  <p class="checkpoint"><strong>Done when:</strong> The shell bounces off walls without losing speed, disappears in about 10 seconds, kills its own shooter too, and a new shell can only be fired once the previous one is gone.</p>
+                </div>
+                <p class="evidence"><strong>In the repo:</strong> a video or image sequence of the ricocheting shell, tests T03–T05 with results, and the Projectile prefab commit.</p>
+              </div>
+            </details>
+            <details class="week-card" id="week-39" data-week="39">
+              <summary><span class="week-number">39</span><span class="week-title"><small>21–25 Sep</small><strong>Rounds, scoring and the five-second rule</strong></span><span class="week-status">0 / 3</span></summary>
+              <div class="week-content">
+                <label><input type="checkbox" data-task="39-1"> <span>Implement tank destruction and round cleanup: shells removed, input cut from the dead tank.</span></label>
+                <label><input type="checkbox" data-task="39-2"> <span>Implement scoring, the GDD's five-second rule and the automatic round restart.</span></label>
+                <label><input type="checkbox" data-task="39-3"> <span>Record tests T06–T08 before running them and play with the game team — note the round rhythm.</span></label>
+                <div class="lesson-instructions">
+                  <p class="lesson-label"><span>Guided work</span> How to proceed</p>
+                  <ol>
+                    <li><strong>Implement destruction properly.</strong> Tank out of play, shells cleaned up, input cut.</li>
+                    <li><strong>Implement scoring and the 5 s rule.</strong> A 5 s window from the first death; both inside it means 0–0.</li>
+                    <li><strong>Restart the round.</strong> Tanks back to start, scores persist, field cleaned.</li>
+                    <li><strong>Record 3 tests before running them.</strong> T06 normal, T07 and T08 boundary.</li>
+                    <li><strong>Weekly meeting.</strong> Play a few rounds with the game team and write down the rhythm.</li>
+                  </ol>
+                  <p class="checkpoint"><strong>Done when:</strong> A whole round works without touching the editor: destruction, a point to the right player (or to neither), and an automatic new round.</p>
+                </div>
+                <p class="evidence"><strong>In the repo:</strong> a whole round without the editor: scoring, the 5 s rule tested (T06–T08) and the playtest note week39.md.</p>
+              </div>
+            </details>
+        </div>
+
+        <div class="phase-block" id="vaihe-b">
+          <div class="phase-heading"><span>B</span><div><p>Weeks 40–43 · break in 42</p><h3>Arena and powers: maze, power-ups and the review</h3></div></div>
+            <details class="week-card" id="week-40" data-week="40">
+              <summary><span class="week-number">40</span><span class="week-title"><small>28 Sep – 2 Oct</small><strong>DFS maze and data out of the code</strong></span><span class="week-status">0 / 4</span></summary>
+              <div class="week-content">
+                <label><input type="checkbox" data-task="40-1"> <span>Write the data store comparison (ScriptableObject / JSON / PlayerPrefs) before implementing anything.</span></label>
+                <label><input type="checkbox" data-task="40-2"> <span>Implement the DFS maze generator as its own class — draw the algorithm on paper first.</span></label>
+                <label><input type="checkbox" data-task="40-3"> <span>Build the arena from data and implement spawn validation: starting positions at least 3 tiles apart.</span></label>
+                <label><input type="checkbox" data-task="40-4"> <span>Record tests T09–T10 before running them: traversability and spawn distance.</span></label>
+                <div class="lesson-instructions">
+                  <p class="lesson-label"><span>Guided work</span> How to proceed</p>
+                  <ol>
+                    <li><strong>Write the data store comparison BEFORE implementing.</strong> Three options, what each suits, which one you pick and why.</li>
+                    <li><strong>Implement the DFS generator.</strong> A grid of cells, DFS carving corridors. Draw it on paper first.</li>
+                    <li><strong>Build the arena from data.</strong> Size and tile types read from the data store you chose.</li>
+                    <li><strong>Implement spawn validation.</strong> Reject a draw under 3 tiles; record how you measure distance.</li>
+                    <li><strong>Record 2 tests before running them.</strong> T09 normal (10 generations), T10 boundary (20 spawn draws).</li>
+                  </ol>
+                  <p class="checkpoint"><strong>Done when:</strong> Every generated 10×10 maze is traversable, the tanks start at least 3 tiles apart, and the arena size is read from data.</p>
+                </div>
+                <p class="evidence"><strong>In the repo:</strong> the written data store comparison, the paper drawing of DFS, generated mazes and tests T09–T10.</p>
+              </div>
+            </details>
+            <details class="week-card" id="week-41" data-week="41">
+              <summary><span class="week-number">41</span><span class="week-title"><small>5–9 Oct</small><strong>Power-ups and the HUD</strong></span><span class="week-status">0 / 3</span></summary>
+              <div class="week-content">
+                <label><input type="checkbox" data-task="41-1"> <span>Define the power-ups as data: SpeedBoost, Slowness and Shield assets with their durations.</span></label>
+                <label><input type="checkbox" data-task="41-2"> <span>Implement spawning (~2 s interval, at tile centres), pickup and the one-power-at-a-time rule.</span></label>
+                <label><input type="checkbox" data-task="41-3"> <span>Show the active powers in the HUD and on the tank, and record tests T11–T12 before running them.</span></label>
+                <div class="lesson-instructions">
+                  <p class="lesson-label"><span>Guided work</span> How to proceed</p>
+                  <ol>
+                    <li><strong>Design the power-up as data.</strong> PowerUpData (ScriptableObject): name, icon, duration, effect.</li>
+                    <li><strong>Implement spawning.</strong> ~2 s timer, a free normal tile, instantiate at the tile centre.</li>
+                    <li><strong>Implement pickup and effect.</strong> A trigger collider; a new power does not replace an active one (GDD).</li>
+                    <li><strong>Show the state.</strong> A HUD icon per player + a colour marker on the tank.</li>
+                    <li><strong>Record 2 tests before running them.</strong> T11 normal, T12 error.</li>
+                  </ol>
+                  <p class="checkpoint"><strong>Done when:</strong> Three powers work with their durations, a player can only hold one at a time, and a spectator can see both players' state from the HUD.</p>
+                </div>
+                <p class="evidence"><strong>In the repo:</strong> three power-up assets as data, a HUD screenshot and tests T11–T12 with results.</p>
+              </div>
+            </details>
+            <article class="holiday-card" id="week-42" data-week="42">
+              <span aria-hidden="true">☕</span>
+              <div><p class="eyebrow">Week 42 · 12–16 Oct</p><h3>Autumn break</h3><p>No project work and no replacement tasks. Continue in week 43 from the last working <code>main</code> — and remember that the client review is immediately after the break.</p></div>
+            </article>
+            <details class="week-card" id="week-43" data-week="43">
+              <summary><span class="week-number">43</span><span class="week-title"><small>19–23 Oct</small><strong>Client review and prioritisation</strong></span><span class="week-status">0 / 3</span></summary>
+              <div class="week-content">
+                <label><input type="checkbox" data-task="43-1"> <span>Prepare a 10-minute demo of the playable build and run the review for the client.</span></label>
+                <label><input type="checkbox" data-task="43-2"> <span>Write the review note in two parts: the client's own words and your interpretation, kept separate.</span></label>
+                <label><input type="checkbox" data-task="43-3"> <span>Make the prioritisation decision with the game team and update the implementation plan and the backlog.</span></label>
+                <div class="lesson-instructions">
+                  <p class="lesson-label"><span>Guided work</span> How to proceed</p>
+                  <ol>
+                    <li><strong>Prepare a 10-minute demo.</strong> A playable build, not the editor. Plan the order.</li>
+                    <li><strong>Run the review.</strong> The client plays it themselves. Write down what they say, as quotes.</li>
+                    <li><strong>Split the note in two.</strong> Part 1: the client's words. Part 2: your interpretation.</li>
+                    <li><strong>Make the prioritisation decision with the game team.</strong> Pick ONE feature for week 44 and record what you are NOT doing.</li>
+                    <li><strong>Update the plan and the backlog.</strong> P0/P1 section and issue milestones up to date.</li>
+                  </ol>
+                  <p class="checkpoint"><strong>Done when:</strong> The note holds the client's own words, your interpretation separately, and a named decision. Your instructor has signed off on it.</p>
+                </div>
+                <p class="evidence"><strong>In the repo:</strong> the review note in the client's words, the recorded prioritisation decision and the updated implementation plan.</p>
+              </div>
+            </details>
+        </div>
+
+        <div class="phase-block" id="vaihe-c">
+          <div class="phase-heading"><span>C</span><div><p>Weeks 44–46</p><h3>Finishing: feedback change, testing and menus</h3></div></div>
+            <details class="week-card" id="week-44" data-week="44">
+              <summary><span class="week-number">44</span><span class="week-title"><small>26–30 Oct</small><strong>Feedback change and the chosen extra feature</strong></span><span class="week-status">0 / 4</span></summary>
+              <div class="week-content">
+                <label><input type="checkbox" data-task="44-1"> <span>Make the change derived from the feedback on its own branch and open a pull request that references the note.</span></label>
+                <label><input type="checkbox" data-task="44-2"> <span>Implement the feature chosen in the review, on top of the week 38 and 41 systems.</span></label>
+                <label><input type="checkbox" data-task="44-3"> <span>Run a game team playtest and record the shared assessment in a note.</span></label>
+                <label><input type="checkbox" data-task="44-4"> <span>Record tests T13–T14 before running them and merge the PR after review.</span></label>
+                <div class="lesson-instructions">
+                  <p class="lesson-label"><span>Guided work</span> How to proceed</p>
+                  <ol>
+                    <li><strong>Make the feedback change on a branch.</strong> Keep it small and reference the note in the PR description.</li>
+                    <li><strong>Implement the chosen feature.</strong> Build on top of the week 38/41 systems, not around them.</li>
+                    <li><strong>Run a game team playtest.</strong> At least 3 rounds per pair, one observation each, then a shared assessment.</li>
+                    <li><strong>Record 2 tests before running them.</strong> T13 normal, T14 boundary.</li>
+                    <li><strong>Merge and weekly meeting.</strong> PR with a review comment, then merge.</li>
+                  </ol>
+                  <p class="checkpoint"><strong>Done when:</strong> Main holds a merged PR whose description makes clear which feedback it answers; the feature works; the playtest note holds at least three shared observations.</p>
+                </div>
+                <p class="evidence"><strong>In the repo:</strong> a merged PR that references the feedback, the playable feature, the playtest note and tests T13–T14.</p>
+              </div>
+            </details>
+            <details class="week-card" id="week-45" data-week="45">
+              <summary><span class="week-number">45</span><span class="week-title"><small>2–6 Nov</small><strong>Testing week and pair debugging</strong></span><span class="week-status">0 / 4</span></summary>
+              <div class="week-content">
+                <label><input type="checkbox" data-task="45-1"> <span>Complete the test matrix from the GDD's testing list: normal, boundary and error cases in balance.</span></label>
+                <label><input type="checkbox" data-task="45-2"> <span>Run every test — the old ones again too — and record the result of every row.</span></label>
+                <label><input type="checkbox" data-task="45-3"> <span>Solve one bug with a named debugging pair and record both sets of observations.</span></label>
+                <label><input type="checkbox" data-task="45-4"> <span>Finish three debugging chains with all six parts.</span></label>
+                <div class="lesson-instructions">
+                  <p class="lesson-label"><span>Guided work</span> How to proceed</p>
+                  <ol>
+                    <li><strong>Complete the matrix.</strong> Go through the GDD's testing list and balance normal/boundary/error.</li>
+                    <li><strong>Run every test and record the results.</strong> The old T01–T14 again too — that is regression.</li>
+                    <li><strong>Solve one bug as a debugging pair.</strong> One drives the debugger, the other writes.</li>
+                    <li><strong>Finish the three chains.</strong> Observation → reproduction → cause → fix commit → retest → regression test.</li>
+                    <li><strong>Weekly meeting.</strong> Summarise the matrix: which areas are strong, where the risk is.</li>
+                  </ol>
+                  <p class="checkpoint"><strong>Done when:</strong> Every row has an expectation recorded before the run and the result of the run; the three chains are complete; the pair note holds both names and observations.</p>
+                </div>
+                <p class="evidence"><strong>In the repo:</strong> the run test matrix (≥12 rows), three complete debugging chains and the pair debugging note.</p>
+              </div>
+            </details>
+            <details class="week-card" id="week-46" data-week="46">
+              <summary><span class="week-number">46</span><span class="week-title"><small>9–13 Nov</small><strong>Menus and settings</strong></span><span class="week-status">0 / 3</span></summary>
+              <div class="week-content">
+                <label><input type="checkbox" data-task="46-1"> <span>Build the main menu and the pause menu per the GDD's UI chapter: Play, Options, Leave and resume/restart/quit.</span></label>
+                <label><input type="checkbox" data-task="46-2"> <span>Implement the settings and save them to PlayerPrefs — block duplicate player colours.</span></label>
+                <label><input type="checkbox" data-task="46-3"> <span>Record tests T15–T16 before running them: settings persistence and the duplicate colour block.</span></label>
+                <div class="lesson-instructions">
+                  <p class="lesson-label"><span>Guided work</span> How to proceed</p>
+                  <ol>
+                    <li><strong>Build the menu skeleton.</strong> Play at the top, Options in the middle, Leave at the bottom. Record the scene/overlay choice.</li>
+                    <li><strong>Implement the settings.</strong> Arena size and player colours; block duplicate colours.</li>
+                    <li><strong>Save to PlayerPrefs.</strong> Settings only. Load on startup.</li>
+                    <li><strong>Implement pause.</strong> Esc: resume / restart / quit, and the timers stop too.</li>
+                    <li><strong>Record 2 tests before running them.</strong> T15 normal, T16 error.</li>
+                  </ol>
+                  <p class="checkpoint"><strong>Done when:</strong> The game can be started, the settings changed and a match paused without touching the editor; the settings persist; the same colour cannot be picked twice.</p>
+                </div>
+                <p class="evidence"><strong>In the repo:</strong> the playable menu path, PlayerPrefs settings persistence (T15) and the duplicate colour block (T16).</p>
+              </div>
+            </details>
+        </div>
+
+        <div class="phase-block" id="vaihe-d">
+          <div class="phase-heading"><span>D</span><div><p>Weeks 47–49</p><h3>Release and handover</h3></div></div>
+            <details class="week-card" id="week-47" data-week="47">
+              <summary><span class="week-number">47</span><span class="week-title"><small>16–20 Nov</small><strong>RC, external testing and security</strong></span><span class="week-status">0 / 4</span></summary>
+              <div class="week-content">
+                <label><input type="checkbox" data-task="47-1"> <span>Make the release candidate v1.0-rc1 and test it yourself in a clean folder.</span></label>
+                <label><input type="checkbox" data-task="47-2"> <span>Write the installation and gameplay guide: download, launch, controls, goal.</span></label>
+                <label><input type="checkbox" data-task="47-3"> <span>Arrange an outside tester on another machine with no spoken help, and record the findings.</span></label>
+                <label><input type="checkbox" data-task="47-4"> <span>Run a security review of your own repository with concrete file paths and commits.</span></label>
+                <div class="lesson-instructions">
+                  <p class="lesson-label"><span>Guided work</span> How to proceed</p>
+                  <ol>
+                    <li><strong>Make the RC build.</strong> Name the version v1.0-rc1 and test it yourself in a clean folder first.</li>
+                    <li><strong>Write the guide.</strong> README or INSTALL.md: download, launch, controls, goal.</li>
+                    <li><strong>Arrange an outside test.</strong> Someone not in the game team, on another machine. Do not help out loud.</li>
+                    <li><strong>Run a security review of your repo.</strong> git log, .gitignore, ProjectSettings, no personal data — with paths and commits.</li>
+                    <li><strong>Fix blocking bugs only.</strong> After the RC the content is frozen.</li>
+                  </ol>
+                  <p class="checkpoint"><strong>Done when:</strong> The tester got through a match without spoken help; every hesitation is recorded as a fix list for the guide; the security review names the files and commits it checked.</p>
+                </div>
+                <p class="evidence"><strong>In the repo:</strong> the RC build, the written guide, the tester's findings in their own words and the security review with references.</p>
+              </div>
+            </details>
+            <details class="week-card" id="week-48" data-week="48">
+              <summary><span class="week-number">48</span><span class="week-title"><small>23–27 Nov</small><strong>Release v1.0 (the MVP)</strong></span><span class="week-status">0 / 3</span></summary>
+              <div class="week-content">
+                <label><input type="checkbox" data-task="48-1"> <span>Fix only the RC's blocking bugs and move the tester's fix list into the guide.</span></label>
+                <label><input type="checkbox" data-task="48-2"> <span>Publish GitHub Release v1.0 with the build files and a scope description.</span></label>
+                <label><input type="checkbox" data-task="48-3"> <span>Test the release in a clean environment, finish the README and LICENSE, and freeze the content.</span></label>
+                <div class="lesson-instructions">
+                  <p class="lesson-label"><span>Guided work</span> How to proceed</p>
+                  <ol>
+                    <li><strong>Finish the RC fix list.</strong> Blocking bugs and guide fixes only — no new features.</li>
+                    <li><strong>Build v1.0 and cut the Release.</strong> Tag v1.0, describe P0, what was left out, the controls and known gaps.</li>
+                    <li><strong>Test in a clean environment.</strong> A machine that has never had the project. Record the report.</li>
+                    <li><strong>Finish the README and LICENSE.</strong> Description, screenshot, controls, installation, author, licences.</li>
+                    <li><strong>Freeze the content.</strong> Last content commit, message "Content freeze v1.0".</li>
+                  </ol>
+                  <p class="checkpoint"><strong>Done when:</strong> An outsider can download the release and play a match on a machine that has never had the project; the README matches the GDD; the release page states what is in and what is out.</p>
+                </div>
+                <p class="evidence"><strong>In the repo:</strong> GitHub Release v1.0, the clean-environment test report and the final README + LICENSE.</p>
+              </div>
+            </details>
+            <details class="week-card" id="week-49" data-week="49">
+              <summary><span class="week-number">49</span><span class="week-title"><small>30 Nov – 4 Dec</small><strong>Handover week</strong></span><span class="week-status">0 / 3</span></summary>
+              <div class="week-content">
+                <label><input type="checkbox" data-task="49-1"> <span>Finish the project documentation so every claim has an exact reference.</span></label>
+                <label><input type="checkbox" data-task="49-2"> <span>Rehearse the 8–10 minute demo and time it with a game team member.</span></label>
+                <label><input type="checkbox" data-task="49-3"> <span>Write the self-assessment against the meeting notes and hand over the MVP on Fri 4 Dec.</span></label>
+                <div class="lesson-instructions">
+                  <p class="lesson-label"><span>Guided work</span> How to proceed</p>
+                  <ol>
+                    <li><strong>Mon: the content freeze holds.</strong> v1.0 on the release page, journal and AI log committed.</li>
+                    <li><strong>Tue: finish the documentation.</strong> Exact references everywhere; anything missing is recorded as missing.</li>
+                    <li><strong>Wed: rehearse the demo.</strong> 8–10 min: a match, one technical solution, one fixed bug, the Git history.</li>
+                    <li><strong>Thu: buffer and self-assessment.</strong> Can another person find things from the documentation alone?</li>
+                    <li><strong>Fri 4 Dec: handover.</strong> The MVP + the project documentation to the client.</li>
+                  </ol>
+                  <p class="checkpoint"><strong>Done when:</strong> Every claim has at least one exact reference; the demo stays inside its time; the self-assessment references real meeting notes.</p>
+                </div>
+                <p class="evidence"><strong>In the repo:</strong> the finished project documentation, the collected journal and AI log, and the self-assessment in project-docs.</p>
+              </div>
+            </details>
+        </div>
+      </section>
+
+      <section class="work-method section-pad" id="method" aria-labelledby="method-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Every working session</p>
+          <h2 id="method-title">Six steps, every time</h2>
+        </div>
+        <ol class="workflow-loop reveal">
+          <li><span>1</span><strong>Pick</strong><small>one small task</small></li>
+          <li><span>2</span><strong>Plan</strong><small>read the GDD section and the issue</small></li>
+          <li><span>3</span><strong>Build</strong><small>one piece at a time</small></li>
+          <li><span>4</span><strong>Test</strong><small>play it and record the result</small></li>
+          <li><span>5</span><strong>Save</strong><small>commit and push</small></li>
+          <li><span>6</span><strong>Record</strong><small>what you produced and learned</small></li>
+        </ol>
+        <p class="method-rule reveal"><strong>Rule of thumb:</strong> if you cannot explain the change, the work is not finished.</p>
+      </section>
+
+      <section class="feature-section section-pad" aria-labelledby="test-title">
+        <figure class="feature-visual reveal">
+          <div class="image-stage"><img src="assets/testauskierros.svg" width="1500" height="1000" alt="The testing loop: expectation, playtest, bug, fix, retest"></div>
+          <figcaption>A test is only finished after a successful retest.</figcaption>
+        </figure>
+        <div class="feature-copy reveal" data-delay="1">
+          <p class="eyebrow">Quality assurance</p>
+          <h2 id="test-title">Test like a developer</h2>
+          <p>Testing is not just playing with a friend. Record the expected result, the observed result, the cause of the bug, the fix and the retest.</p>
+          <ul class="check-list">
+            <li>At least 12 planned test cases with the expected result recorded before the run — the T tests from the feature weeks count (14+ in the plan).</li>
+            <li>3 complete debugging chains: observation → reproduction steps → cause → fix commit → retest → regression test.</li>
+            <li>Test classes in roughly equal thirds: normal use, boundaries and error cases — the GDD's own risks first: collision accuracy, spawn fairness, the 5 s rule, despawn timing and power-up frequency.</li>
+            <li>The release is tested in a clean environment, on a machine that has never had the project on it.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="ai-section section-pad" id="ai" aria-labelledby="ai-title">
+        <div class="ai-heading reveal">
+          <p class="eyebrow eyebrow-accent">AI is an allowed tool</p>
+          <h2 id="ai-title">You make the decisions.<br>AI is a tool.</h2>
+          <p>You may use AI to explain error messages, unpack Unity concepts and generate test case ideas. The game's C# code, the game design decisions and the test results are the core of this project — you produce those yourself. Every significant use of AI goes into the AI log with a reference.</p>
+        </div>
+        <figure class="ai-visual reveal" data-delay="1">
+          <div class="image-stage"><img src="assets/tekoalyapu.svg" width="1500" height="1000" alt="The AI loop: ask, check, test, record"></div>
+          <figcaption>Ask → check → test → record and learn.</figcaption>
+        </figure>
+        <div class="ai-rules">
+          <article class="reveal"><span>01</span><h3>Understand</h3><p>Explain in your own words what the solution does and why it fits your game and its components.</p></article>
+          <article class="reveal" data-delay="1"><span>02</span><h3>Check</h3><p>Compare it against the Unity documentation and your own GDD. AI can invent fields and commands that do not exist.</p></article>
+          <article class="reveal" data-delay="2"><span>03</span><h3>Test</h3><p>Run the tests yourself. Never invent test results or feedback.</p></article>
+          <article class="reveal" data-delay="3"><span>04</span><h3>Record</h3><p>Note the significant use, your own changes, and what you learned.</p></article>
+        </div>
+
+        <div class="ai-log reveal">
+          <div class="log-heading"><div><p class="eyebrow">Your AI log</p><h3>Record significant AI help immediately</h3></div><span data-log-count>0 entries</span></div>
+          <p class="ai-log-warning"><strong>Note:</strong> the log stored in your browser is working memory. It is included in the full project journal download. You can also download the AI log on its own and save it in <code>project-docs</code>.</p>
+          <form data-ai-form>
+            <label>Date and tool<input name="tool" required placeholder="31 Aug / ChatGPT"></label>
+            <label>What did you ask for help with?<input name="question" required placeholder="Why does OnCollisionEnter2D not fire on the shell?"></label>
+            <label>What did you use, change or reject?<input name="used" required placeholder="The explanation of Rigidbody2D collision detection modes; I wrote the code myself"></label>
+            <label>How did you check it, and what did you learn?<input name="checked" required placeholder="From the Unity docs + I tested the Continuous setting in the game"></label>
+            <label>Reference<input name="reference" required placeholder="Issue #12 / commit abc123 / test T05"></label>
+            <label class="privacy-confirm"><input type="checkbox" name="privacy" required> I confirm that I entered no personal data, secrets or confidential material.</label>
+            <button class="button button-primary" type="submit">Add to the log</button>
+          </form>
+          <div class="ai-log-actions">
+            <button class="button button-secondary" type="button" data-export-log>Download the AI log only (.md)</button>
+            <small>Do not enter personal data, secrets or other confidential material.</small>
+          </div>
+          <div class="log-entries" data-ai-entries aria-live="polite"><p class="empty-state">No entries yet.</p></div>
+        </div>
+      </section>
+
+      <section class="final-week section-pad" aria-labelledby="final-title">
+        <div class="final-heading reveal"><p class="eyebrow">The last week</p><h2 id="final-title">The final five days</h2><p>No new content gets added. Now you make sure the work is visible.</p></div>
+        <ol class="final-days reveal">
+          <li><span>Mon 30 Nov</span><strong>Content freeze</strong><small>The last approved version.</small></li>
+          <li><span>Tue 1 Dec</span><strong>Documentation</strong><small>Journal, tests and references.</small></li>
+          <li><span>Wed 2 Dec</span><strong>Rehearsal</strong><small>8–10 min demo and self-assessment.</small></li>
+          <li><span>Thu 3 Dec</span><strong>Buffer</strong><small>A review with another person.</small></li>
+          <li class="deadline-day"><span>Fri 4 Dec</span><strong>Handover</strong><small>MVP + project documentation to the client</small></li>
+        </ol>
+      </section>
+
+      <section class="downloads section-pad" aria-labelledby="downloads-title">
+        <div><p class="eyebrow">Printable schedule</p><h2 id="downloads-title">Take the checklist with you</h2><p>The printable pack helps you follow the schedule away from this page. The actual project journal is written here and pushed to the repository's <code>project-docs</code> folder.</p></div>
+        <div class="download-actions">
+          <a class="button button-primary" href="downloads/pingpongtanks-tyopaketti.pdf" download>Download PDF</a>
+          <a class="button button-secondary" href="downloads/pingpongtanks-tyopaketti.docx" download>Download Word</a>
+          <button class="button button-ghost" type="button" data-reset>Reset my progress</button>
+        </div>
+        <details class="source-downloads">
+          <summary>Instructor's source material (in Finnish) · nothing here needs filling in without a separate instruction</summary>
+          <div>
+            <a href="downloads/projektin-dokumentointipohjat.docx" download>Documentation templates (docx, Finnish)</a>
+            <a href="downloads/opettajan-projektisuunnitelma.docx" download>Instructor's project plan (docx, Finnish)</a>
+          </div>
+        </details>
+      </section>
+
+      <section class="gallery section-pad" id="gallery" aria-labelledby="gallery-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Released work</p>
+          <h2 id="gallery-title">Gallery</h2>
+          <p>Finished v1.0 releases are added here in week 48: name, screenshot, licence and the release link.</p>
+        </div>
+        <div class="gallery-grid" data-gallery>
+          <!-- The instructor adds one card per released project:
+          <a class="gallery-card" href="https://github.com/user/repo/releases/tag/v1.0">
+            <img src="assets/gallery/NAME.png" width="640" height="360" alt="Screenshot" loading="lazy">
+            <strong>Name</strong><span>Author · v1.0</span>
+          </a>
+          -->
+          <p class="empty-state">The first releases are published in week 48.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <strong>Ping Pong Tanks</strong>
+    <p>Game project · Unity · C# · Git · GitHub · 2026</p>
+    <a href="#top">Back to top ↑</a>
+    <img class="ai-modified-badge" src="assets/ai-modified-badge.svg" width="84" height="28" alt="Content has been edited with AI">
+  </footer>
+</body>
+</html>

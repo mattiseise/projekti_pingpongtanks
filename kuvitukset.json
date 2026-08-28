@@ -1,0 +1,56 @@
+{
+  "aksentti": "#2e7d32",
+  "aksenttiTumma": "#1b5e20",
+  "vaihevarit": [
+    "#a16207",
+    "#2f6b8f",
+    "#6d5aae",
+    "#b8412c"
+  ],
+  "tyokierto": [
+    "Issue",
+    "Build",
+    "Playtest",
+    "Commit",
+    "Record"
+  ],
+  "vaiheet": [
+    [
+      "A",
+      "Core"
+    ],
+    [
+      "B",
+      "Arena & powers"
+    ],
+    [
+      "C",
+      "Finishing"
+    ],
+    [
+      "D",
+      "Release"
+    ]
+  ],
+  "suunnitelma": [
+    "GDD: core loop",
+    "P0 / P1 / P2",
+    "Your decisions"
+  ],
+  "testaus": [
+    "Log expectation",
+    "Run playtest",
+    "Find bug",
+    "Fix it",
+    "Retest"
+  ],
+  "tekoaly": [
+    "Ask",
+    "Check",
+    "Test",
+    "Record"
+  ],
+  "tunnus": "neliot",
+  "tyokiertoOtsikko": "THE WEEKLY LOOP",
+  "tekoalyMuistutus": "The game's code and design decisions are yours."
+}

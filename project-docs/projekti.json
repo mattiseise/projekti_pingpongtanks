@@ -1,0 +1,192 @@
+{
+  "slug": "pingpongtanks",
+  "nimi": "Ping Pong Tanks",
+  "kuvaus": "Game project: the two-player tank arena is built from the student's own GDD across weeks 36-49 and the MVP ships on 4 December 2026.",
+  "vuosi": 2026,
+  "viikot": [
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49
+  ],
+  "lomaViikot": [
+    42
+  ],
+  "julkaisuviikko": 48,
+  "tunnusmerkki": "◉",
+  "paletti": {
+    "aksentti": "#2e7d32",
+    "aksenttiTumma": "#1b5e20",
+    "taulukkoSavy": "#e9f2e9",
+    "riviSavy": "#f3f8f3"
+  },
+  "vaiheet": [
+    {
+      "tunnus": "A",
+      "lyhyt": "Core",
+      "otsikko": "Core game: GDD into tasks, and a playable round",
+      "viikot": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "vari": "#a16207"
+    },
+    {
+      "tunnus": "B",
+      "lyhyt": "Arena & powers",
+      "otsikko": "Arena and powers: maze, power-ups and the review",
+      "viikot": [
+        40,
+        41,
+        42,
+        43
+      ],
+      "vari": "#2f6b8f"
+    },
+    {
+      "tunnus": "C",
+      "lyhyt": "Finishing",
+      "otsikko": "Finishing: feedback change, testing and menus",
+      "viikot": [
+        44,
+        45,
+        46
+      ],
+      "vari": "#6d5aae"
+    },
+    {
+      "tunnus": "D",
+      "lyhyt": "Release",
+      "otsikko": "Release and handover",
+      "viikot": [
+        47,
+        48,
+        49
+      ],
+      "vari": "#b8412c"
+    }
+  ],
+  "kuvitukset": {
+    "tyokierto": [
+      "Issue",
+      "Build",
+      "Playtest",
+      "Commit",
+      "Record"
+    ],
+    "tyokiertoOtsikko": "THE WEEKLY LOOP",
+    "suunnitelma": [
+      "GDD: core loop",
+      "P0 / P1 / P2",
+      "Your decisions"
+    ],
+    "testaus": [
+      "Log expectation",
+      "Run playtest",
+      "Find bug",
+      "Fix it",
+      "Retest"
+    ],
+    "tekoaly": [
+      "Ask",
+      "Check",
+      "Test",
+      "Record"
+    ],
+    "tekoalyMuistutus": "The game's code and design decisions are yours.",
+    "tunnus": "neliot"
+  },
+  "tokenit": {
+    "KUVAUS": "Ohjattu näyttöprojekti: Ping Pong Tanks -tankkiareena rakennetaan omasta GDD:stä viikko kerrallaan ja MVP julkaistaan 4.12.2026.",
+    "HERO_OTSIKKO": "GDD on valmis.<br><em>Nyt se toteutetaan.</em>",
+    "LEAD": "Sinulla on jo pelisuunnitelma: Ping Pong Tanks, kahden pelaajan tankkiareena kimpoavilla ammuksilla. Tässä projektissa GDD ositetaan tehtäviksi ja toteutetaan Unitylla viikko kerrallaan niin, että peli on pelattavissa jokaisen viikon lopussa. Näytössä arvioidaan pelin tekniikka — koodi, testaus, versionhallinta ja julkaisu — ei hauskuus. Projektipäiväkirja kirjoitetaan tällä sivulla ja viedään Gitiin joka viikko.",
+    "POLKU_NAVI": "Peliviikot",
+    "POLKU_OTSIKKO": "Pelin rakentuminen",
+    "POLKU_H2": "Peli valmistuu feature kerrallaan",
+    "POLKU_OHJE": "mitä pelissä on tämän viikon jälkeen, mitä siitä jää työnäytteeksi ja miksi viikko tehdään.",
+    "ALOITUS_NAPPI": "Aloita pelin toteutus",
+    "LOMAN_NIMI": "syysloma",
+    "SUUNNITELMA_TIEDOSTO": "gdd-toteutussuunnitelma.md",
+    "SUUNNITELMA_EYEBROW": "GDD → toteutussuunnitelma · viikko 36",
+    "SUUNNITELMA_OTSIKKO": "GDD:stä toteutuskelpoinen suunnitelma",
+    "SUUNNITELMA_JOHDANTO": "Game Design Document on jo kirjoitettu — sitä ei kirjoiteta uudelleen. Tällä lomakkeella GDD:stä johdetaan toteutussuunnitelma: P0-rajaus, omat tekniset päätökset perusteluineen ja ohjaajan kanssa sovittavat asiat. Esitäytetyt osiot on poimittu GDD:stäsi.",
+    "SUUNNITELMA_AJOITUS": "Täytä viikolla 36 issue-backlogin rinnalla. Palaa lomakkeeseen viikolla 43, kun katselmoinnin priorisointipäätös on tehty.",
+    "SUUNNITELMA_KUVA_ALT": "Luonnos: GDD:n featurelista jaettuna P0-, P1- ja P2-koreihin",
+    "SUUNNITELMA_KUVA_OTSIKKO": "GDD ei ole tehtävälista.",
+    "SUUNNITELMA_KUVA_TEKSTI": "Siitä tulee toteutuskelpoinen vasta, kun featuret on priorisoitu ja jaettu viikkoihin.",
+    "OMAT_PAATOKSET_OTSIKKO": "Toteutuksen päätökset",
+    "OMAT_PAATOKSET_TEKSTI": "GDD kertoo mitä tehdään. Tässä päätät ja perustelet, miten — ja nämä päätökset testataan omassa työssäsi.",
+    "TOIMEKSIANTO_OTSIKKO": "Build the game you designed — and prove it works",
+    "RESURSSI_OTSIKKO": "Grafiikka, äänet ja kirjastot",
+    "KANSIOT": "<code>project-docs</code> ja <code>docs/testit</code>",
+    "JULKAISULAUSE": "Repository on julkinen: päiväkirjaan ei kirjoiteta henkilötietoja.",
+    "TYOMAA_OTSIKKO": "Rakenna Unity-projektissa",
+    "TYOMAA_TEKSTI": "Varsinainen peli syntyy Unity-projektissa, joka on koko ajan Git-repositoryssa. Scenet, skriptit ja prefabit ovat repositoryn juuressa, dokumentit project-docs-kansiossa.",
+    "TYOMAA_LISA": "Buildit eivät mene Gitiin — .gitignore hoitaa sen.",
+    "KICKOFF_KARKI": "Ensimmäisen viikon kärki: GDD muuttuu issue-backlogiksi ja tyhjä Unity-projekti kääntyy repositoryssa.",
+    "PAIVA1": "Lue toimeksianto ja oma GDD rinnakkain. Kirjaa kysymyslista tilaajalle: mitä MVP:ltä odotetaan 4.12.?",
+    "PAIVA2": "Rajaa P0 ohjaajan kanssa: mikä GDD:stä on pakko olla MVP:ssä, mikä on P1/P2. Kirjaa päätös.",
+    "PAIVA3": "Luo Unity-projekti sovitulla versiolla, .gitignore ja julkinen GitHub-repository. Yksityisyystarkistus.",
+    "PAIVA4": "Osita P0 issueiksi (0,5–1 pv / issue, valmis kun -ehto jokaisessa). Käy ositus läpi peliryhmän kanssa.",
+    "PAIVA5_OTSIKKO": "Ensimmäinen commit",
+    "PAIVA5": "Tyhjä scene kääntyy ja käynnistyy. Push, ja ensimmäinen viikkopalaverimuistio project-docsiin.",
+    "HERO_KUVA_ALT": "Viikon työkierto: issue, toteutus, pelitesti, commit ja kirjaus",
+    "HERO_KUVA_OTSIKKO": "Sama kierto joka viikko.",
+    "HERO_KUVA_TEKSTI": "Feature ei ole valmis, kun se toimii — se on valmis, kun se on testattu, committattu ja kirjattu.",
+    "POLKU_KUVA_ALT": "Neljä vaihetta: ydin, kenttä ja voimat, valmiiksi, julkaisu",
+    "POLKU_KUVA_OTSIKKO": "Neljä vaihetta.",
+    "POLKU_KUVA_TEKSTI": "Ydin tekee pelistä pelattavan, B-vaihe tekee siitä Ping Pong Tanksin, C tekee siitä valmiin ja D julkaisee sen.",
+    "ASKEL2": "lue GDD:n kohta ja issue",
+    "ASKEL4": "pelaa ja kirjaa tulos",
+    "TESTI_KUVA_ALT": "Testauskierros: odotus, pelitesti, virhe, korjaus, uusintatesti",
+    "TESTI_EI_RIITA": "pelailua kaverin kanssa",
+    "AI_JOHDANTO": "Tekoälyä saa käyttää virheilmoitusten selittämiseen, Unity-käsitteiden avaamiseen ja testitapausten ideointiin. Pelin C#-koodi, pelisuunnittelupäätökset ja testien tulokset ovat sitä ydintä, jonka näyttö arvioi — ne teet itse. Jokainen merkittävä tekoälyapu kirjataan AI-lokiin aineistoviitteineen.",
+    "AI_KUVA_ALT": "Tekoälyn työkierto: kysy, tarkista, testaa, kirjaa",
+    "AI_KOHDE": "juuri sinun peliisi ja sen komponentteihin",
+    "AI_LAHDE": "Unityn dokumentaatioon ja omaan GDD:hesi",
+    "AI_ESIM_KYSYMYS": "Miksi OnCollisionEnter2D ei laukea ammuksessa?",
+    "AI_ESIM_KAYTTO": "Selityksen Rigidbody2D:n collision detection -tilasta; koodin kirjoitin itse",
+    "AI_ESIM_TARKISTUS": "Unity-dokumentaatiosta + testasin Continuous-asetuksen pelissä",
+    "JALKI_VAATIMUS": "testaa ohjelman toimintoja (Ohjelmointi p3)",
+    "JALKI_ISSUE": "#14 Ammuksen despawn 10 s",
+    "JALKI_VALMIS": "ammus katoaa 10 s kuluttua myös kimpoillessa",
+    "JALKI_TESTI": "T07 testit.md + commit, jonka viesti viittaa testiin",
+    "VAATIMUSMAARA": "25",
+    "LUOVUTUS": "MVP + näyttöaineisto tilaajalle",
+    "FOOTER_TEKNIIKKA": "Unity · C# · Git · GitHub",
+    "FOOTER_VASTUUVAPAUS": ""
+  },
+  "koonti": {
+    "tyyppi": "peli",
+    "tila": "kaynnissa",
+    "kuvaus": "Kahden pelaajan tankkiareena samalla näppäimistöllä: kimpoavat ammukset, DFS-generoitu sokkelo ja power-upit. Oma GDD toteutetaan Unitylla MVP:ksi asti. Sivusto ja projektidokumentaatio ovat englanniksi.",
+    "ryhma": "",
+    "kesto": "13 työviikkoa",
+    "tekniikat": [
+      "Unity",
+      "C#",
+      "Git",
+      "GitHub"
+    ],
+    "sivusto": "https://mattiseise.github.io/projekti_pingpongtanks/",
+    "repo": "https://github.com/mattiseise/projekti_pingpongtanks",
+    "tutkinto": "Tieto- ja viestintätekniikan perustutkinto",
+    "diaarinumero": "",
+    "vaatimuksia": 0,
+    "tutkinnonOsat": [],
+    "kieli": "en"
+  },
+  "huomio": "Sivusto on kirjoitettu englanniksi käsin 28.8.2026 ja näyttökehys (näyttömatriisi, näyttöaineisto-osio, näyttösuunnitelma) on poistettu. Tämän tiedoston tokenit-lohko kuvaa alkuperaista suomenkielista generointia eikä vastaa sivuston nykyista sisaltoa. Sisällön lähde on sisalto.js. Osaamiskartoitus: opettajalle/osaamiskartoitus.md."
+}
