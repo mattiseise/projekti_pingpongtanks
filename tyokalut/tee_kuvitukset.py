@@ -50,10 +50,15 @@ def rect(x, y, w, h, fill, r=0, extra=""):
     return f'<rect x="{x:g}" y="{y:g}" width="{w:g}" height="{h:g}" fill="{fill}"{rr} {extra}/>'
 
 
+def esc(s):
+    """SVG on XML: &, < ja > on pakko suojata tai koko kuva jää renderöitymättä."""
+    return (str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
+
+
 def text(x, y, s, size=26, fill=TXT, weight=800, anchor="middle", spacing="0.02em"):
     return (f'<text x="{x:g}" y="{y:g}" font-family="{FONT}" font-size="{size:g}" '
             f'font-weight="{weight}" fill="{fill}" text-anchor="{anchor}" '
-            f'letter-spacing="{spacing}">{s}</text>')
+            f'letter-spacing="{spacing}">{esc(s)}</text>')
 
 
 def arrow(x, y, size, color=GOLD):
