@@ -5,6 +5,10 @@
  * Site language: English (student and client facing).
  * Teacher material (`opettaja`) stays in Finnish on purpose — it is read by
  * the instructor, not by the client.
+ *
+ * Keys in `tekstit` match app.js v2's UI_OLETUS exactly (two-column layout
+ * engine). The engine's own defaults are Finnish; every key is overridden
+ * here so the English site never falls back to Finnish UI copy.
  */
 window.NAYTTOPROJEKTI = {
   slug: "pingpongtanks",
@@ -15,62 +19,54 @@ window.NAYTTOPROJEKTI = {
   aloitusNappi: "Start building",
   apuOtsikko: "I need implementation help",
 
-  /* Käyttöliittymän tekstit englanniksi. app.js:n oletukset ovat suomeksi;
-     nämä korvaavat ne. Ks. app.js UI_OLETUS. */
   tekstit: {
-    briefExcerptLabel: "The brief at this point",
-    briefFullLink: "Full brief ↑",
-    briefAnchor: "#brief",
-    weekKicker: "This week in the game",
+    weekKickerFallback: "After this week",
     connectionLabel: "How this week moves the project:",
     deliverableLabel: "Finished by the end of this week",
     whyLabel: "Why this week exists",
     skillsLabel: "Technical focus this week",
-    resourcesAria: "Templates and tools for this week",
     resourcesLabel: "You need these:",
     helpFallbackTitle: "I need implementation help",
     helpTreeLabel: "Create this structure",
     helpActionsLabel: "Wire it up like this",
     helpCodeLabel: "Use this template or checklist",
     helpTestLabel: "Verification test:",
-    stepsCount: (n) => `${n} steps`,
-    stepsLead: "Work through these one at a time",
-    doneLabel: "Done when:",
-    exampleLabel: "Example of the expected level of detail · do not copy the content",
-    notEnoughLabel: "This is not enough yet",
-    evidenceLabel: "In the Git repository before you tick the box:",
-    journalPrompt: "Write this before you tick the week complete",
-    journalHeading: (w) => `Project journal · week ${w}`,
-    journalRecordLabel: "Record these:",
-    journalWorkLabel: "What did you do, and how?",
-    journalReasonLabel: "Why did you do it this way?",
-    journalEvidenceLabel: "Exact location of the work",
-    journalNextLabel: "Next small step",
-    journalWorkHint: "Name the actual files, solutions, issues and tests.",
-    journalReasonHint: "The decision, the options you weighed, the reasoning, what you learned.",
-    journalEvidenceHint: (w) => `E.g. commit link, issue #12, test T05 or project-docs/evidence/week-${w}/shot.png`,
-    journalNextHint: "What is the first thing you pick up next session?",
-    exportWeekButton: "Download this week only (.md)",
-    exportJournalButton: "Download the whole journal",
+    helpNote: "If you used AI for this, log it in the AI log.",
+    stepsLead: (n) => `${n} steps · guided work · work through them in order`,
+    dayRhythmLabel: "Weekly day rhythm",
+    dayLabel: (n) => `Day ${n}`,
+    doneLabel: "Done when",
+    evidenceLabel: "Show",
+    quoteSource: "From the brief – the client's wish this week fulfills",
+    journalRecordPrefix: "Record these:",
     journalComplete: "Main fields written",
     journalPartial: "Unfinished – fill all 3 main fields",
     journalEmpty: "Not written yet",
     journalReminder: "Remember the 3 main journal fields",
-    journalSummary: (done, total) => `${done} / ${total} weeks written`,
+    journalSummary: (done, total) => `${done} / ${total}`,
+    journalCountBig: (done, total) => `${done} / ${total} weeks written`,
+    weekTileLogged: "written",
+    weekTileCurrent: "current",
+    weekTileOpen: "open",
+    exportWeekButton: "Download this week only (.md)",
+    exportJournalButton: "Download the whole journal",
     weekFallback: (w) => `Week ${w}`,
     weekAria: (w, phase) => `Week ${w}${phase ? `, phase ${phase}` : ""}`,
     weekAriaHoliday: (w, name) => `Week ${w}, ${name}`,
     holidayFallback: "break",
-    weekNavSmall: (w, phase) => (phase ? `${phase} · Week ${w}` : `Week ${w}`),
     progressCopy: (done, total) => `${done} / ${total} tasks done`,
-    continueNext: "Continue from the next task",
-    continueStart: "Start building",
-    continueDone: "All tasks done",
+    resumeLabel: "Continue from the next task",
+    resumeDone: "All tasks done",
+    resumeNote: (w, title) => `Week ${w} · ${title}`,
     planNotStarted: "Not started",
     planPartial: (done, total) => `Unfinished — ${done} / ${total} fields filled`,
     planDone: "Plan complete ✓",
     planEmptyValue: "_(not filled in yet)_",
     dateLocale: "en-GB",
+    prevWeek: (w, title) => `← Week ${w}: ${title}`,
+    nextWeek: (w, title) => `Week ${w}: ${title} →`,
+    prevStart: "At the start",
+    nextEnd: "Last week",
     mdJournalTitle: (name) => `${name} – project journal`,
     mdJournalLead: (path) => `Save this file as \`${path}\` and commit it at the end of every week.`,
     mdWeekHeading: (w, title) => `## Week ${w} – ${title}`,
@@ -79,7 +75,6 @@ window.NAYTTOPROJEKTI = {
     mdWork: "### What did I do, and how?",
     mdReason: "### Why did I do it this way?",
     mdEvidence: "### Exact location of the work",
-    mdNext: "### Next small step",
     mdNotRecorded: "Not written yet.",
     mdWeekFile: (w) => `project-journal-week-${w}.md`,
     mdWeekFileTitle: (name, w) => `# ${name} – week ${w}`,
@@ -89,7 +84,6 @@ window.NAYTTOPROJEKTI = {
     aiLogFileTitle: (name) => `# ${name} – AI log`,
     aiLogQuestion: "Task or question:",
     aiLogUsed: "Used, changed or rejected:",
-    aiLogChecked: "How I checked it, and what I learned:",
     aiLogReference: "Reference:",
     aiLogNoReference: "no reference",
     aiLogPrivacyOk: "Privacy: I entered no personal data, secrets or confidential material.",
@@ -97,8 +91,8 @@ window.NAYTTOPROJEKTI = {
     logCount: (n) => `${n} ${n === 1 ? "entry" : "entries"}`,
     logEmptyState: "No entries yet.",
     logReferencePrefix: "Reference:",
-    logRemove: "Remove",
     logRemoveAria: "Remove log entry",
+    logRemove: "Remove",
     resetConfirm: (plan, files) => `Clear tasks, the project journal${plan} and the AI log from this browser? Download the journal${files} first if you want to keep your answers.`
   },
 
@@ -387,7 +381,7 @@ window.NAYTTOPROJEKTI = {
       done: "An outsider can see from the repository what is being built and in which order: the README describes the game in one paragraph, the milestone \"MVP 4 Dec\" holds the P0 issues, and the project compiles as an empty scene.",
       record: "In the week 36 entry: the P0 scope and who approved it, the open items on your question list, the repository address and the hash of the first commit.",
       skills: ["breaking work down", "version control", "reading requirements"],
-      resources: [["Open the implementation plan", "#plan", false]],
+      resources: [["Open the implementation plan", "#view-suunnitelma", false]],
       steps: [
         ["Read the brief and the GDD side by side.", "Underline the client's requirements in the brief and turn everything the GDD does not yet settle into questions — for example which Unity version gets locked and where the MVP is published."],
         ["Scope P0 with your instructor.", "Go through the feature list: what must be in a playable MVP (movement, shell, round, maze, 2–3 power-ups, menu) and what is P1/P2. Record the decision in the implementation plan."],
@@ -409,7 +403,14 @@ window.NAYTTOPROJEKTI = {
         links: [["Unity.gitignore (GitHub)", "https://github.com/github/gitignore/blob/main/Unity.gitignore"]]
       },
       example: "The milestone \"MVP 4 Dec\" holds 14 issues, one of which is #3 \"Tank moves with WASD — done when the tank moves and stops at a wall in the test arena\". The question list has 6 questions for the client.",
-      notEnough: "\"I made the repo and read the GDD\" without a P0 decision, done-when conditions and a privacy check. A breakdown that does not exist is not a breakdown — it is a delay."
+      notEnough: "\"I made the repo and read the GDD\" without a P0 decision, done-when conditions and a privacy check. A breakdown that does not exist is not a breakdown — it is a delay.",
+      paivat: [
+        ["The need", "Read the brief and your own GDD side by side. Write a question list for the client: what is expected of the MVP on 4 December?"],
+        ["Scope", "Scope P0 with your instructor: what from the GDD must be in the MVP, what is P1/P2. Record the decision."],
+        ["Tooling", "Create the Unity project with the agreed version, a .gitignore and a public GitHub repository. Run the privacy check."],
+        ["Plan", "Split P0 into issues (0.5–1 day each, a done-when condition in every one). Walk the breakdown through with the game team."],
+        ["First commit", "An empty scene compiles and runs. Push, and the first weekly meeting note into project-docs."]
+      ]
     },
     37: {
       type: "feature",
@@ -709,7 +710,14 @@ window.NAYTTOPROJEKTI = {
         ["Fri 4 Dec: handover.", "The MVP + the project documentation to the client. Make sure the repository, the release and project-docs are in the state your links point at."]
       ],
       example: "Documentation row: \"Testing → project-docs/tests.md (T01–T18, 16 OK / 2 fixed) + chains C1–C3 + regression run 23 Nov, commit f3d9a02.\" Self-assessment: \"The week 38 note shows I estimated the ricochet at two hours of work — it took three days. What I learned…\"",
-      notEnough: "Documentation where every entry says \"see the repository\". That is not linking, it is outsourcing the work to the reader."
+      notEnough: "Documentation where every entry says \"see the repository\". That is not linking, it is outsourcing the work to the reader.",
+      paivat: [
+        ["Content freeze", "The last approved version."],
+        ["Documentation", "Journal, tests and references."],
+        ["Rehearsal", "8–10 min demo and self-assessment."],
+        ["Buffer", "A review with another person."],
+        ["Handover", "MVP + project documentation to the client."]
+      ]
     }
   }
 };
