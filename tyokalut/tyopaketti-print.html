@@ -18,19 +18,19 @@ th { background: #e9f2e9; }
 .muted { color: #555; }
 .item { font-size: 9pt; margin: 2pt 0; }
 </style></head><body>
-<div class="cover"><h1>Ping Pong Tanks</h1><p style="font-size:14pt">Printable work pack · game project</p><p>Ping Pong Tanks: your own GDD built in Unity up to the MVP — bouncing shells, a DFS maze and power-ups</p><p style="font-size:12pt"><strong>Weeks 36–49 · autumn break in week 42 · handover Fri 4 Dec 2026</strong></p><p style="max-width:120mm;margin:18pt auto 0">This pack is a schedule and a checklist for situations where the site is not open. The project journal is written on the site and pushed to the repository's project-docs folder. A tick in this booklet is not a submission — the work always lives in the Git repository.</p><p style="max-width:120mm;margin:10pt auto 0">The repository is public: no personal data, no school identifiers and no other people's names go into Git.</p><p style="max-width:120mm;margin:10pt auto 0">The GDD is your own — the implementation is judged against it.</p></div>
+<div class="cover"><h1>Ping Pong Tanks</h1><p style="font-size:14pt">Printable work pack · game project</p><p>Ping Pong Tanks: your own Game Design Document built in Unity into a playable release — bouncing shells, a generated maze and power-ups</p><p style="font-size:12pt"><strong>Weeks 36–49 · autumn break in week 42 · handover Fri 4 Dec 2026</strong></p><p style="max-width:120mm;margin:18pt auto 0">This pack is a schedule and a checklist for situations where the site is not open. The project journal is written on the site and pushed to the repository's project-docs folder. A tick in this booklet is not a submission — the work always lives in the Git repository.</p><p style="max-width:120mm;margin:10pt auto 0">The repository is public: no personal data, no school identifiers and no other people's names go into Git.</p><p style="max-width:120mm;margin:10pt auto 0">The Game Design Document (GDD) is your own — the implementation is judged against it.</p></div>
 <h1>Schedule</h1><table><tr><th>Week</th><th>Dates</th><th>Topic of the week</th><th>Phase</th></tr>
 <tr><td><strong>36</strong></td><td>31 Aug – 4 Sep</td><td>GDD into tasks, project set up</td><td>A</td></tr>
 <tr><td><strong>37</strong></td><td>7–11 Sep</td><td>Tanks move — two players, one keyboard</td><td>A</td></tr>
 <tr><td><strong>38</strong></td><td>14–18 Sep</td><td>The bouncing shell</td><td>A</td></tr>
 <tr><td><strong>39</strong></td><td>21–25 Sep</td><td>Rounds, scoring and the five-second rule</td><td>A</td></tr>
-<tr><td><strong>40</strong></td><td>28 Sep – 2 Oct</td><td>DFS maze and data out of the code</td><td>B</td></tr>
+<tr><td><strong>40</strong></td><td>28 Sep – 2 Oct</td><td>Generated maze and data out of the code</td><td>B</td></tr>
 <tr><td><strong>41</strong></td><td>5–9 Oct</td><td>Power-ups and the HUD</td><td>B</td></tr>
 <tr><td><strong>43</strong></td><td>19–23 Oct</td><td>Client review and prioritisation</td><td>B</td></tr>
 <tr><td><strong>44</strong></td><td>26–30 Oct</td><td>Feedback change and the chosen extra feature</td><td>C</td></tr>
 <tr><td><strong>45</strong></td><td>2–6 Nov</td><td>Testing week and pair debugging</td><td>C</td></tr>
 <tr><td><strong>46</strong></td><td>9–13 Nov</td><td>Menus and settings</td><td>C</td></tr>
-<tr><td><strong>47</strong></td><td>16–20 Nov</td><td>RC, external testing and security</td><td>D</td></tr>
+<tr><td><strong>47</strong></td><td>16–20 Nov</td><td>Release candidate, external testing and security</td><td>D</td></tr>
 <tr><td><strong>48</strong></td><td>23–27 Nov</td><td>Release v1.0 (the MVP)</td><td>D</td></tr>
 <tr><td><strong>49</strong></td><td>30 Nov – 4 Dec</td><td>Handover week</td><td>D</td></tr>
 </table><p class="muted">Handover no later than Fri 4 Dec 2026. The site has the detailed task instructions, the implementation help and the project journal.</p>
@@ -48,44 +48,44 @@ th { background: #e9f2e9; }
 <p class="feature">Two tanks move on one keyboard in a test arena and stop at walls. The game is playable for the first time.</p>
 <p class="task">☐&nbsp; Build the tank prefab (square body and round turret) with a Rigidbody2D and colliders.</p>
 <p class="task">☐&nbsp; Implement two-player movement on one keyboard: WASD and the arrow keys.</p>
-<p class="task">☐&nbsp; Record tests T01–T02 with their expectations before running them, and run them — plus the weekly meeting note.</p>
+<p class="task">☐&nbsp; Write two test cases and number them T01 and T02: record the expected result before running them, then run them — plus the weekly meeting note.</p>
 <p class="done"><strong>Done when:</strong> Two players can move at the same time on one keyboard without the keys interfering with each other, and the tanks stop at a wall without jittering.</p>
-<p class="ev"><strong>In the Git repository before you tick the box:</strong> In the repo: a playable build with two tanks moving, tests T01–T02 with results in tests.md, and the movement commits.</p>
+<p class="ev"><strong>In the Git repository before you tick the box:</strong> In the repo: a playable build with two tanks moving, test cases T01–T02 with results in tests.md, and the movement commits.</p>
 </div>
 <div class="wk"><h2>Week 38 · 14–18 Sep — The bouncing shell</h2>
 <p class="feature">The tanks shoot: a shell flies, ricochets off walls indefinitely and disappears after about 10 seconds. You can die to your own shell — the core tension of the game exists.</p>
 <p class="task">☐&nbsp; Build the Projectile prefab with a physics material: Bounciness 1, Friction 0.</p>
 <p class="task">☐&nbsp; Implement shooting: one shell per player on the field, slightly faster than the tank.</p>
 <p class="task">☐&nbsp; Implement a ~10 s despawn and hits — including on your own tank (friendly fire).</p>
-<p class="task">☐&nbsp; Record tests T03–T05 before running them: direct hit, ricochet chain, despawn time.</p>
+<p class="task">☐&nbsp; Write test cases T03–T05 before running them: direct hit, ricochet chain, despawn time.</p>
 <p class="done"><strong>Done when:</strong> The shell bounces off walls without losing speed, disappears in about 10 seconds, kills its own shooter too, and a new shell can only be fired once the previous one is gone.</p>
-<p class="ev"><strong>In the Git repository before you tick the box:</strong> In the repo: a video or image sequence of the ricocheting shell, tests T03–T05 with results, and the Projectile prefab commit.</p>
+<p class="ev"><strong>In the Git repository before you tick the box:</strong> In the repo: a video or image sequence of the ricocheting shell, test cases T03–T05 with results, and the Projectile prefab commit.</p>
 </div>
 <div class="wk"><h2>Week 39 · 21–25 Sep — Rounds, scoring and the five-second rule</h2>
 <p class="feature">A hit destroys a tank, the round ends, a point is recorded and a new round starts. The GDD's five-second rule works: if both tanks die within five seconds, no point is awarded.</p>
 <p class="task">☐&nbsp; Implement tank destruction and round cleanup: shells removed, input cut from the dead tank.</p>
 <p class="task">☐&nbsp; Implement scoring, the GDD's five-second rule and the automatic round restart.</p>
-<p class="task">☐&nbsp; Record tests T06–T08 before running them and play with the game team — note the round rhythm.</p>
+<p class="task">☐&nbsp; Write test cases T06–T08 before running them and play with the game team — note the round rhythm.</p>
 <p class="done"><strong>Done when:</strong> A whole round works without touching the editor: destruction, a point to the right player (or to neither, under the 5 s rule), and an automatic new round.</p>
 <p class="ev"><strong>In the Git repository before you tick the box:</strong> In the repo: a whole round without the editor: scoring, the 5 s rule tested (T06–T08) and the playtest note week39.md.</p>
 </div>
 <h1 class="page">Phase B — Arena and powers: maze, power-ups and the review</h1>
-<div class="wk"><h2>Week 40 · 28 Sep – 2 Oct — DFS maze and data out of the code</h2>
-<p class="feature">The arena is generated with a DFS algorithm: a 10×10 maze where every tile is reachable, and the tanks spawn fairly, at least 3 tiles apart. Arena data comes from outside the code.</p>
+<div class="wk"><h2>Week 40 · 28 Sep – 2 Oct — Generated maze and data out of the code</h2>
+<p class="feature">The arena is generated with the depth-first search (DFS) algorithm: a 10×10 maze where every tile is reachable, and the tanks spawn fairly, at least 3 tiles apart. Arena data comes from outside the code.</p>
 <p class="task">☐&nbsp; Write the data store comparison (ScriptableObject / JSON / PlayerPrefs) before implementing anything.</p>
-<p class="task">☐&nbsp; Implement the DFS maze generator as its own class — draw the algorithm on paper first.</p>
+<p class="task">☐&nbsp; Implement the maze generator with depth-first search (DFS) as its own class — draw the algorithm on paper first.</p>
 <p class="task">☐&nbsp; Build the arena from data and implement spawn validation: starting positions at least 3 tiles apart.</p>
-<p class="task">☐&nbsp; Record tests T09–T10 before running them: traversability and spawn distance.</p>
+<p class="task">☐&nbsp; Write test cases T09–T10 before running them: traversability and spawn distance.</p>
 <p class="done"><strong>Done when:</strong> Every generated 10×10 maze is fully traversable (DFS guarantees it), the tanks start at least 3 tiles apart, and the arena size is read from data — you can change the size without touching code.</p>
-<p class="ev"><strong>In the Git repository before you tick the box:</strong> In the repo: the written data store comparison, the paper drawing of DFS, generated mazes and tests T09–T10.</p>
+<p class="ev"><strong>In the Git repository before you tick the box:</strong> In the repo: the written data store comparison, the paper drawing of the depth-first search, generated mazes and test cases T09–T10.</p>
 </div>
 <div class="wk"><h2>Week 41 · 5–9 Oct — Power-ups and the HUD</h2>
 <p class="feature">Power-ups appear on the field roughly every 2 seconds in the centre of a tile, and speed boost, slowness and shield affect play. The tank and the HUD both show which power is active.</p>
 <p class="task">☐&nbsp; Define the power-ups as data: SpeedBoost, Slowness and Shield assets with their durations.</p>
 <p class="task">☐&nbsp; Implement spawning (~2 s interval, at tile centres), pickup and the one-power-at-a-time rule.</p>
-<p class="task">☐&nbsp; Show the active powers in the HUD and on the tank, and record tests T11–T12 before running them.</p>
+<p class="task">☐&nbsp; Show the active powers in the HUD and on the tank, and write test cases T11–T12 before running them.</p>
 <p class="done"><strong>Done when:</strong> Three powers work with their durations, a player can only hold one at a time (a new one is not picked up before the old one is spent — GDD), and a spectator can see both players' state from the HUD.</p>
-<p class="ev"><strong>In the Git repository before you tick the box:</strong> In the repo: three power-up assets as data, a HUD screenshot and tests T11–T12 with results.</p>
+<p class="ev"><strong>In the Git repository before you tick the box:</strong> In the repo: three power-up assets as data, a HUD screenshot and test cases T11–T12 with results.</p>
 </div>
 <div class="wk"><h2>Week 43 · 19–23 Oct — Client review and prioritisation</h2>
 <p class="feature">The client has seen the game, the feedback is recorded in the client's own words, and the game team has made a prioritisation decision: which GDD extras fit into the remaining weeks. No new code is written this week.</p>
@@ -97,16 +97,16 @@ th { background: #e9f2e9; }
 </div>
 <h1 class="page">Phase C — Finishing: feedback change, testing and menus</h1>
 <div class="wk"><h2>Week 44 · 26–30 Oct — Feedback change and the chosen extra feature</h2>
-<p class="feature">The change derived from the client's feedback is made on its own branch and merged through a pull request, and the feature chosen in the review is playable. The game team has played the version and assessed it together.</p>
-<p class="task">☐&nbsp; Make the change derived from the feedback on its own branch and open a pull request that references the note.</p>
+<p class="feature">The change derived from the client's feedback is made on its own branch and merged through a pull request (PR), and the feature chosen in the review is playable. The game team has played the version and assessed it together.</p>
+<p class="task">☐&nbsp; Make the change derived from the feedback on its own branch and open a pull request (PR) that references the note.</p>
 <p class="task">☐&nbsp; Implement the feature chosen in the review, on top of the week 38 and 41 systems.</p>
 <p class="task">☐&nbsp; Run a game team playtest and record the shared assessment in a note.</p>
-<p class="task">☐&nbsp; Record tests T13–T14 before running them and merge the PR after review.</p>
+<p class="task">☐&nbsp; Write test cases T13–T14 before running them and merge the pull request after review.</p>
 <p class="done"><strong>Done when:</strong> Main holds a merged PR whose description makes clear which feedback it answers; the feature works; the playtest note holds at least three shared observations and a shared assessment.</p>
-<p class="ev"><strong>In the Git repository before you tick the box:</strong> In the repo: a merged PR that references the feedback, the playable feature, the playtest note and tests T13–T14.</p>
+<p class="ev"><strong>In the Git repository before you tick the box:</strong> In the repo: a merged PR that references the feedback, the playable feature, the playtest note and test cases T13–T14.</p>
 </div>
 <div class="wk"><h2>Week 45 · 2–6 Nov — Testing week and pair debugging</h2>
-<p class="feature">The test matrix has been run: at least 12 tests with results, three complete debugging chains verified, and one bug solved in a debugging pair with a team member. The game gets no new features — it becomes reliable.</p>
+<p class="feature">The test matrix has been run: at least 12 test cases with results, three complete debugging chains verified, and one bug solved in a debugging pair with a team member. The game gets no new features — it becomes reliable.</p>
 <p class="task">☐&nbsp; Complete the test matrix from the GDD's testing list: normal, boundary and error cases in balance.</p>
 <p class="task">☐&nbsp; Run every test — the old ones again too — and record the result of every row.</p>
 <p class="task">☐&nbsp; Solve one bug with a named debugging pair and record both sets of observations.</p>
@@ -116,16 +116,16 @@ th { background: #e9f2e9; }
 </div>
 <div class="wk"><h2>Week 46 · 9–13 Nov — Menus and settings</h2>
 <p class="feature">The game has the menu path the GDD describes: a main menu (Play / Options / Leave), settings and a pause menu. Settings persist between sessions, and the players cannot pick the same colour.</p>
-<p class="task">☐&nbsp; Build the main menu and the pause menu per the GDD's UI chapter: Play, Options, Leave and resume/restart/quit.</p>
+<p class="task">☐&nbsp; Build the main menu and the pause menu per the GDD's user interface (UI) chapter: Play, Options, Leave and resume/restart/quit.</p>
 <p class="task">☐&nbsp; Implement the settings and save them to PlayerPrefs — block duplicate player colours.</p>
-<p class="task">☐&nbsp; Record tests T15–T16 before running them: settings persistence and the duplicate colour block.</p>
+<p class="task">☐&nbsp; Write test cases T15–T16 before running them: settings persistence and the duplicate colour block.</p>
 <p class="done"><strong>Done when:</strong> The game can be started, the settings changed and a match paused without touching the editor; the settings are still there on the next launch; the same player colour cannot be picked twice.</p>
 <p class="ev"><strong>In the Git repository before you tick the box:</strong> In the repo: the playable menu path, PlayerPrefs settings persistence (T15) and the duplicate colour block (T16).</p>
 </div>
 <h1 class="page">Phase D — Release and handover</h1>
-<div class="wk"><h2>Week 47 · 16–20 Nov — RC, external testing and security</h2>
-<p class="feature">A release candidate exists, and an outside tester has got the game running on another machine from the written instructions alone. The security of your own repository has been reviewed before release.</p>
-<p class="task">☐&nbsp; Make the release candidate v1.0-rc1 and test it yourself in a clean folder.</p>
+<div class="wk"><h2>Week 47 · 16–20 Nov — Release candidate, external testing and security</h2>
+<p class="feature">The first release candidate (RC1) exists — a build that would be released as it is if testing turns up nothing blocking — and an outside tester has got the game running on another machine from the written instructions alone. The security of your own repository has been reviewed before release.</p>
+<p class="task">☐&nbsp; Make the first release candidate (RC1) as build v1.0-rc1 and test it yourself in a clean folder.</p>
 <p class="task">☐&nbsp; Write the installation and gameplay guide: download, launch, controls, goal.</p>
 <p class="task">☐&nbsp; Arrange an outside tester on another machine with no spoken help, and record the findings.</p>
 <p class="task">☐&nbsp; Run a security review of your own repository with concrete file paths and commits.</p>
@@ -134,7 +134,7 @@ th { background: #e9f2e9; }
 </div>
 <div class="wk"><h2>Week 48 · 23–27 Nov — Release v1.0 (the MVP)</h2>
 <p class="feature">Ping Pong Tanks v1.0 (the MVP) is released: a GitHub Release on the agreed channel, a README that says everything needed, and a release tested in a clean environment. The content is frozen.</p>
-<p class="task">☐&nbsp; Fix only the RC's blocking bugs and move the tester's fix list into the guide.</p>
+<p class="task">☐&nbsp; Fix only the release candidate's blocking bugs and move the tester's fix list into the guide.</p>
 <p class="task">☐&nbsp; Publish GitHub Release v1.0 with the build files and a scope description.</p>
 <p class="task">☐&nbsp; Test the release in a clean environment, finish the README and LICENSE, and freeze the content.</p>
 <p class="done"><strong>Done when:</strong> An outsider can download the release and play a match on a machine that has never had the project on it; the README matches the GDD's controls and rules; the release page states what the MVP contains and what was deliberately left out (P1/P2).</p>
@@ -154,5 +154,29 @@ th { background: #e9f2e9; }
 <p class="task"><strong>Wed 2 Dec</strong> · Rehearse the demo (8–10 min) with a game team member</p>
 <p class="task"><strong>Thu 3 Dec</strong> · Buffer: review the material with another person + self-assessment</p>
 <p class="task"><strong>Fri 4 Dec</strong> · Handover: the MVP + the project documentation to the client</p>
+<h1 class="page">Glossary</h1><p class="muted">The identifiers and technical terms of this project in the order you meet them. Each one is also explained on the site where it first comes up.</p><table>
+<tr><td style="width:24%"><strong>GDD</strong><br><span class="muted">week 36</span></td><td><em>Game Design Document.</em> The design document you wrote before this project: what the game is, how a round plays out and which features it has. Here the GDD is the source of the work — you do not rewrite it, you build it.</td></tr>
+<tr><td style="width:24%"><strong>MVP</strong><br><span class="muted">week 36</span></td><td><em>Minimum Viable Product.</em> The smallest version of the game that contains the required playable core and can be handed to the client. In this project the MVP is the version released on 4 December 2026.</td></tr>
+<tr><td style="width:24%"><strong>P0</strong><br><span class="muted">week 36</span></td><td><em>Required core.</em> The features that must be finished, or there is nothing to hand over. P0 is built first and everything else waits for it.</td></tr>
+<tr><td style="width:24%"><strong>P1</strong><br><span class="muted">week 36</span></td><td><em>Important follow-up content.</em> Features that are built only once P0 works. The P1 list is gone through in the week 43 prioritisation.</td></tr>
+<tr><td style="width:24%"><strong>P2</strong><br><span class="muted">week 36</span></td><td><em>Optional extra.</em> Features that can be left out entirely without the project failing. They stay recorded as issues, so the decision to drop them is visible.</td></tr>
+<tr><td style="width:24%"><strong>repository</strong><br><span class="muted">week 36</span></td><td><em>repo for short.</em> The project folder that Git tracks and GitHub holds. Everything that counts as work — code, documents, tests — lives in the repository, not only on your own machine.</td></tr>
+<tr><td style="width:24%"><strong>commit</strong><br><span class="muted">week 36</span></td><td>One saved, described change in the repository. A commit has a message and an identifier such as 4f2a91c, so you can point at exactly what you did and when.</td></tr>
+<tr><td style="width:24%"><strong>GitHub issue</strong><br><span class="muted">week 36</span></td><td>A numbered task card in the repository, for example issue #14. It says what is to be done and when it is done, and it is closed by the commit that finishes it.</td></tr>
+<tr><td style="width:24%"><strong>milestone</strong><br><span class="muted">week 36</span></td><td>A named group of issues in GitHub with a target date — here "MVP 4 Dec". It shows at a glance how much of the required core is still open.</td></tr>
+<tr><td style="width:24%"><strong>backlog</strong><br><span class="muted">week 36</span></td><td>The list of issues that are not done yet, in priority order. Work is picked from the top of the backlog, not from whatever feels nicest.</td></tr>
+<tr><td style="width:24%"><strong>T01</strong><br><span class="muted">week 37</span></td><td><em>Test case identifier.</em> T means a test case and the number identifies it: T01 is the first test case, T02 the second. The expected result is written down before the test is run, and the identifier is what you refer to in commits and in the journal.</td></tr>
+<tr><td style="width:24%"><strong>prefab</strong><br><span class="muted">week 37</span></td><td>A Unity object saved as a reusable template — the tank, the shell, the power-up pickup. Change the prefab and every copy of it in the scene changes too.</td></tr>
+<tr><td style="width:24%"><strong>HUD</strong><br><span class="muted">week 39</span></td><td><em>heads-up display.</em> The information drawn on top of the running match: the score and the active power-up icons. The player has to be able to read it without stopping to look.</td></tr>
+<tr><td style="width:24%"><strong>DFS</strong><br><span class="muted">week 40</span></td><td><em>depth-first search.</em> The algorithm that generates the maze: it carves a corridor one cell at a time until it reaches a dead end, then backs up and carries on in another direction. Because it visits every cell, every maze it generates is fully traversable.</td></tr>
+<tr><td style="width:24%"><strong>JSON</strong><br><span class="muted">week 40</span></td><td>A plain-text data format that both people and programs can read. Here it is one of the options for keeping arena and power-up data outside the code.</td></tr>
+<tr><td style="width:24%"><strong>branch</strong><br><span class="muted">week 44</span></td><td>A separate line of work in Git, taken off main so that main keeps working while you build. When the change is ready, the branch is merged back into main.</td></tr>
+<tr><td style="width:24%"><strong>PR</strong><br><span class="muted">week 44</span></td><td><em>pull request.</em> A request in GitHub to merge a branch into main. Its description says which requirement or feedback the change answers, someone reads the change, and only then is it merged.</td></tr>
+<tr><td style="width:24%"><strong>regression test</strong><br><span class="muted">week 45</span></td><td>An old test run again after a fix, to prove that the fix did not break something that used to work. Every test is run once more before the release.</td></tr>
+<tr><td style="width:24%"><strong>debugging chain</strong><br><span class="muted">week 45</span></td><td>One bug written up end to end: observation, reproduction steps, cause, fix commit, retest and regression test. Three complete chains are required in this project.</td></tr>
+<tr><td style="width:24%"><strong>UI</strong><br><span class="muted">week 46</span></td><td><em>user interface.</em> Everything the player operates the game through: the menus, the settings and the HUD. The GDD has its own chapter for it.</td></tr>
+<tr><td style="width:24%"><strong>RC</strong><br><span class="muted">week 47</span></td><td><em>release candidate.</em> A build that would be released as it is, if testing turns up nothing blocking. RC1 is the first release candidate; after it, only bugs that block playing or installing get fixed.</td></tr>
+<tr><td style="width:24%"><strong>content freeze</strong><br><span class="muted">week 48</span></td><td>The point after which nothing new is added to the game — only documentation. Here the content freeze is in week 48, so the last week is left for the handover.</td></tr>
+</table>
 <p class="muted" style="margin-top:10pt"><em>Remember: the tick boxes and fields on the site are stored in your browser only. They do not reach your instructor and they do not replace what is in Git.</em></p>
 </body></html>

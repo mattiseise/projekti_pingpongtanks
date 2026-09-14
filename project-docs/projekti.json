@@ -171,7 +171,7 @@
   "koonti": {
     "tyyppi": "peli",
     "tila": "kaynnissa",
-    "kuvaus": "Kahden pelaajan tankkiareena samalla näppäimistöllä: kimpoavat ammukset, DFS-generoitu sokkelo ja power-upit. Oma GDD toteutetaan Unitylla MVP:ksi asti. Sivusto ja projektidokumentaatio ovat englanniksi.",
+    "kuvaus": "Kahden pelaajan tankkiareena samalla näppäimistöllä: kimpoavat ammukset, joka kierroksella uusi satunnaisesti luotu sokkelo ja power-upit. Opiskelija toteuttaa oman pelisuunnitteludokumenttinsa Unitylla pelattavaksi perusversioksi asti ja julkaisee sen. Sivusto ja projektidokumentaatio ovat englanniksi.",
     "ryhma": "",
     "kesto": "13 työviikkoa",
     "tekniikat": [
