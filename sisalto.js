@@ -94,6 +94,8 @@ window.NAYTTOPROJEKTI = {
     logRemoveAria: "Remove log entry",
     logRemove: "Remove",
     resetConfirm: (plan, files) => `Clear tasks, the project journal${plan} and the AI log from this browser? Download the journal${files} first if you want to keep your answers.`,
+    exampleLabel: "Example of the expected precision · do not copy the content",
+    notEnoughLabel: "This is not enough yet",
     glossaryWeekLabel: "New terms this week",
     glossaryWeekLink: "Whole glossary →",
     glossaryWeekChip: (w) => `week ${w}`,
