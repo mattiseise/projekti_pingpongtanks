@@ -1,0 +1,693 @@
+{
+  "skeema": 1,
+  "slug": "pingpongtanks",
+  "nimi": "Ping Pong Tanks",
+  "kieli": "en",
+  "paivaton": false,
+  "generoitu": "2026-09-28",
+  "lahde": {
+    "sisalto.js": "2d1dffa1d3aca0f5",
+    "index.html": "d1b5f8e4d1b67dec"
+  },
+  "viikot": [
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49
+  ],
+  "lomaViikot": [
+    42
+  ],
+  "tyoviikot": [
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49
+  ],
+  "paivakirja": {
+    "polku": "project-docs/project-journal.md",
+    "tiedostonimi": "project-journal.md",
+    "viikkotiedosto": "project-journal-week-{n}.md",
+    "viikkoOtsikko": "## Week {n}",
+    "kentat": [
+      "### What did I do, and how?",
+      "### Why did I do it this way?",
+      "### Exact location of the work"
+    ],
+    "tyhja": "Not written yet."
+  },
+  "aiLoki": {
+    "otsikko": "## AI log",
+    "tiedosto": "ai-log.md"
+  },
+  "suunnitelma": {
+    "tiedostonimi": "gdd-implementation-plan.md",
+    "polku": "project-docs/gdd-implementation-plan.md"
+  },
+  "viikko": {
+    "36": {
+      "jarjestys": 1,
+      "tyyppi": "pohjustus",
+      "vaihe": "A",
+      "otsikko": "GDD into tasks, project set up",
+      "tehtavat": [
+        {
+          "id": "36-1",
+          "teksti": "Read the brief and your own GDD side by side and write a question list for the client."
+        },
+        {
+          "id": "36-2",
+          "teksti": "Scope P0 with your instructor and split it into issues, each with a done-when condition."
+        },
+        {
+          "id": "36-3",
+          "teksti": "Set up the Unity project with the agreed version and a public GitHub repository — run the privacy check."
+        },
+        {
+          "id": "36-4",
+          "teksti": "Name the game team, hold the first weekly meeting and put the implementation plan into project-docs."
+        }
+      ],
+      "nayta": "a public repository whose README, P0 milestone and first commit say what is being built — plus the question list with answers and the meeting note in project-docs.",
+      "tuotos": "A public GitHub repository, a P0 milestone with issues, a question list for the client, the GDD and the implementation plan in project-docs, and the first weekly meeting note.",
+      "valmis": "An outsider can see from the repository what is being built and in which order: the README describes the game in one paragraph, the milestone \"MVP 4 Dec\" holds the P0 issues, and the project compiles as an empty scene.",
+      "tarkistukset": [
+        {
+          "id": "tiedosto:README.md",
+          "tyyppi": "tiedosto",
+          "polku": "README.md",
+          "lahde": "auto"
+        },
+        {
+          "id": "paivakirja:36",
+          "tyyppi": "paivakirja",
+          "viikko": 36,
+          "lahde": "oletus"
+        },
+        {
+          "id": "commitit:36",
+          "tyyppi": "commitit",
+          "viikko": 36,
+          "min": 1,
+          "lahde": "oletus"
+        }
+      ],
+      "vuosi": 2026,
+      "alku": "2026-08-31",
+      "loppu": "2026-09-06",
+      "erapaiva": "2026-09-04",
+      "label": "31 Aug – 4 Sep"
+    },
+    "37": {
+      "jarjestys": 2,
+      "tyyppi": "feature",
+      "vaihe": "A",
+      "otsikko": "Tanks move — two players, one keyboard",
+      "tehtavat": [
+        {
+          "id": "37-1",
+          "teksti": "Build the tank prefab (square body and round turret) with a Rigidbody2D and colliders."
+        },
+        {
+          "id": "37-2",
+          "teksti": "Implement two-player movement on one keyboard: WASD and the arrow keys."
+        },
+        {
+          "id": "37-3",
+          "teksti": "Write two test cases and number them T01 and T02: record the expected result before running them, then run them — plus the weekly meeting note."
+        }
+      ],
+      "nayta": "a playable build with two tanks moving, test cases T01–T02 with results in tests.md, and the movement commits.",
+      "tuotos": "A tank prefab (square body + round turret per the GDD), two-player input mapping (WASD / arrows), Rigidbody2D-based movement, a fixed test arena. 2 recorded test cases.",
+      "valmis": "Two players can move at the same time on one keyboard without the keys interfering with each other, and the tanks stop at a wall without jittering.",
+      "tarkistukset": [
+        {
+          "id": "tiedosto:tests.md",
+          "tyyppi": "tiedosto",
+          "polku": "tests.md",
+          "lahde": "auto"
+        },
+        {
+          "id": "paivakirja:37",
+          "tyyppi": "paivakirja",
+          "viikko": 37,
+          "lahde": "oletus"
+        },
+        {
+          "id": "commitit:37",
+          "tyyppi": "commitit",
+          "viikko": 37,
+          "min": 1,
+          "lahde": "oletus"
+        }
+      ],
+      "vuosi": 2026,
+      "alku": "2026-09-07",
+      "loppu": "2026-09-13",
+      "erapaiva": "2026-09-11",
+      "label": "7–11 Sep"
+    },
+    "38": {
+      "jarjestys": 3,
+      "tyyppi": "feature",
+      "vaihe": "A",
+      "otsikko": "The bouncing shell",
+      "tehtavat": [
+        {
+          "id": "38-1",
+          "teksti": "Build the Projectile prefab with a physics material: Bounciness 1, Friction 0."
+        },
+        {
+          "id": "38-2",
+          "teksti": "Implement shooting: one shell per player on the field, slightly faster than the tank."
+        },
+        {
+          "id": "38-3",
+          "teksti": "Implement a ~10 s despawn and hits — including on your own tank (friendly fire)."
+        },
+        {
+          "id": "38-4",
+          "teksti": "Write test cases T03–T05 before running them: direct hit, ricochet chain, despawn time."
+        }
+      ],
+      "nayta": "a video or image sequence of the ricocheting shell, test cases T03–T05 with results, and the Projectile prefab commit.",
+      "tuotos": "A Projectile prefab and shooting for both players: one shell per player on the field, ricochet through a physics material, despawn on a timer. 3 recorded test cases.",
+      "valmis": "The shell bounces off walls without losing speed, disappears in about 10 seconds, kills its own shooter too, and a new shell can only be fired once the previous one is gone.",
+      "tarkistukset": [
+        {
+          "id": "paivakirja:38",
+          "tyyppi": "paivakirja",
+          "viikko": 38,
+          "lahde": "oletus"
+        },
+        {
+          "id": "commitit:38",
+          "tyyppi": "commitit",
+          "viikko": 38,
+          "min": 1,
+          "lahde": "oletus"
+        }
+      ],
+      "vuosi": 2026,
+      "alku": "2026-09-14",
+      "loppu": "2026-09-20",
+      "erapaiva": "2026-09-18",
+      "label": "14–18 Sep"
+    },
+    "39": {
+      "jarjestys": 4,
+      "tyyppi": "feature",
+      "vaihe": "A",
+      "otsikko": "Rounds, scoring and the five-second rule",
+      "tehtavat": [
+        {
+          "id": "39-1",
+          "teksti": "Implement tank destruction and round cleanup: shells removed, input cut from the dead tank."
+        },
+        {
+          "id": "39-2",
+          "teksti": "Implement scoring, the GDD's five-second rule and the automatic round restart."
+        },
+        {
+          "id": "39-3",
+          "teksti": "Write test cases T06–T08 before running them and play with the game team — note the round rhythm."
+        }
+      ],
+      "nayta": "a whole round without the editor: scoring, the 5 s rule tested (T06–T08) and the playtest note week39.md.",
+      "tuotos": "GameManager: tank destruction, scoring, the 5 s rule, round restart, a score display at the top of the screen — the first version of the HUD, the heads-up display drawn on top of the running match. 3 recorded test cases.",
+      "valmis": "A whole round works without touching the editor: destruction, a point to the right player (or to neither, under the 5 s rule), and an automatic new round.",
+      "tarkistukset": [
+        {
+          "id": "tiedosto:week39.md",
+          "tyyppi": "tiedosto",
+          "polku": "week39.md",
+          "lahde": "auto"
+        },
+        {
+          "id": "paivakirja:39",
+          "tyyppi": "paivakirja",
+          "viikko": 39,
+          "lahde": "oletus"
+        },
+        {
+          "id": "commitit:39",
+          "tyyppi": "commitit",
+          "viikko": 39,
+          "min": 1,
+          "lahde": "oletus"
+        }
+      ],
+      "vuosi": 2026,
+      "alku": "2026-09-21",
+      "loppu": "2026-09-27",
+      "erapaiva": "2026-09-25",
+      "label": "21–25 Sep"
+    },
+    "40": {
+      "jarjestys": 5,
+      "tyyppi": "feature",
+      "vaihe": "B",
+      "otsikko": "Generated maze and data out of the code",
+      "tehtavat": [
+        {
+          "id": "40-1",
+          "teksti": "Write the data store comparison (ScriptableObject / JSON / PlayerPrefs) before implementing anything."
+        },
+        {
+          "id": "40-2",
+          "teksti": "Implement the maze generator with depth-first search (DFS) as its own class — draw the algorithm on paper first."
+        },
+        {
+          "id": "40-3",
+          "teksti": "Build the arena from data and implement spawn validation: starting positions at least 3 tiles apart."
+        },
+        {
+          "id": "40-4",
+          "teksti": "Write test cases T09–T10 before running them: traversability and spawn distance."
+        }
+      ],
+      "nayta": "the written data store comparison, the paper drawing of the depth-first search, generated mazes and test cases T09–T10.",
+      "tuotos": "MazeGenerator (DFS), 10×10 working (5×5 and 25×25 as P1 issues), spawn validation, arena configuration in a ScriptableObject or JSON + a written data store comparison. 2 recorded test cases.",
+      "valmis": "Every generated 10×10 maze is fully traversable (DFS guarantees it), the tanks start at least 3 tiles apart, and the arena size is read from data — you can change the size without touching code.",
+      "tarkistukset": [
+        {
+          "id": "paivakirja:40",
+          "tyyppi": "paivakirja",
+          "viikko": 40,
+          "lahde": "oletus"
+        },
+        {
+          "id": "commitit:40",
+          "tyyppi": "commitit",
+          "viikko": 40,
+          "min": 1,
+          "lahde": "oletus"
+        }
+      ],
+      "vuosi": 2026,
+      "alku": "2026-09-28",
+      "loppu": "2026-10-04",
+      "erapaiva": "2026-10-02",
+      "label": "28 Sep – 2 Oct"
+    },
+    "41": {
+      "jarjestys": 6,
+      "tyyppi": "feature",
+      "vaihe": "B",
+      "otsikko": "Power-ups and the HUD",
+      "tehtavat": [
+        {
+          "id": "41-1",
+          "teksti": "Define the power-ups as data: SpeedBoost, Slowness and Shield assets with their durations."
+        },
+        {
+          "id": "41-2",
+          "teksti": "Implement spawning (~2 s interval, at tile centres), pickup and the one-power-at-a-time rule."
+        },
+        {
+          "id": "41-3",
+          "teksti": "Show the active powers in the HUD and on the tank, and write test cases T11–T12 before running them."
+        }
+      ],
+      "nayta": "three power-up assets as data, a HUD screenshot and test cases T11–T12 with results.",
+      "tuotos": "The power-up system: spawning (~2 s interval, only into free normal tiles), pickup, one power at a time (GDD), duration timers, a HUD icon and a tank indicator. Speed +20 %/10 s, slowness −20 %/10 s on the opponent, shield 15 s or one hit. 2 recorded test cases.",
+      "valmis": "Three powers work with their durations, a player can only hold one at a time (a new one is not picked up before the old one is spent — GDD), and a spectator can see both players' state from the HUD.",
+      "tarkistukset": [
+        {
+          "id": "paivakirja:41",
+          "tyyppi": "paivakirja",
+          "viikko": 41,
+          "lahde": "oletus"
+        },
+        {
+          "id": "commitit:41",
+          "tyyppi": "commitit",
+          "viikko": 41,
+          "min": 1,
+          "lahde": "oletus"
+        }
+      ],
+      "vuosi": 2026,
+      "alku": "2026-10-05",
+      "loppu": "2026-10-11",
+      "erapaiva": "2026-10-09",
+      "label": "5–9 Oct"
+    },
+    "43": {
+      "jarjestys": 7,
+      "tyyppi": "katselmointi",
+      "vaihe": "B",
+      "otsikko": "Client review and prioritisation",
+      "tehtavat": [
+        {
+          "id": "43-1",
+          "teksti": "Prepare a 10-minute demo of the playable build and run the review for the client."
+        },
+        {
+          "id": "43-2",
+          "teksti": "Write the review note in two parts: the client's own words and your interpretation, kept separate."
+        },
+        {
+          "id": "43-3",
+          "teksti": "Make the prioritisation decision with the game team and update the implementation plan and the backlog."
+        }
+      ],
+      "nayta": "the review note in the client's words, the recorded prioritisation decision and the updated implementation plan.",
+      "tuotos": "A review note (the client's words kept separate from your interpretation), the game team's prioritisation decision from the P1 list (laser / triple shot / special tiles / audio — the chosen one must fit roughly 2 working days), and an updated implementation plan.",
+      "valmis": "The note holds the client's own words, your interpretation separately, and a named decision: what gets built in week 44, what moves to P1/P2. The instructor has signed off on the decision.",
+      "tarkistukset": [
+        {
+          "id": "paivakirja:43",
+          "tyyppi": "paivakirja",
+          "viikko": 43,
+          "lahde": "oletus"
+        },
+        {
+          "id": "commitit:43",
+          "tyyppi": "commitit",
+          "viikko": 43,
+          "min": 1,
+          "lahde": "oletus"
+        }
+      ],
+      "vuosi": 2026,
+      "alku": "2026-10-19",
+      "loppu": "2026-10-25",
+      "erapaiva": "2026-10-23",
+      "label": "19–23 Oct"
+    },
+    "44": {
+      "jarjestys": 8,
+      "tyyppi": "feature",
+      "vaihe": "C",
+      "otsikko": "Feedback change and the chosen extra feature",
+      "tehtavat": [
+        {
+          "id": "44-1",
+          "teksti": "Make the change derived from the feedback on its own branch and open a pull request (PR) that references the note."
+        },
+        {
+          "id": "44-2",
+          "teksti": "Implement the feature chosen in the review, on top of the week 38 and 41 systems."
+        },
+        {
+          "id": "44-3",
+          "teksti": "Run a game team playtest and record the shared assessment in a note."
+        },
+        {
+          "id": "44-4",
+          "teksti": "Write test cases T13–T14 before running them and merge the pull request after review."
+        }
+      ],
+      "nayta": "a merged PR that references the feedback, the playable feature, the playtest note and test cases T13–T14.",
+      "tuotos": "A PR: the feedback change (branch → main) whose description references the review note; the chosen feature (e.g. triple shot) playable; the game team's playtest note with a shared assessment. 2 recorded test cases.",
+      "valmis": "Main holds a merged PR whose description makes clear which feedback it answers; the feature works; the playtest note holds at least three shared observations and a shared assessment.",
+      "tarkistukset": [
+        {
+          "id": "pr:yhdistetty",
+          "tyyppi": "pr",
+          "min": 1,
+          "lahde": "auto"
+        },
+        {
+          "id": "paivakirja:44",
+          "tyyppi": "paivakirja",
+          "viikko": 44,
+          "lahde": "oletus"
+        },
+        {
+          "id": "commitit:44",
+          "tyyppi": "commitit",
+          "viikko": 44,
+          "min": 1,
+          "lahde": "oletus"
+        }
+      ],
+      "vuosi": 2026,
+      "alku": "2026-10-26",
+      "loppu": "2026-11-01",
+      "erapaiva": "2026-10-30",
+      "label": "26–30 Oct"
+    },
+    "45": {
+      "jarjestys": 9,
+      "tyyppi": "laatu",
+      "vaihe": "C",
+      "otsikko": "Testing week and pair debugging",
+      "tehtavat": [
+        {
+          "id": "45-1",
+          "teksti": "Complete the test matrix from the GDD's testing list: normal, boundary and error cases in balance."
+        },
+        {
+          "id": "45-2",
+          "teksti": "Run every test — the old ones again too — and record the result of every row."
+        },
+        {
+          "id": "45-3",
+          "teksti": "Solve one bug with a named debugging pair and record both sets of observations."
+        },
+        {
+          "id": "45-4",
+          "teksti": "Finish three debugging chains with all six parts."
+        }
+      ],
+      "nayta": "the run test matrix (≥12 rows), three complete debugging chains and the pair debugging note.",
+      "tuotos": "A run test matrix (≥12 test cases: normal / boundary / error in roughly equal thirds), 3 complete debugging chains, a debugging pair note, regression tests for the fixed bugs.",
+      "valmis": "Every row of the matrix has an expectation recorded before the run and the result of the run; the three chains hold an observation, reproduction steps, the cause, the fix commit, a retest and a regression test; the pair note holds both names and both sets of observations.",
+      "tarkistukset": [
+        {
+          "id": "paivakirja:45",
+          "tyyppi": "paivakirja",
+          "viikko": 45,
+          "lahde": "oletus"
+        },
+        {
+          "id": "commitit:45",
+          "tyyppi": "commitit",
+          "viikko": 45,
+          "min": 1,
+          "lahde": "oletus"
+        }
+      ],
+      "vuosi": 2026,
+      "alku": "2026-11-02",
+      "loppu": "2026-11-08",
+      "erapaiva": "2026-11-06",
+      "label": "2–6 Nov"
+    },
+    "46": {
+      "jarjestys": 10,
+      "tyyppi": "feature",
+      "vaihe": "C",
+      "otsikko": "Menus and settings",
+      "tehtavat": [
+        {
+          "id": "46-1",
+          "teksti": "Build the main menu and the pause menu per the GDD's user interface (UI) chapter: Play, Options, Leave and resume/restart/quit."
+        },
+        {
+          "id": "46-2",
+          "teksti": "Implement the settings and save them to PlayerPrefs — block duplicate player colours."
+        },
+        {
+          "id": "46-3",
+          "teksti": "Write test cases T15–T16 before running them: settings persistence and the duplicate colour block."
+        }
+      ],
+      "nayta": "the playable menu path, PlayerPrefs settings persistence (T15) and the duplicate colour block (T16).",
+      "tuotos": "Main menu, options (arena size, player colours without duplicates; audio sliders only if audio was chosen in week 43), pause (resume / restart / quit), settings saved to PlayerPrefs. 2 recorded test cases.",
+      "valmis": "The game can be started, the settings changed and a match paused without touching the editor; the settings are still there on the next launch; the same player colour cannot be picked twice.",
+      "tarkistukset": [
+        {
+          "id": "paivakirja:46",
+          "tyyppi": "paivakirja",
+          "viikko": 46,
+          "lahde": "oletus"
+        },
+        {
+          "id": "commitit:46",
+          "tyyppi": "commitit",
+          "viikko": 46,
+          "min": 1,
+          "lahde": "oletus"
+        }
+      ],
+      "vuosi": 2026,
+      "alku": "2026-11-09",
+      "loppu": "2026-11-15",
+      "erapaiva": "2026-11-13",
+      "label": "9–13 Nov"
+    },
+    "47": {
+      "jarjestys": 11,
+      "tyyppi": "katselmointi",
+      "vaihe": "D",
+      "otsikko": "Release candidate, external testing and security",
+      "tehtavat": [
+        {
+          "id": "47-1",
+          "teksti": "Make the first release candidate (RC1) as build v1.0-rc1 and test it yourself in a clean folder."
+        },
+        {
+          "id": "47-2",
+          "teksti": "Write the installation and gameplay guide: download, launch, controls, goal."
+        },
+        {
+          "id": "47-3",
+          "teksti": "Arrange an outside tester on another machine with no spoken help, and record the findings."
+        },
+        {
+          "id": "47-4",
+          "teksti": "Run a security review of your own repository with concrete file paths and commits."
+        }
+      ],
+      "nayta": "the RC build, the written guide, the tester's findings in their own words and the security review with references.",
+      "tuotos": "An RC build, an installation and gameplay guide, the outside tester's observations (name, role, date, their own words), and a security review of your own repository with concrete references.",
+      "valmis": "The tester got all the way through a match without spoken help; every point where they hesitated is recorded as a fix list for the guide; the security review names the files and commits it checked. After the RC, only blocking bugs get fixed.",
+      "tarkistukset": [
+        {
+          "id": "tagi:v1.0-rc1",
+          "tyyppi": "tagi",
+          "nimi": "v1.0-rc1",
+          "lahde": "auto"
+        },
+        {
+          "id": "paivakirja:47",
+          "tyyppi": "paivakirja",
+          "viikko": 47,
+          "lahde": "oletus"
+        },
+        {
+          "id": "commitit:47",
+          "tyyppi": "commitit",
+          "viikko": 47,
+          "min": 1,
+          "lahde": "oletus"
+        }
+      ],
+      "vuosi": 2026,
+      "alku": "2026-11-16",
+      "loppu": "2026-11-22",
+      "erapaiva": "2026-11-20",
+      "label": "16–20 Nov"
+    },
+    "48": {
+      "jarjestys": 12,
+      "tyyppi": "julkaisu",
+      "vaihe": "D",
+      "otsikko": "Release v1.0 (the MVP)",
+      "tehtavat": [
+        {
+          "id": "48-1",
+          "teksti": "Fix only the release candidate's blocking bugs and move the tester's fix list into the guide."
+        },
+        {
+          "id": "48-2",
+          "teksti": "Publish GitHub Release v1.0 with the build files and a scope description."
+        },
+        {
+          "id": "48-3",
+          "teksti": "Test the release in a clean environment, finish the README and LICENSE, and freeze the content."
+        }
+      ],
+      "nayta": "GitHub Release v1.0, the clean-environment test report and the final README + LICENSE.",
+      "tuotos": "GitHub Release v1.0 with the build files (or an itch.io release — the instructor decides), the final README, a LICENSE as agreed, a clean-environment test report, and a content freeze commit.",
+      "valmis": "An outsider can download the release and play a match on a machine that has never had the project on it; the README matches the GDD's controls and rules; the release page states what the MVP contains and what was deliberately left out (P1/P2).",
+      "tarkistukset": [
+        {
+          "id": "tiedosto:LICENSE",
+          "tyyppi": "tiedosto",
+          "polku": "LICENSE",
+          "lahde": "auto"
+        },
+        {
+          "id": "tagi:v1.0",
+          "tyyppi": "tagi",
+          "nimi": "v1.0",
+          "lahde": "auto"
+        },
+        {
+          "id": "paivakirja:48",
+          "tyyppi": "paivakirja",
+          "viikko": 48,
+          "lahde": "oletus"
+        },
+        {
+          "id": "commitit:48",
+          "tyyppi": "commitit",
+          "viikko": 48,
+          "min": 1,
+          "lahde": "oletus"
+        }
+      ],
+      "vuosi": 2026,
+      "alku": "2026-11-23",
+      "loppu": "2026-11-29",
+      "erapaiva": "2026-11-27",
+      "label": "23–27 Nov"
+    },
+    "49": {
+      "jarjestys": 13,
+      "tyyppi": "handover",
+      "vaihe": "D",
+      "otsikko": "Handover week",
+      "tehtavat": [
+        {
+          "id": "49-1",
+          "teksti": "Finish the project documentation so every claim has an exact reference."
+        },
+        {
+          "id": "49-2",
+          "teksti": "Rehearse the 8–10 minute demo and time it with a game team member."
+        },
+        {
+          "id": "49-3",
+          "teksti": "Write the self-assessment against the meeting notes and hand over the MVP on Fri 4 Dec."
+        }
+      ],
+      "nayta": "the finished project documentation, the collected journal and AI log, and the self-assessment in project-docs.",
+      "tuotos": "The collected project journal and AI log in project-docs, a rehearsed 8–10 minute demo, a self-assessment written against the meeting notes, and the handover on Friday 4 December.",
+      "valmis": "Every claim in the documentation has at least one exact reference (commit, test id, note, release); the demo stays inside its time and covers the technique, a bug fix and the Git history; the self-assessment references real meeting notes.",
+      "tarkistukset": [
+        {
+          "id": "paivakirja:49",
+          "tyyppi": "paivakirja",
+          "viikko": 49,
+          "lahde": "oletus"
+        },
+        {
+          "id": "commitit:49",
+          "tyyppi": "commitit",
+          "viikko": 49,
+          "min": 1,
+          "lahde": "oletus"
+        }
+      ],
+      "vuosi": 2026,
+      "alku": "2026-11-30",
+      "loppu": "2026-12-06",
+      "erapaiva": "2026-12-04",
+      "label": "30 Nov – 4 Dec"
+    }
+  }
+}
