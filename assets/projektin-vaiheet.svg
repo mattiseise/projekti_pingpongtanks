@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="722" viewBox="0 0 880 722" role="img" aria-labelledby="title desc">
+<title id="title">Ping Pong Tanks: project phases</title>
+<desc id="desc">1. Core game: a playable round (weeks 36–39): You break the GDD into a prioritised backlog and set up the Unity project, then build movement, the bouncing shell and a whole round with scoring. They come first because every later feature drives, shoots or scores on top of them. 2. Arena, powers and the review (weeks 40–43): You replace the test arena with a generated maze and add three data-driven power-ups. In week 43 the client plays this version, and together you decide what fits into the remaining weeks. Autumn break · week 42. 3. Complete and tested game (weeks 44–46): You answer the client's feedback through a pull request, run the whole test matrix and build the menu path. The game becomes reliable and complete before anyone outside the project tries it. 4. Release and handover (weeks 47–49): An outside tester starts the release candidate from your written guide alone. You fix only blocking bugs, release v1.0 and hand the MVP and the documentation over on 4 December.</desc>
+<rect width="880" height="722" fill="#ffffff"/>
+<defs><marker id="nuoli" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#5c5347" stroke-width="1.4"/></marker></defs>
+<text x="40" y="49" fill="#241f1a" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">What gets built in each phase?</text>
+<rect x="90" y="78" width="752" height="132" rx="12" fill="#ffffff" stroke="#a16207" stroke-width="2"/>
+<circle cx="45" cy="107" r="24" fill="#a16207"/>
+<text x="45" y="117" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" text-anchor="middle">1</text>
+<text x="112" y="114" fill="#241f1a" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">Core game: a playable round</text>
+<text x="822" y="114" fill="#5c5347" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="end">Weeks 36–39</text>
+<text x="112" y="150" fill="#241f1a" font-family="Arial, Helvetica, sans-serif" font-size="21">GDD → backlog → movement → shell → rounds</text>
+<text x="112" y="180" fill="#241f1a" font-family="Arial, Helvetica, sans-serif" font-size="21">Week 39: a whole 1v1 round without the editor.</text>
+<path d="M45 136V224" stroke="#d4cbbb" stroke-width="2" marker-end="url(#nuoli)"/>
+<rect x="90" y="230" width="752" height="162" rx="12" fill="#ffffff" stroke="#2f6b8f" stroke-width="2"/>
+<circle cx="45" cy="259" r="24" fill="#2f6b8f"/>
+<text x="45" y="269" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" text-anchor="middle">2</text>
+<text x="112" y="266" fill="#241f1a" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">Arena, powers and the review</text>
+<text x="822" y="266" fill="#5c5347" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="end">Weeks 40–43</text>
+<text x="112" y="302" fill="#241f1a" font-family="Arial, Helvetica, sans-serif" font-size="21">Maze → power-ups → the client plays it</text>
+<text x="112" y="332" fill="#241f1a" font-family="Arial, Helvetica, sans-serif" font-size="21">Week 43: the remaining weeks are prioritised.</text>
+<text x="112" y="366" fill="#5c5347" font-family="Arial, Helvetica, sans-serif" font-size="18" font-style="italic">Autumn break · week 42</text>
+<path d="M45 288V406" stroke="#d4cbbb" stroke-width="2" marker-end="url(#nuoli)"/>
+<rect x="90" y="412" width="752" height="132" rx="12" fill="#ffffff" stroke="#6d5aae" stroke-width="2"/>
+<circle cx="45" cy="441" r="24" fill="#6d5aae"/>
+<text x="45" y="451" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" text-anchor="middle">3</text>
+<text x="112" y="448" fill="#241f1a" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">Complete and tested game</text>
+<text x="822" y="448" fill="#5c5347" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="end">Weeks 44–46</text>
+<text x="112" y="484" fill="#241f1a" font-family="Arial, Helvetica, sans-serif" font-size="21">Feedback change → test matrix → menus</text>
+<text x="112" y="514" fill="#241f1a" font-family="Arial, Helvetica, sans-serif" font-size="21">Reliable and complete before an outsider tries it.</text>
+<path d="M45 470V558" stroke="#d4cbbb" stroke-width="2" marker-end="url(#nuoli)"/>
+<rect x="90" y="564" width="752" height="132" rx="12" fill="#ffffff" stroke="#b8412c" stroke-width="2"/>
+<circle cx="45" cy="593" r="24" fill="#b8412c"/>
+<text x="45" y="603" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" text-anchor="middle">4</text>
+<text x="112" y="600" fill="#241f1a" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">Release and handover</text>
+<text x="822" y="600" fill="#5c5347" font-family="Arial, Helvetica, sans-serif" font-size="20" text-anchor="end">Weeks 47–49</text>
+<text x="112" y="636" fill="#241f1a" font-family="Arial, Helvetica, sans-serif" font-size="21">RC1 → outside tester → v1.0 → handover</text>
+<text x="112" y="666" fill="#241f1a" font-family="Arial, Helvetica, sans-serif" font-size="21">Anyone can download it and play from your guide.</text>
+</svg>

@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="640" viewBox="0 0 880 640" role="img" aria-labelledby="title desc">
+<title id="title">How the parts of Ping Pong Tanks fit together</title>
+<desc id="desc">Illustration, not a screenshot. The scene holds what the players see: the menus, two tank prefabs, the shells, the maze walls and floor, the power-up pickups and the HUD with the score and the active powers. The C# scripts control those objects: movement and shooting, the shell's ricochet, lifetime and hits, the round manager with the score, the five-second rule and the restart, the maze generator that uses depth-first search as a plain C# class with a builder, the power-up system with spawning, one power at a time and timers, and the menus and settings. The data kept outside the code is read by the scripts: the arena configuration with the size and tile types, three power-up data assets with duration and effect, and the saved settings in PlayerPrefs. You choose the store for arena data in week 40, ScriptableObject or JSON, and the settings go to PlayerPrefs in week 46. The release path runs from the Git repository with the project and project-docs, to a build for the agreed target, to release candidate v1.0-rc1 that an outsider tests, and to release v1.0 with the written guide.</desc>
+<rect width="880" height="640" fill="#ffffff"/>
+<defs>
+  <marker id="nuoli" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#5c5347"/></marker>
+</defs>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="32" y="44" fill="#241f1a" font-size="26" font-weight="700">How the parts of Ping Pong Tanks fit together</text>
+<text x="32" y="70" fill="#5c5347" font-size="14">Illustration, not a screenshot · the names in the implementation help are suggestions</text>
+
+<!-- Scene -->
+<rect x="32" y="92" width="248" height="384" rx="12" fill="#fdfcf9" stroke="#2f6b8f" stroke-width="2"/>
+<text x="48" y="122" fill="#2f6b8f" font-size="19" font-weight="700">Scene</text>
+<text x="48" y="142" fill="#5c5347" font-size="14">what the players see</text>
+<rect x="44" y="156" width="224" height="46" rx="8" fill="#eaf1f5"/>
+<text x="56" y="176" fill="#241f1a" font-size="15" font-weight="700">Menus</text>
+<text x="56" y="194" fill="#241f1a" font-size="13">main menu, options, pause</text>
+<rect x="44" y="208" width="224" height="46" rx="8" fill="#eaf1f5"/>
+<text x="56" y="228" fill="#241f1a" font-size="15" font-weight="700">Tank ×2 (prefab)</text>
+<text x="56" y="246" fill="#241f1a" font-size="13">body, turret, Rigidbody2D</text>
+<rect x="44" y="260" width="224" height="46" rx="8" fill="#eaf1f5"/>
+<text x="56" y="280" fill="#241f1a" font-size="15" font-weight="700">Shell (prefab)</text>
+<text x="56" y="298" fill="#241f1a" font-size="13">bounces: Physics Material 2D</text>
+<rect x="44" y="312" width="224" height="46" rx="8" fill="#eaf1f5"/>
+<text x="56" y="332" fill="#241f1a" font-size="15" font-weight="700">Maze walls and floor</text>
+<text x="56" y="350" fill="#241f1a" font-size="13">built from the maze data</text>
+<rect x="44" y="364" width="224" height="46" rx="8" fill="#eaf1f5"/>
+<text x="56" y="384" fill="#241f1a" font-size="15" font-weight="700">Power-up pickups</text>
+<text x="56" y="402" fill="#241f1a" font-size="13">at the centre of free tiles</text>
+<rect x="44" y="416" width="224" height="46" rx="8" fill="#eaf1f5"/>
+<text x="56" y="436" fill="#241f1a" font-size="15" font-weight="700">HUD</text>
+<text x="56" y="454" fill="#241f1a" font-size="13">score and active powers</text>
+
+<!-- Scripts -->
+<rect x="316" y="92" width="248" height="384" rx="12" fill="#fdfcf9" stroke="#2e7d32" stroke-width="2"/>
+<text x="332" y="122" fill="#1b5e20" font-size="19" font-weight="700">Scripts · C#</text>
+<text x="332" y="142" fill="#5c5347" font-size="14">control the scene objects</text>
+<rect x="328" y="156" width="224" height="46" rx="8" fill="#e9f2e9"/>
+<text x="340" y="176" fill="#241f1a" font-size="15" font-weight="700">Movement and shooting</text>
+<text x="340" y="194" fill="#241f1a" font-size="13">keys → physics, one shell</text>
+<rect x="328" y="208" width="224" height="46" rx="8" fill="#e9f2e9"/>
+<text x="340" y="228" fill="#241f1a" font-size="15" font-weight="700">Shell</text>
+<text x="340" y="246" fill="#241f1a" font-size="13">ricochet, ~10 s life, hits</text>
+<rect x="328" y="260" width="224" height="46" rx="8" fill="#e9f2e9"/>
+<text x="340" y="280" fill="#241f1a" font-size="15" font-weight="700">Round manager</text>
+<text x="340" y="298" fill="#241f1a" font-size="13">score, 5 s rule, restart</text>
+<rect x="328" y="312" width="224" height="46" rx="8" fill="#e9f2e9"/>
+<text x="340" y="332" fill="#241f1a" font-size="15" font-weight="700">Maze generator (DFS)</text>
+<text x="340" y="350" fill="#241f1a" font-size="13">plain C# class + builder</text>
+<rect x="328" y="364" width="224" height="46" rx="8" fill="#e9f2e9"/>
+<text x="340" y="384" fill="#241f1a" font-size="15" font-weight="700">Power-up system</text>
+<text x="340" y="402" fill="#241f1a" font-size="13">spawn, one power, timers</text>
+<rect x="328" y="416" width="224" height="46" rx="8" fill="#e9f2e9"/>
+<text x="340" y="436" fill="#241f1a" font-size="15" font-weight="700">Menus and settings</text>
+<text x="340" y="454" fill="#241f1a" font-size="13">save and load settings</text>
+
+<!-- Data -->
+<rect x="600" y="92" width="248" height="384" rx="12" fill="#fdfcf9" stroke="#a16207" stroke-width="2"/>
+<text x="616" y="122" fill="#8a5206" font-size="19" font-weight="700">Data</text>
+<text x="616" y="142" fill="#5c5347" font-size="14">outside the code, read by scripts</text>
+<rect x="612" y="156" width="224" height="46" rx="8" fill="#f7efe1"/>
+<text x="624" y="176" fill="#241f1a" font-size="15" font-weight="700">Arena configuration</text>
+<text x="624" y="194" fill="#241f1a" font-size="13">size and tile types</text>
+<rect x="612" y="208" width="224" height="46" rx="8" fill="#f7efe1"/>
+<text x="624" y="228" fill="#241f1a" font-size="15" font-weight="700">Power-up data ×3</text>
+<text x="624" y="246" fill="#241f1a" font-size="13">duration and effect</text>
+<rect x="612" y="260" width="224" height="46" rx="8" fill="#f7efe1"/>
+<text x="624" y="280" fill="#241f1a" font-size="15" font-weight="700">Saved settings</text>
+<text x="624" y="298" fill="#241f1a" font-size="13">PlayerPrefs: size, colours</text>
+<rect x="612" y="324" width="224" height="138" rx="8" fill="#ffffff" stroke="#a16207" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="624" y="350" fill="#241f1a" font-size="14" font-weight="700">You choose the store</text>
+<text x="624" y="372" fill="#241f1a" font-size="13">for arena data in week 40:</text>
+<text x="624" y="392" fill="#241f1a" font-size="13">ScriptableObject or JSON.</text>
+<text x="624" y="420" fill="#241f1a" font-size="13">The settings go into</text>
+<text x="624" y="440" fill="#241f1a" font-size="13">PlayerPrefs in week 46.</text>
+
+<!-- arrows: data → scripts → scene -->
+<path d="M598 284H570" stroke="#5c5347" stroke-width="2" marker-end="url(#nuoli)"/>
+<path d="M314 284H286" stroke="#5c5347" stroke-width="2" marker-end="url(#nuoli)"/>
+
+<!-- Release -->
+<text x="32" y="516" fill="#241f1a" font-size="19" font-weight="700">Release</text>
+<rect x="32" y="532" width="186" height="68" rx="10" fill="#fdfcf9" stroke="#b8412c" stroke-width="2"/>
+<text x="44" y="560" fill="#241f1a" font-size="15" font-weight="700">Git repository</text>
+<text x="44" y="582" fill="#241f1a" font-size="13">project + project-docs</text>
+<path d="M220 566H238" stroke="#5c5347" stroke-width="2" marker-end="url(#nuoli)"/>
+<rect x="242" y="532" width="186" height="68" rx="10" fill="#fdfcf9" stroke="#b8412c" stroke-width="2"/>
+<text x="254" y="560" fill="#241f1a" font-size="15" font-weight="700">Build</text>
+<text x="254" y="582" fill="#241f1a" font-size="13">for the agreed target</text>
+<path d="M430 566H448" stroke="#5c5347" stroke-width="2" marker-end="url(#nuoli)"/>
+<rect x="452" y="532" width="186" height="68" rx="10" fill="#fdfcf9" stroke="#b8412c" stroke-width="2"/>
+<text x="464" y="560" fill="#241f1a" font-size="15" font-weight="700">v1.0-rc1</text>
+<text x="464" y="582" fill="#241f1a" font-size="13">an outsider tests it</text>
+<path d="M640 566H658" stroke="#5c5347" stroke-width="2" marker-end="url(#nuoli)"/>
+<rect x="662" y="532" width="186" height="68" rx="10" fill="#fdfcf9" stroke="#b8412c" stroke-width="2"/>
+<text x="674" y="560" fill="#241f1a" font-size="15" font-weight="700">Release v1.0</text>
+<text x="674" y="582" fill="#241f1a" font-size="13">+ the written guide</text>
+</g>
+</svg>

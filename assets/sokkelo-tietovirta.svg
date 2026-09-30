@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" role="img" aria-labelledby="title desc">
+<title id="title">How the maze data flows</title>
+<desc id="desc">Illustration, not a screenshot. The arena data, for example an ArenaConfig asset with the size 10×10 and the tile types, is kept in the store you chose in week 40. MazeGenerator is a plain C# class that runs the depth-first search and returns the walls of every cell. MazeBuilder is a MonoBehaviour that turns that result into wall and floor objects. In the scene the spawn check draws the starting positions and rejects any draw closer than 3 tiles. Changing the size in the data gives a new maze without a code change, and because the generator holds no GameObjects, it can be tested without a scene.</desc>
+<rect width="880" height="420" fill="#ffffff"/>
+<defs>
+  <marker id="nuoli" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#5c5347"/></marker>
+</defs>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="32" y="44" fill="#241f1a" font-size="26" font-weight="700">How the maze data flows</text>
+<text x="32" y="70" fill="#5c5347" font-size="14">Illustration, not a screenshot · the names are suggestions from the implementation help</text>
+
+<rect x="32" y="96" width="186" height="170" rx="12" fill="#f7efe1" stroke="#a16207" stroke-width="2"/>
+<text x="46" y="124" fill="#241f1a" font-size="17" font-weight="700">Arena data</text>
+<text x="46" y="150" fill="#241f1a" font-size="13">e.g. ArenaConfig asset</text>
+<text x="46" y="172" fill="#241f1a" font-size="13">size: 10×10</text>
+<text x="46" y="194" fill="#241f1a" font-size="13">tile types</text>
+<text x="46" y="226" fill="#5c5347" font-size="13">in the store you</text>
+<text x="46" y="246" fill="#5c5347" font-size="13">chose in week 40</text>
+<path d="M220 181H238" stroke="#5c5347" stroke-width="2" marker-end="url(#nuoli)"/>
+
+<rect x="242" y="96" width="186" height="170" rx="12" fill="#e9f2e9" stroke="#2e7d32" stroke-width="2"/>
+<text x="256" y="124" fill="#241f1a" font-size="17" font-weight="700">MazeGenerator</text>
+<text x="256" y="150" fill="#241f1a" font-size="13">plain C# class</text>
+<text x="256" y="172" fill="#241f1a" font-size="13">depth-first search</text>
+<text x="256" y="194" fill="#241f1a" font-size="13">returns the walls</text>
+<text x="256" y="216" fill="#241f1a" font-size="13">of every cell</text>
+<text x="256" y="246" fill="#5c5347" font-size="13">no GameObjects</text>
+<path d="M430 181H448" stroke="#5c5347" stroke-width="2" marker-end="url(#nuoli)"/>
+
+<rect x="452" y="96" width="186" height="170" rx="12" fill="#e9f2e9" stroke="#2e7d32" stroke-width="2"/>
+<text x="466" y="124" fill="#241f1a" font-size="17" font-weight="700">MazeBuilder</text>
+<text x="466" y="150" fill="#241f1a" font-size="13">MonoBehaviour</text>
+<text x="466" y="172" fill="#241f1a" font-size="13">creates the wall</text>
+<text x="466" y="194" fill="#241f1a" font-size="13">and floor objects</text>
+<path d="M640 181H658" stroke="#5c5347" stroke-width="2" marker-end="url(#nuoli)"/>
+
+<rect x="662" y="96" width="186" height="170" rx="12" fill="#eaf1f5" stroke="#2f6b8f" stroke-width="2"/>
+<text x="676" y="124" fill="#241f1a" font-size="17" font-weight="700">Scene</text>
+<text x="676" y="150" fill="#241f1a" font-size="13">walls and floor</text>
+<text x="676" y="172" fill="#241f1a" font-size="13">+ spawn check:</text>
+<text x="676" y="194" fill="#241f1a" font-size="13">tanks at least</text>
+<text x="676" y="216" fill="#241f1a" font-size="13">3 tiles apart</text>
+
+<rect x="32" y="296" width="396" height="92" rx="10" fill="#ffffff" stroke="#a16207" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="48" y="326" fill="#241f1a" font-size="15" font-weight="700">Change the size in the data</text>
+<text x="48" y="350" fill="#241f1a" font-size="14">10×10 → 8×8 gives a new maze</text>
+<text x="48" y="372" fill="#241f1a" font-size="14">without a single code change.</text>
+
+<rect x="452" y="296" width="396" height="92" rx="10" fill="#ffffff" stroke="#2e7d32" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="468" y="326" fill="#241f1a" font-size="15" font-weight="700">Test the generator on its own</text>
+<text x="468" y="350" fill="#241f1a" font-size="14">No GameObjects inside, so the</text>
+<text x="468" y="372" fill="#241f1a" font-size="14">traversability check needs no scene.</text>
+</g>
+</svg>

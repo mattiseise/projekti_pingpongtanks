@@ -4,10 +4,10 @@
   "nimi": "Ping Pong Tanks",
   "kieli": "en",
   "paivaton": false,
-  "generoitu": "2026-09-28",
+  "generoitu": "2026-09-30",
   "lahde": {
-    "sisalto.js": "2d1dffa1d3aca0f5",
-    "index.html": "d1b5f8e4d1b67dec"
+    "sisalto.js": "a9cb58c840fdd8c3",
+    "index.html": "777db1c5e3be026a"
   },
   "viikot": [
     36,
@@ -67,30 +67,50 @@
     "36": {
       "jarjestys": 1,
       "tyyppi": "pohjustus",
-      "vaihe": "A",
+      "vaihe": "1",
       "otsikko": "GDD into tasks, project set up",
       "tehtavat": [
         {
           "id": "36-1",
-          "teksti": "Read the brief and your own GDD side by side and write a question list for the client."
+          "teksti": "Write a question list from the brief and your GDD",
+          "valmis": "The question list covers the gaps between the brief and the GDD, and every question is either answered or marked open.",
+          "tallenna": "The question list in `project-docs/`. The open items go into the week 36 journal entry."
         },
         {
           "id": "36-2",
-          "teksti": "Scope P0 with your instructor and split it into issues, each with a done-when condition."
+          "teksti": "Scope P0 with your instructor and break it into issues",
+          "valmis": "The P0 scope is agreed with your instructor and recorded in the plan, and every piece of P0 is an issue draft with a done-when condition.",
+          "tallenna": "The P0 scope and who approved it in the plan and in the week 36 journal entry. The drafts become GitHub issues in work step 3."
         },
         {
           "id": "36-3",
-          "teksti": "Set up the Unity project with the agreed version and a public GitHub repository — run the privacy check."
+          "teksti": "Set up the Unity project in a public GitHub repository",
+          "valmis": "A fresh clone of the repository opens in Unity without errors by following the README alone, and the milestone \"MVP 4 Dec\" holds the P0 issues.",
+          "tallenna": "Commit and push. The repository address and the hash of the first commit go into the week 36 journal entry."
         },
         {
           "id": "36-4",
-          "teksti": "Name the game team, hold the first weekly meeting and put the implementation plan into project-docs."
+          "teksti": "Name the game team and hold the first weekly meeting",
+          "valmis": "The meeting note names the attendees and the agreements with issue numbers, and the implementation plan is in `project-docs/`.",
+          "tallenna": "`project-docs/meetings/week36.md` and `project-docs/gdd-implementation-plan.md`, committed and pushed."
         }
       ],
-      "nayta": "a public repository whose README, P0 milestone and first commit say what is being built — plus the question list with answers and the meeting note in project-docs.",
+      "nayta": "A public repository whose README, P0 milestone and first commit say what is being built — plus the question list with answers and the meeting note in project-docs.",
       "tuotos": "A public GitHub repository, a P0 milestone with issues, a question list for the client, the GDD and the implementation plan in project-docs, and the first weekly meeting note.",
       "valmis": "An outsider can see from the repository what is being built and in which order: the README describes the game in one paragraph, the milestone \"MVP 4 Dec\" holds the P0 issues, and the project compiles as an empty scene.",
       "tarkistukset": [
+        {
+          "id": "tiedosto:project-docs/meetings/week36.md",
+          "tyyppi": "tiedosto",
+          "polku": "project-docs/meetings/week36.md",
+          "lahde": "auto"
+        },
+        {
+          "id": "tiedosto:project-docs/gdd-implementation-plan.md",
+          "tyyppi": "tiedosto",
+          "polku": "project-docs/gdd-implementation-plan.md",
+          "lahde": "auto"
+        },
         {
           "id": "tiedosto:README.md",
           "tyyppi": "tiedosto",
@@ -120,30 +140,42 @@
     "37": {
       "jarjestys": 2,
       "tyyppi": "feature",
-      "vaihe": "A",
+      "vaihe": "1",
       "otsikko": "Tanks move — two players, one keyboard",
       "tehtavat": [
         {
           "id": "37-1",
-          "teksti": "Build the tank prefab (square body and round turret) with a Rigidbody2D and colliders."
+          "teksti": "Build the tank prefab and place two tanks in a test arena",
+          "valmis": "One tank prefab exists, and two instances of it in different colours stand in a walled test arena that the camera shows whole.",
+          "tallenna": "The prefab and the scene, committed with a message that names the issue."
         },
         {
           "id": "37-2",
-          "teksti": "Implement two-player movement on one keyboard: WASD and the arrow keys."
+          "teksti": "Move two tanks with physics on one keyboard",
+          "valmis": "Both tanks move at the same time on one keyboard without disturbing each other, and they stop at walls without jittering.",
+          "tallenna": "Small commits that name the issue, for example \"Tank movement: two players, one keyboard (#3)\". Your input and Rigidbody2D settings go into the week 37 journal entry."
         },
         {
           "id": "37-3",
-          "teksti": "Write two test cases and number them T01 and T02: record the expected result before running them, then run them — plus the weekly meeting note."
+          "teksti": "Run test cases T01–T02 and hold the weekly meeting",
+          "valmis": "T01 and T02 each have an expected result written before the run and an actual result, and the meeting note is in the repository.",
+          "tallenna": "`project-docs/tests.md` and `project-docs/meetings/week37.md`, committed. The results of T01–T02 go into the week 37 journal entry."
         }
       ],
-      "nayta": "a playable build with two tanks moving, test cases T01–T02 with results in tests.md, and the movement commits.",
+      "nayta": "A playable build with two tanks moving, test cases T01–T02 with results in tests.md, and the movement commits.",
       "tuotos": "A tank prefab (square body + round turret per the GDD), two-player input mapping (WASD / arrows), Rigidbody2D-based movement, a fixed test arena. 2 recorded test cases.",
       "valmis": "Two players can move at the same time on one keyboard without the keys interfering with each other, and the tanks stop at a wall without jittering.",
       "tarkistukset": [
         {
-          "id": "tiedosto:tests.md",
+          "id": "tiedosto:project-docs/tests.md",
           "tyyppi": "tiedosto",
-          "polku": "tests.md",
+          "polku": "project-docs/tests.md",
+          "lahde": "auto"
+        },
+        {
+          "id": "tiedosto:project-docs/meetings/week37.md",
+          "tyyppi": "tiedosto",
+          "polku": "project-docs/meetings/week37.md",
           "lahde": "auto"
         },
         {
@@ -169,30 +201,56 @@
     "38": {
       "jarjestys": 3,
       "tyyppi": "feature",
-      "vaihe": "A",
+      "vaihe": "1",
       "otsikko": "The bouncing shell",
       "tehtavat": [
         {
           "id": "38-1",
-          "teksti": "Build the Projectile prefab with a physics material: Bounciness 1, Friction 0."
+          "teksti": "Build the bouncing Projectile prefab",
+          "valmis": "The Projectile prefab has Bounciness 1 and Friction 0 on the shell and on the walls, Linear Drag 0 and continuous collision detection.",
+          "tallenna": "The Projectile prefab, committed with a message that names the issue. The physics material settings go into the week 38 journal entry."
         },
         {
           "id": "38-2",
-          "teksti": "Implement shooting: one shell per player on the field, slightly faster than the tank."
+          "teksti": "Let each player fire one shell at a time",
+          "valmis": "Each player can fire only when their previous shell is gone, and the shell leaves the barrel slightly faster than the tank moves.",
+          "tallenna": "`TankShooting.cs`, committed with a message that names the issue. How you limited it to one shell goes into the week 38 journal entry."
         },
         {
           "id": "38-3",
-          "teksti": "Implement a ~10 s despawn and hits — including on your own tank (friendly fire)."
+          "teksti": "Make shells despawn after ~10 s and destroy any tank they hit",
+          "valmis": "A shell disappears after about 10 seconds, and a hit destroys any tank, including the one that fired it.",
+          "tallenna": "`Projectile.cs`, committed with a message that names the issue."
         },
         {
           "id": "38-4",
-          "teksti": "Write test cases T03–T05 before running them: direct hit, ricochet chain, despawn time."
+          "teksti": "Run test cases T03–T05 and playtest the ricochet",
+          "valmis": "T03–T05 each have an expectation written before the run and an actual result, and the ricochet feedback is in the meeting note.",
+          "tallenna": "`tests.md` and `meetings/week38.md` committed, with a short video or image sequence of the ricocheting shell in `project-docs/`. The results go into the week 38 journal entry."
         }
       ],
-      "nayta": "a video or image sequence of the ricocheting shell, test cases T03–T05 with results, and the Projectile prefab commit.",
+      "nayta": "A video or image sequence of the ricocheting shell, test cases T03–T05 with results, and the Projectile prefab commit.",
       "tuotos": "A Projectile prefab and shooting for both players: one shell per player on the field, ricochet through a physics material, despawn on a timer. 3 recorded test cases.",
       "valmis": "The shell bounces off walls without losing speed, disappears in about 10 seconds, kills its own shooter too, and a new shell can only be fired once the previous one is gone.",
       "tarkistukset": [
+        {
+          "id": "tiedosto:meetings/week38.md",
+          "tyyppi": "tiedosto",
+          "polku": "meetings/week38.md",
+          "lahde": "auto"
+        },
+        {
+          "id": "tiedosto:TankShooting.cs",
+          "tyyppi": "tiedosto",
+          "polku": "TankShooting.cs",
+          "lahde": "auto"
+        },
+        {
+          "id": "tiedosto:Projectile.cs",
+          "tyyppi": "tiedosto",
+          "polku": "Projectile.cs",
+          "lahde": "auto"
+        },
         {
           "id": "paivakirja:38",
           "tyyppi": "paivakirja",
@@ -216,30 +274,36 @@
     "39": {
       "jarjestys": 4,
       "tyyppi": "feature",
-      "vaihe": "A",
+      "vaihe": "1",
       "otsikko": "Rounds, scoring and the five-second rule",
       "tehtavat": [
         {
           "id": "39-1",
-          "teksti": "Implement tank destruction and round cleanup: shells removed, input cut from the dead tank."
+          "teksti": "Destroy a hit tank and clean up the round",
+          "valmis": "A hit tank disappears with an effect and no longer reacts to its keys, and no shells are left on the field when the round ends.",
+          "tallenna": "Commits that name the issue."
         },
         {
           "id": "39-2",
-          "teksti": "Implement scoring, the GDD's five-second rule and the automatic round restart."
+          "teksti": "Score rounds with the five-second rule and restart them",
+          "valmis": "Rounds end, score and restart without touching the editor, and two deaths within 5 s give no point.",
+          "tallenna": "The GameManager, committed with a message that names the issue. How you built the 5 s rule and stored the scores goes into the week 39 journal entry."
         },
         {
           "id": "39-3",
-          "teksti": "Write test cases T06–T08 before running them and play with the game team — note the round rhythm."
+          "teksti": "Run test cases T06–T08 and play rounds with the game team",
+          "valmis": "T06–T08 have expectations written before the run and actual results, and the meeting note judges the round rhythm.",
+          "tallenna": "`tests.md` and `meetings/week39.md`, committed. The results of T06–T08 go into the week 39 journal entry."
         }
       ],
-      "nayta": "a whole round without the editor: scoring, the 5 s rule tested (T06–T08) and the playtest note week39.md.",
+      "nayta": "scoring, the 5 s rule tested (T06–T08) and the playtest note week39.md.",
       "tuotos": "GameManager: tank destruction, scoring, the 5 s rule, round restart, a score display at the top of the screen — the first version of the HUD, the heads-up display drawn on top of the running match. 3 recorded test cases.",
       "valmis": "A whole round works without touching the editor: destruction, a point to the right player (or to neither, under the 5 s rule), and an automatic new round.",
       "tarkistukset": [
         {
-          "id": "tiedosto:week39.md",
+          "id": "tiedosto:meetings/week39.md",
           "tyyppi": "tiedosto",
-          "polku": "week39.md",
+          "polku": "meetings/week39.md",
           "lahde": "auto"
         },
         {
@@ -265,30 +329,50 @@
     "40": {
       "jarjestys": 5,
       "tyyppi": "feature",
-      "vaihe": "B",
+      "vaihe": "2",
       "otsikko": "Generated maze and data out of the code",
       "tehtavat": [
         {
           "id": "40-1",
-          "teksti": "Write the data store comparison (ScriptableObject / JSON / PlayerPrefs) before implementing anything."
+          "teksti": "Compare the data stores before you implement anything",
+          "valmis": "The comparison covers all three options, names the store chosen for arena data with its reason, and was written before the maze code.",
+          "tallenna": "The comparison in the GitHub issue or the journal. The choice and its reasoning in the plan (`project-docs/gdd-implementation-plan.md`)."
         },
         {
           "id": "40-2",
-          "teksti": "Implement the maze generator with depth-first search (DFS) as its own class — draw the algorithm on paper first."
+          "teksti": "Write the depth-first search (DFS) maze generator",
+          "valmis": "The generator produces a 10×10 maze in which every cell is visited, and you can explain each step of it from your paper drawing.",
+          "tallenna": "`MazeGenerator.cs` committed, and a photo of the paper drawing in `project-docs/`. Explain the DFS in your own words in the week 40 journal entry."
         },
         {
           "id": "40-3",
-          "teksti": "Build the arena from data and implement spawn validation: starting positions at least 3 tiles apart."
+          "teksti": "Build the arena from data with fair spawn positions",
+          "valmis": "Changing the arena size in the data changes the maze without any code change, and the tanks always start at least 3 tiles apart.",
+          "tallenna": "`MazeBuilder.cs` and the arena data, committed. The distance measure goes into the week 40 journal entry."
         },
         {
           "id": "40-4",
-          "teksti": "Write test cases T09–T10 before running them: traversability and spawn distance."
+          "teksti": "Run test cases T09–T10 for traversability and spawn distance",
+          "valmis": "T09 and T10 have expectations written before the run, a stated way of verifying and actual results.",
+          "tallenna": "`project-docs/tests.md` committed, with screenshots of generated mazes. The results of T09–T10 go into the week 40 journal entry."
         }
       ],
-      "nayta": "the written data store comparison, the paper drawing of the depth-first search, generated mazes and test cases T09–T10.",
+      "nayta": "The written data store comparison, the paper drawing of the depth-first search, generated mazes and test cases T09–T10.",
       "tuotos": "MazeGenerator (DFS), 10×10 working (5×5 and 25×25 as P1 issues), spawn validation, arena configuration in a ScriptableObject or JSON + a written data store comparison. 2 recorded test cases.",
       "valmis": "Every generated 10×10 maze is fully traversable (DFS guarantees it), the tanks start at least 3 tiles apart, and the arena size is read from data — you can change the size without touching code.",
       "tarkistukset": [
+        {
+          "id": "tiedosto:MazeGenerator.cs",
+          "tyyppi": "tiedosto",
+          "polku": "MazeGenerator.cs",
+          "lahde": "auto"
+        },
+        {
+          "id": "tiedosto:MazeBuilder.cs",
+          "tyyppi": "tiedosto",
+          "polku": "MazeBuilder.cs",
+          "lahde": "auto"
+        },
         {
           "id": "paivakirja:40",
           "tyyppi": "paivakirja",
@@ -312,23 +396,29 @@
     "41": {
       "jarjestys": 6,
       "tyyppi": "feature",
-      "vaihe": "B",
+      "vaihe": "2",
       "otsikko": "Power-ups and the HUD",
       "tehtavat": [
         {
           "id": "41-1",
-          "teksti": "Define the power-ups as data: SpeedBoost, Slowness and Shield assets with their durations."
+          "teksti": "Define the three power-ups as data assets",
+          "valmis": "Three power-up assets exist with their durations and effects, and no power has its own if branch in the code.",
+          "tallenna": "The `PowerUpData` script and the three assets in `Assets/Data/PowerUps/`, committed. Why you used a data asset goes into the week 41 journal entry."
         },
         {
           "id": "41-2",
-          "teksti": "Implement spawning (~2 s interval, at tile centres), pickup and the one-power-at-a-time rule."
+          "teksti": "Spawn power-ups and apply one power at a time",
+          "valmis": "Power-ups appear about every 2 seconds at the centres of free tiles, a player holds at most one power, and every effect ends on time.",
+          "tallenna": "The spawner, pickup and runner scripts, committed with messages that name the issue. How you timed the effects goes into the week 41 journal entry."
         },
         {
           "id": "41-3",
-          "teksti": "Show the active powers in the HUD and on the tank, and write test cases T11–T12 before running them."
+          "teksti": "Show active powers in the HUD and run test cases T11–T12",
+          "valmis": "A spectator can see both players' powers from the HUD and the tanks, and T11–T12 have expectations and actual results.",
+          "tallenna": "A HUD screenshot and `tests.md`, committed. The results of T11–T12 go into the week 41 journal entry."
         }
       ],
-      "nayta": "three power-up assets as data, a HUD screenshot and test cases T11–T12 with results.",
+      "nayta": "Three power-up assets as data, a HUD screenshot and test cases T11–T12 with results.",
       "tuotos": "The power-up system: spawning (~2 s interval, only into free normal tiles), pickup, one power at a time (GDD), duration timers, a HUD icon and a tank indicator. Speed +20 %/10 s, slowness −20 %/10 s on the opponent, shield 15 s or one hit. 2 recorded test cases.",
       "valmis": "Three powers work with their durations, a player can only hold one at a time (a new one is not picked up before the old one is spent — GDD), and a spectator can see both players' state from the HUD.",
       "tarkistukset": [
@@ -355,26 +445,38 @@
     "43": {
       "jarjestys": 7,
       "tyyppi": "katselmointi",
-      "vaihe": "B",
+      "vaihe": "2",
       "otsikko": "Client review and prioritisation",
       "tehtavat": [
         {
           "id": "43-1",
-          "teksti": "Prepare a 10-minute demo of the playable build and run the review for the client."
+          "teksti": "Demo the playable build and let the client play it",
+          "valmis": "The client has played the build themselves, and their comments are written down word for word.",
+          "tallenna": "The quotes go into the review note in work step 2. What you demonstrated and how goes into the week 43 journal entry."
         },
         {
           "id": "43-2",
-          "teksti": "Write the review note in two parts: the client's own words and your interpretation, kept separate."
+          "teksti": "Write the review note with the client's words kept apart",
+          "valmis": "The note has the client's quotes and your interpretation in separate parts, and part 2 ends with your proposal.",
+          "tallenna": "`project-docs/reviews/week43.md`, committed. The client's most important comment goes into the week 43 journal entry as a quote."
         },
         {
           "id": "43-3",
-          "teksti": "Make the prioritisation decision with the game team and update the implementation plan and the backlog."
+          "teksti": "Decide the priorities with the game team and update the plan",
+          "valmis": "A named decision says what gets built in week 44 and what moves to P1 or P2, and your instructor has signed it off.",
+          "tallenna": "The decision in the review note and in the updated `project-docs/gdd-implementation-plan.md`, plus `meetings/week43.md`. The reasoning and what you left out go into the week 43 journal entry."
         }
       ],
-      "nayta": "the review note in the client's words, the recorded prioritisation decision and the updated implementation plan.",
+      "nayta": "The review note in the client's words, the recorded prioritisation decision and the updated implementation plan.",
       "tuotos": "A review note (the client's words kept separate from your interpretation), the game team's prioritisation decision from the P1 list (laser / triple shot / special tiles / audio — the chosen one must fit roughly 2 working days), and an updated implementation plan.",
       "valmis": "The note holds the client's own words, your interpretation separately, and a named decision: what gets built in week 44, what moves to P1/P2. The instructor has signed off on the decision.",
       "tarkistukset": [
+        {
+          "id": "tiedosto:project-docs/reviews/week43.md",
+          "tyyppi": "tiedosto",
+          "polku": "project-docs/reviews/week43.md",
+          "lahde": "auto"
+        },
         {
           "id": "paivakirja:43",
           "tyyppi": "paivakirja",
@@ -398,30 +500,50 @@
     "44": {
       "jarjestys": 8,
       "tyyppi": "feature",
-      "vaihe": "C",
+      "vaihe": "3",
       "otsikko": "Feedback change and the chosen extra feature",
       "tehtavat": [
         {
           "id": "44-1",
-          "teksti": "Make the change derived from the feedback on its own branch and open a pull request (PR) that references the note."
+          "teksti": "Make the feedback change on a branch and open a pull request",
+          "valmis": "An open pull request to main holds only the feedback change, and its description makes clear which feedback it answers.",
+          "tallenna": "The pull request in GitHub. Its number and the feedback it resolves go into the week 44 journal entry."
         },
         {
           "id": "44-2",
-          "teksti": "Implement the feature chosen in the review, on top of the week 38 and 41 systems."
+          "teksti": "Build the feature chosen in the review on the existing systems",
+          "valmis": "The chosen feature works in a real match and uses the existing shell or power-up code.",
+          "tallenna": "Commits that name the feature's issue. How the feature leans on the week 38 shell logic goes into the week 44 journal entry."
         },
         {
           "id": "44-3",
-          "teksti": "Run a game team playtest and record the shared assessment in a note."
+          "teksti": "Run a game team playtest and record a shared assessment",
+          "valmis": "The playtest note holds at least three observations and a shared assessment.",
+          "tallenna": "`project-docs/meetings/week44-playtest.md`, committed. The main findings go into the week 44 journal entry."
         },
         {
           "id": "44-4",
-          "teksti": "Write test cases T13–T14 before running them and merge the pull request after review."
+          "teksti": "Run test cases T13–T14 and merge the reviewed pull request",
+          "valmis": "T13–T14 have expectations and actual results, and main holds the merged pull request with its review comment.",
+          "tallenna": "`tests.md` and `meetings/week44.md` committed; the merged pull request in GitHub. The results of T13–T14 go into the week 44 journal entry."
         }
       ],
-      "nayta": "a merged PR that references the feedback, the playable feature, the playtest note and test cases T13–T14.",
+      "nayta": "A merged PR that references the feedback, the playable feature, the playtest note and test cases T13–T14.",
       "tuotos": "A PR: the feedback change (branch → main) whose description references the review note; the chosen feature (e.g. triple shot) playable; the game team's playtest note with a shared assessment. 2 recorded test cases.",
       "valmis": "Main holds a merged PR whose description makes clear which feedback it answers; the feature works; the playtest note holds at least three shared observations and a shared assessment.",
       "tarkistukset": [
+        {
+          "id": "tiedosto:project-docs/meetings/week44-playtest.md",
+          "tyyppi": "tiedosto",
+          "polku": "project-docs/meetings/week44-playtest.md",
+          "lahde": "auto"
+        },
+        {
+          "id": "tiedosto:meetings/week44.md",
+          "tyyppi": "tiedosto",
+          "polku": "meetings/week44.md",
+          "lahde": "auto"
+        },
         {
           "id": "pr:yhdistetty",
           "tyyppi": "pr",
@@ -451,30 +573,44 @@
     "45": {
       "jarjestys": 9,
       "tyyppi": "laatu",
-      "vaihe": "C",
+      "vaihe": "3",
       "otsikko": "Testing week and pair debugging",
       "tehtavat": [
         {
           "id": "45-1",
-          "teksti": "Complete the test matrix from the GDD's testing list: normal, boundary and error cases in balance."
+          "teksti": "Complete the test matrix from the GDD's testing list",
+          "valmis": "The matrix has at least 12 test cases, each with an expectation written before the run, in roughly equal thirds of normal, boundary and error cases.",
+          "tallenna": "`project-docs/tests.md`, committed."
         },
         {
           "id": "45-2",
-          "teksti": "Run every test — the old ones again too — and record the result of every row."
+          "teksti": "Run every test case again and record each result",
+          "valmis": "Every row of the matrix has a dated result, and T01–T14 have been run again this week.",
+          "tallenna": "`tests.md`, committed. A summary of the matrix (how many OK, how many fixed) goes into the week 45 journal entry."
         },
         {
           "id": "45-3",
-          "teksti": "Solve one bug with a named debugging pair and record both sets of observations."
+          "teksti": "Solve one bug with a named debugging pair",
+          "valmis": "The pair note holds both names, both sets of observations, the breakpoints and the cause of the bug.",
+          "tallenna": "The pair note in `project-docs/`, committed. What pair debugging showed about your own way of hunting bugs goes into the week 45 journal entry."
         },
         {
           "id": "45-4",
-          "teksti": "Finish three debugging chains with all six parts."
+          "teksti": "Finish three complete debugging chains",
+          "valmis": "Three chains in `project-docs/chains/` each have all six parts, or you have raised the lack of real bugs with your instructor.",
+          "tallenna": "`project-docs/chains/` and `meetings/week45.md`, committed. The hardest bug and its cause go into the week 45 journal entry."
         }
       ],
-      "nayta": "the run test matrix (≥12 rows), three complete debugging chains and the pair debugging note.",
+      "nayta": "The run test matrix (≥12 rows), three complete debugging chains and the pair debugging note.",
       "tuotos": "A run test matrix (≥12 test cases: normal / boundary / error in roughly equal thirds), 3 complete debugging chains, a debugging pair note, regression tests for the fixed bugs.",
       "valmis": "Every row of the matrix has an expectation recorded before the run and the result of the run; the three chains hold an observation, reproduction steps, the cause, the fix commit, a retest and a regression test; the pair note holds both names and both sets of observations.",
       "tarkistukset": [
+        {
+          "id": "tiedosto:meetings/week45.md",
+          "tyyppi": "tiedosto",
+          "polku": "meetings/week45.md",
+          "lahde": "auto"
+        },
         {
           "id": "paivakirja:45",
           "tyyppi": "paivakirja",
@@ -498,23 +634,29 @@
     "46": {
       "jarjestys": 10,
       "tyyppi": "feature",
-      "vaihe": "C",
+      "vaihe": "3",
       "otsikko": "Menus and settings",
       "tehtavat": [
         {
           "id": "46-1",
-          "teksti": "Build the main menu and the pause menu per the GDD's user interface (UI) chapter: Play, Options, Leave and resume/restart/quit."
+          "teksti": "Build the main menu and the pause menu",
+          "valmis": "A player can start a match, pause it, restart it and quit from the menus without touching the editor.",
+          "tallenna": "The menu and pause commits, with messages that name the issues. The scene or overlay decision goes into the week 46 journal entry."
         },
         {
           "id": "46-2",
-          "teksti": "Implement the settings and save them to PlayerPrefs — block duplicate player colours."
+          "teksti": "Save the settings and block duplicate tank colours",
+          "valmis": "The settings are still there after the game is closed and opened again, and the same colour cannot be picked twice.",
+          "tallenna": "Commits that name the issues. What you save to PlayerPrefs and why goes into the week 46 journal entry."
         },
         {
           "id": "46-3",
-          "teksti": "Write test cases T15–T16 before running them: settings persistence and the duplicate colour block."
+          "teksti": "Run test cases T15–T16 for saved settings and colours",
+          "valmis": "T15 and T16 have expectations written before the run and actual results.",
+          "tallenna": "`tests.md`, committed. The results of T15–T16 go into the week 46 journal entry."
         }
       ],
-      "nayta": "the playable menu path, PlayerPrefs settings persistence (T15) and the duplicate colour block (T16).",
+      "nayta": "The playable menu path, PlayerPrefs settings persistence (T15) and the duplicate colour block (T16).",
       "tuotos": "Main menu, options (arena size, player colours without duplicates; audio sliders only if audio was chosen in week 43), pause (resume / restart / quit), settings saved to PlayerPrefs. 2 recorded test cases.",
       "valmis": "The game can be started, the settings changed and a match paused without touching the editor; the settings are still there on the next launch; the same player colour cannot be picked twice.",
       "tarkistukset": [
@@ -541,30 +683,44 @@
     "47": {
       "jarjestys": 11,
       "tyyppi": "katselmointi",
-      "vaihe": "D",
+      "vaihe": "4",
       "otsikko": "Release candidate, external testing and security",
       "tehtavat": [
         {
           "id": "47-1",
-          "teksti": "Make the first release candidate (RC1) as build v1.0-rc1 and test it yourself in a clean folder."
+          "teksti": "Build release candidate v1.0-rc1 and test it yourself",
+          "valmis": "`v1.0-rc1` starts from a clean folder and a whole match can be played in it.",
+          "tallenna": "The RC build settings go into the week 47 journal entry."
         },
         {
           "id": "47-2",
-          "teksti": "Write the installation and gameplay guide: download, launch, controls, goal."
+          "teksti": "Write the installation and gameplay guide",
+          "valmis": "Someone who has never seen the game can find in the guide how to download, start and play it.",
+          "tallenna": "The guide, committed to the repository."
         },
         {
           "id": "47-3",
-          "teksti": "Arrange an outside tester on another machine with no spoken help, and record the findings."
+          "teksti": "Let an outside tester start the game from the guide alone",
+          "valmis": "The tester got through a whole match without spoken help, and every hesitation is on a fix list for the guide.",
+          "tallenna": "The test note in `project-docs/`, committed. Where the tester hesitated and how you fixed the guide go into the week 47 journal entry."
         },
         {
           "id": "47-4",
-          "teksti": "Run a security review of your own repository with concrete file paths and commits."
+          "teksti": "Review your repository's security with exact references",
+          "valmis": "The security review names the files and commits it checked and what it found.",
+          "tallenna": "The review in `project-docs/` (for example `security-review.md`), committed. Its findings go into the week 47 journal entry."
         }
       ],
-      "nayta": "the RC build, the written guide, the tester's findings in their own words and the security review with references.",
+      "nayta": "The RC build, the written guide, the tester's findings in their own words and the security review with references.",
       "tuotos": "An RC build, an installation and gameplay guide, the outside tester's observations (name, role, date, their own words), and a security review of your own repository with concrete references.",
       "valmis": "The tester got all the way through a match without spoken help; every point where they hesitated is recorded as a fix list for the guide; the security review names the files and commits it checked. After the RC, only blocking bugs get fixed.",
       "tarkistukset": [
+        {
+          "id": "tiedosto:security-review.md",
+          "tyyppi": "tiedosto",
+          "polku": "security-review.md",
+          "lahde": "auto"
+        },
         {
           "id": "tagi:v1.0-rc1",
           "tyyppi": "tagi",
@@ -594,20 +750,26 @@
     "48": {
       "jarjestys": 12,
       "tyyppi": "julkaisu",
-      "vaihe": "D",
+      "vaihe": "4",
       "otsikko": "Release v1.0 (the MVP)",
       "tehtavat": [
         {
           "id": "48-1",
-          "teksti": "Fix only the release candidate's blocking bugs and move the tester's fix list into the guide."
+          "teksti": "Fix only blocking bugs and update the guide",
+          "valmis": "Every blocking bug on the fix list is fixed and every guide fix is in the guide, and nothing else has changed.",
+          "tallenna": "Commits that name the fixes they make."
         },
         {
           "id": "48-2",
-          "teksti": "Publish GitHub Release v1.0 with the build files and a scope description."
+          "teksti": "Publish release v1.0 with the build and its scope description",
+          "valmis": "Release v1.0 is public with its build files, and its description separates what the MVP contains from what was left out.",
+          "tallenna": "The release link goes into the week 48 journal entry."
         },
         {
           "id": "48-3",
-          "teksti": "Test the release in a clean environment, finish the README and LICENSE, and freeze the content."
+          "teksti": "Test the release in a clean environment and freeze the content",
+          "valmis": "The release plays on a clean machine by the guide, the README matches the GDD's controls and rules, and the content freeze commit exists.",
+          "tallenna": "The clean-environment report, the README and the LICENSE, committed. The LICENSE decision and what ended up as follow-up or optional (P1/P2) go into the week 48 journal entry."
         }
       ],
       "nayta": "GitHub Release v1.0, the clean-environment test report and the final README + LICENSE.",
@@ -649,23 +811,29 @@
     "49": {
       "jarjestys": 13,
       "tyyppi": "handover",
-      "vaihe": "D",
+      "vaihe": "4",
       "otsikko": "Handover week",
       "tehtavat": [
         {
           "id": "49-1",
-          "teksti": "Finish the project documentation so every claim has an exact reference."
+          "teksti": "Finish the project documentation with exact references",
+          "valmis": "Every claim in the documentation has at least one exact reference, and anything missing is marked as missing.",
+          "tallenna": "`project-docs/` with the journal and the AI log, committed."
         },
         {
           "id": "49-2",
-          "teksti": "Rehearse the 8–10 minute demo and time it with a game team member."
+          "teksti": "Rehearse and time the 8–10 minute demo",
+          "valmis": "The demo stays within 8–10 minutes and covers the technique, a bug fix and the Git history.",
+          "tallenna": "The structure of the demo goes into the week 49 journal entry."
         },
         {
           "id": "49-3",
-          "teksti": "Write the self-assessment against the meeting notes and hand over the MVP on Fri 4 Dec."
+          "teksti": "Write the self-assessment and hand over on Fri 4 Dec",
+          "valmis": "The self-assessment refers to real meeting notes, and the client has received the MVP and the project documentation.",
+          "tallenna": "The self-assessment in `project-docs/`, committed. Its main points go into the week 49 journal entry."
         }
       ],
-      "nayta": "the finished project documentation, the collected journal and AI log, and the self-assessment in project-docs.",
+      "nayta": "The finished project documentation, the collected journal and AI log, and the self-assessment in project-docs.",
       "tuotos": "The collected project journal and AI log in project-docs, a rehearsed 8–10 minute demo, a self-assessment written against the meeting notes, and the handover on Friday 4 December.",
       "valmis": "Every claim in the documentation has at least one exact reference (commit, test id, note, release); the demo stays inside its time and covers the technique, a bug fix and the Git history; the self-assessment references real meeting notes.",
       "tarkistukset": [

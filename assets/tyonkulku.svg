@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="676" viewBox="0 0 880 676" role="img" aria-labelledby="title desc">
+<title id="title">How players use Ping Pong Tanks</title>
+<desc id="desc">Illustration of the player's workflow in the finished game, not a screenshot. 1 Download and start: the players get version 1.0 from the release page, start it with the written guide and choose Play in the main menu, or set the arena size and the tank colours in Options. 2 Two players, one keyboard: player 1 drives with W, A, S and D and fires with Space, player 2 uses the arrow keys and fires with M, and both tanks move at the same time. 3 Fight in a generated maze: shells ricochet off the walls, one hit destroys a tank, even your own, power-ups add chaos and the HUD shows who holds which power. 4 Score and go again: the survivor scores a point, nobody scores if both tanks die within five seconds, and the next round starts at once. An arrow labelled next round leads from step 4 back to step 3.</desc>
+<rect width="880" height="676" fill="#ffffff"/>
+<defs>
+  <marker id="nuoli" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#5c5347"/></marker>
+</defs>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="32" y="44" fill="#241f1a" font-size="26" font-weight="700">How players use Ping Pong Tanks</text>
+<text x="32" y="70" fill="#5c5347" font-size="15">Illustration of the finished game's workflow · not a screenshot</text>
+
+<!-- 1 Download and start -->
+<rect x="32" y="92" width="816" height="120" rx="12" fill="#f3f8f3" stroke="#2e7d32" stroke-width="2"/>
+<circle cx="70" cy="126" r="20" fill="#2e7d32"/>
+<text x="70" y="134" fill="#ffffff" font-size="22" font-weight="700" text-anchor="middle">1</text>
+<text x="110" y="128" fill="#1b5e20" font-size="20" font-weight="700">Download and start</text>
+<text x="110" y="154" fill="#241f1a" font-size="15">Get v1.0 from the release page and start it</text>
+<text x="110" y="176" fill="#241f1a" font-size="15">with the written guide. Choose Play, or set the</text>
+<text x="110" y="198" fill="#241f1a" font-size="15">arena size and tank colours in Options.</text>
+<rect x="516" y="112" width="44" height="58" rx="4" fill="#ffffff" stroke="#5c5347" stroke-width="1.5"/>
+<path d="M524 126H552M524 136H552M524 146H552M524 156H544" stroke="#5c5347" stroke-width="1.5"/>
+<text x="538" y="194" fill="#5c5347" font-size="13" text-anchor="middle">guide</text>
+<path d="M570 142H598" stroke="#5c5347" stroke-width="2" marker-end="url(#nuoli)"/>
+<rect x="610" y="102" width="220" height="100" rx="6" fill="#ffffff" stroke="#5c5347" stroke-width="1.5"/>
+<rect x="610" y="102" width="220" height="16" rx="6" fill="#d4cbbb"/>
+<rect x="660" y="124" width="120" height="22" rx="4" fill="#2e7d32"/>
+<text x="720" y="140" fill="#ffffff" font-size="14" font-weight="700" text-anchor="middle">Play</text>
+<rect x="660" y="150" width="120" height="22" rx="4" fill="#ffffff" stroke="#2e7d32" stroke-width="1.5"/>
+<text x="720" y="166" fill="#1b5e20" font-size="14" text-anchor="middle">Options</text>
+<rect x="660" y="176" width="120" height="22" rx="4" fill="#ffffff" stroke="#2e7d32" stroke-width="1.5"/>
+<text x="720" y="192" fill="#1b5e20" font-size="14" text-anchor="middle">Leave</text>
+
+<path d="M70 214V234" stroke="#5c5347" stroke-width="2" marker-end="url(#nuoli)"/>
+
+<!-- 2 Two players, one keyboard -->
+<rect x="32" y="238" width="816" height="120" rx="12" fill="#f3f8f3" stroke="#2e7d32" stroke-width="2"/>
+<circle cx="70" cy="272" r="20" fill="#2e7d32"/>
+<text x="70" y="280" fill="#ffffff" font-size="22" font-weight="700" text-anchor="middle">2</text>
+<text x="110" y="274" fill="#1b5e20" font-size="20" font-weight="700">Two players, one keyboard</text>
+<text x="110" y="300" fill="#241f1a" font-size="15">Player 1 drives with WASD and fires with Space.</text>
+<text x="110" y="322" fill="#241f1a" font-size="15">Player 2 uses the arrow keys and fires with M.</text>
+<text x="110" y="344" fill="#241f1a" font-size="15">Both tanks move at the same time.</text>
+<!-- player 1 keys -->
+<text x="522" y="278" fill="#2f6b8f" font-size="14" font-weight="700">P1</text>
+<rect x="552" y="252" width="28" height="28" rx="4" fill="#ffffff" stroke="#2f6b8f" stroke-width="2"/>
+<text x="566" y="271" fill="#241f1a" font-size="14" font-weight="700" text-anchor="middle">W</text>
+<rect x="520" y="284" width="28" height="28" rx="4" fill="#ffffff" stroke="#2f6b8f" stroke-width="2"/>
+<text x="534" y="303" fill="#241f1a" font-size="14" font-weight="700" text-anchor="middle">A</text>
+<rect x="552" y="284" width="28" height="28" rx="4" fill="#ffffff" stroke="#2f6b8f" stroke-width="2"/>
+<text x="566" y="303" fill="#241f1a" font-size="14" font-weight="700" text-anchor="middle">S</text>
+<rect x="584" y="284" width="28" height="28" rx="4" fill="#ffffff" stroke="#2f6b8f" stroke-width="2"/>
+<text x="598" y="303" fill="#241f1a" font-size="14" font-weight="700" text-anchor="middle">D</text>
+<rect x="520" y="318" width="92" height="26" rx="4" fill="#2f6b8f"/>
+<text x="566" y="336" fill="#ffffff" font-size="13" font-weight="700" text-anchor="middle">Space</text>
+<!-- player 2 keys -->
+<text x="688" y="278" fill="#b8412c" font-size="14" font-weight="700">P2</text>
+<rect x="718" y="252" width="28" height="28" rx="4" fill="#ffffff" stroke="#b8412c" stroke-width="2"/>
+<text x="732" y="271" fill="#241f1a" font-size="14" font-weight="700" text-anchor="middle">↑</text>
+<rect x="686" y="284" width="28" height="28" rx="4" fill="#ffffff" stroke="#b8412c" stroke-width="2"/>
+<text x="700" y="303" fill="#241f1a" font-size="14" font-weight="700" text-anchor="middle">←</text>
+<rect x="718" y="284" width="28" height="28" rx="4" fill="#ffffff" stroke="#b8412c" stroke-width="2"/>
+<text x="732" y="303" fill="#241f1a" font-size="14" font-weight="700" text-anchor="middle">↓</text>
+<rect x="750" y="284" width="28" height="28" rx="4" fill="#ffffff" stroke="#b8412c" stroke-width="2"/>
+<text x="764" y="303" fill="#241f1a" font-size="14" font-weight="700" text-anchor="middle">→</text>
+<rect x="794" y="318" width="34" height="26" rx="4" fill="#b8412c"/>
+<text x="811" y="336" fill="#ffffff" font-size="13" font-weight="700" text-anchor="middle">M</text>
+
+<path d="M70 360V380" stroke="#5c5347" stroke-width="2" marker-end="url(#nuoli)"/>
+
+<!-- 3 Fight in a generated maze -->
+<rect x="32" y="384" width="816" height="120" rx="12" fill="#f3f8f3" stroke="#2e7d32" stroke-width="2"/>
+<circle cx="70" cy="418" r="20" fill="#2e7d32"/>
+<text x="70" y="426" fill="#ffffff" font-size="22" font-weight="700" text-anchor="middle">3</text>
+<text x="110" y="420" fill="#1b5e20" font-size="20" font-weight="700">Fight in a generated maze</text>
+<text x="110" y="446" fill="#241f1a" font-size="15">Shells ricochet off the walls, and one hit</text>
+<text x="110" y="468" fill="#241f1a" font-size="15">destroys a tank, even your own. Power-ups add</text>
+<text x="110" y="490" fill="#241f1a" font-size="15">chaos, and the HUD shows who holds which.</text>
+<!-- maze -->
+<rect x="516" y="394" width="200" height="100" fill="#ffffff" stroke="#241f1a" stroke-width="3"/>
+<path d="M586 394V444M516 454H556M646 434V494M646 424H686" stroke="#241f1a" stroke-width="3" fill="none"/>
+<!-- tank P1 -->
+<rect x="526" y="468" width="16" height="16" fill="#2f6b8f"/>
+<circle cx="534" cy="476" r="5" fill="#ffffff" stroke="#2f6b8f" stroke-width="2"/>
+<path d="M539 476H550" stroke="#2f6b8f" stroke-width="3"/>
+<!-- tank P2 -->
+<rect x="690" y="404" width="16" height="16" fill="#b8412c"/>
+<circle cx="698" cy="412" r="5" fill="#ffffff" stroke="#b8412c" stroke-width="2"/>
+<path d="M693 412H682" stroke="#b8412c" stroke-width="3"/>
+<!-- ricochet path: off the wall at x 646, then off the top wall -->
+<path d="M553 476L643 452L620 397L636 420" fill="none" stroke="#6d5aae" stroke-width="2" stroke-dasharray="5 4"/>
+<circle cx="636" cy="420" r="4" fill="#6d5aae"/>
+<!-- power-up -->
+<path d="M686 460L694 468L686 476L678 468Z" fill="#a16207"/>
+<!-- HUD -->
+<rect x="732" y="410" width="100" height="68" rx="6" fill="#ffffff" stroke="#5c5347" stroke-width="1.5"/>
+<text x="746" y="430" fill="#241f1a" font-size="13" font-weight="700">HUD</text>
+<text x="746" y="450" fill="#2f6b8f" font-size="13">P1 · speed</text>
+<text x="746" y="468" fill="#b8412c" font-size="13">P2 · shield</text>
+
+<path d="M70 506V526" stroke="#5c5347" stroke-width="2" marker-end="url(#nuoli)"/>
+<!-- loop back to step 3 -->
+<path d="M806 528V508" stroke="#2e7d32" stroke-width="2" marker-end="url(#nuoli)"/>
+<text x="794" y="522" fill="#1b5e20" font-size="13" font-weight="700" text-anchor="end">next round</text>
+
+<!-- 4 Score and go again -->
+<rect x="32" y="530" width="816" height="120" rx="12" fill="#f3f8f3" stroke="#2e7d32" stroke-width="2"/>
+<circle cx="70" cy="564" r="20" fill="#2e7d32"/>
+<text x="70" y="572" fill="#ffffff" font-size="22" font-weight="700" text-anchor="middle">4</text>
+<text x="110" y="566" fill="#1b5e20" font-size="20" font-weight="700">Score and go again</text>
+<text x="110" y="592" fill="#241f1a" font-size="15">The survivor scores a point. If both tanks die</text>
+<text x="110" y="614" fill="#241f1a" font-size="15">within five seconds, nobody scores. The next</text>
+<text x="110" y="636" fill="#241f1a" font-size="15">round starts at once.</text>
+<rect x="560" y="548" width="240" height="52" rx="6" fill="#ffffff" stroke="#5c5347" stroke-width="1.5"/>
+<text x="598" y="582" fill="#2f6b8f" font-size="22" font-weight="700" text-anchor="middle">P1</text>
+<text x="680" y="583" fill="#241f1a" font-size="24" font-weight="700" text-anchor="middle">3 – 2</text>
+<text x="762" y="582" fill="#b8412c" font-size="22" font-weight="700" text-anchor="middle">P2</text>
+<text x="680" y="626" fill="#5c5347" font-size="13" text-anchor="middle">both die within 5 s → no point</text>
+</g>
+</svg>

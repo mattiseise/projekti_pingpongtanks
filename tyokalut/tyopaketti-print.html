@@ -12,141 +12,358 @@ th { background: #e9f2e9; }
 .wk { page-break-inside: avoid; margin-bottom: 8pt; }
 .feature { color: #555; font-style: italic; margin: 0 0 4pt; }
 .task { margin: 2pt 0; }
+.tcard { margin: 7pt 0 2pt; }
+.osat { list-style: none; margin: 0 0 2pt 12pt; padding: 0; font-size: 9pt; }
+.osat li { margin: 1pt 0; }
+.osa-done { margin-left: 12pt; }
 .done { color: #1b5e20; font-size: 9pt; margin: 3pt 0 0; }
 .ev { color: #555; font-size: 9pt; margin: 2pt 0 0; }
 .page { page-break-before: always; }
 .muted { color: #555; }
 .item { font-size: 9pt; margin: 2pt 0; }
+.conn { font-size: 9pt; margin: 0 0 3pt; }
+code { font-family: Menlo, Consolas, monospace; font-size: 8.5pt; }
+.wk.u { page-break-inside: auto; }
+.wkdone { margin-top: 8pt; padding-top: 4pt; border-top: 0.5pt solid #bbb; }
+.tblock { page-break-inside: avoid; }
+.goal { font-size: 9.5pt; margin: 0 0 4pt; }
+img.figure { display: block; max-width: 100%; max-height: 96mm; margin: 4pt auto 6pt; }
 </style></head><body>
 <div class="cover"><h1>Ping Pong Tanks</h1><p style="font-size:14pt">Printable work pack · game project</p><p>Ping Pong Tanks: your own Game Design Document built in Unity into a playable release — bouncing shells, a generated maze and power-ups</p><p style="font-size:12pt"><strong>Weeks 36–49 · autumn break in week 42 · handover Fri 4 Dec 2026</strong></p><p style="max-width:120mm;margin:18pt auto 0">This pack is a schedule and a checklist for situations where the site is not open. The project journal is written on the site and pushed to the repository's project-docs folder. A tick in this booklet is not a submission — the work always lives in the Git repository.</p><p style="max-width:120mm;margin:10pt auto 0">The repository is public: no personal data, no school identifiers and no other people's names go into Git.</p><p style="max-width:120mm;margin:10pt auto 0">The Game Design Document (GDD) is your own — the implementation is judged against it.</p></div>
+<h1>Ping Pong Tanks: what you build and how you proceed</h1>
+<p>Ping Pong Tanks is a two-player tank arena on one keyboard. The players fire shells that ricochet through a generated maze, grab power-ups and play quick rounds: one hit destroys a tank and the survivor scores.</p>
+<ol class="osat"><li>1. The players download v1.0, start it with the written guide and choose Play in the main menu. Options sets the arena size and the tank colours.</li><li>2. Two players share one keyboard: player 1 drives with WASD and fires with Space, player 2 uses the arrow keys and M.</li><li>3. Shells ricochet off the maze walls, and one hit destroys a tank, even your own. Power-ups appear on the field, and the HUD (heads-up display) shows who holds which.</li><li>4. The survivor scores a point. If both tanks die within five seconds, nobody scores. The next round starts at once.</li></ol>
+<h2>The project's 4 phases</h2>
+<img class="figure" src="../assets/projektin-vaiheet.svg" alt="The four phases of Ping Pong Tanks: 1 core game, from the GDD to a playable round, weeks 36–39; 2 arena, powers and the review, with the maze, the power-ups and the client review, weeks 40–43 with the autumn break in week 42; 3 complete and tested game, with the feedback change, testing and menus, weeks 44–46; 4 release and handover, weeks 47–49.">
+<p class="task"><strong>1. Core game: a playable round · weeks 36–39.</strong> You break the GDD into a prioritised backlog and set up the Unity project, then build movement, the bouncing shell and a whole round with scoring. They come first because every later feature drives, shoots or scores on top of them.</p>
+<p class="task"><strong>2. Arena, powers and the review · weeks 40–43.</strong> You replace the test arena with a generated maze and add three data-driven power-ups. In week 43 the client plays this version, and together you decide what fits into the remaining weeks.</p>
+<p class="task"><strong>3. Complete and tested game · weeks 44–46.</strong> You answer the client's feedback through a pull request, run the whole test matrix and build the menu path. The game becomes reliable and complete before anyone outside the project tries it.</p>
+<p class="task"><strong>4. Release and handover · weeks 47–49.</strong> An outside tester starts the release candidate from your written guide alone. You fix only blocking bugs, release v1.0 and hand the MVP and the documentation over on 4 December.</p>
+<p class="muted">A work step is one numbered item in this pack and on the site. When a work step changes the game, do each change as a GitHub issue: what to do, a done-when condition and the commit that closes it. Test results go into project-docs/tests.md at once; the weekly summary goes into the project journal at the end of the week.</p>
+<div class="page"></div>
 <h1>Schedule</h1><table><tr><th>Week</th><th>Dates</th><th>Topic of the week</th><th>Phase</th></tr>
-<tr><td><strong>36</strong></td><td>31 Aug – 4 Sep</td><td>GDD into tasks, project set up</td><td>A</td></tr>
-<tr><td><strong>37</strong></td><td>7–11 Sep</td><td>Tanks move — two players, one keyboard</td><td>A</td></tr>
-<tr><td><strong>38</strong></td><td>14–18 Sep</td><td>The bouncing shell</td><td>A</td></tr>
-<tr><td><strong>39</strong></td><td>21–25 Sep</td><td>Rounds, scoring and the five-second rule</td><td>A</td></tr>
-<tr><td><strong>40</strong></td><td>28 Sep – 2 Oct</td><td>Generated maze and data out of the code</td><td>B</td></tr>
-<tr><td><strong>41</strong></td><td>5–9 Oct</td><td>Power-ups and the HUD</td><td>B</td></tr>
-<tr><td><strong>43</strong></td><td>19–23 Oct</td><td>Client review and prioritisation</td><td>B</td></tr>
-<tr><td><strong>44</strong></td><td>26–30 Oct</td><td>Feedback change and the chosen extra feature</td><td>C</td></tr>
-<tr><td><strong>45</strong></td><td>2–6 Nov</td><td>Testing week and pair debugging</td><td>C</td></tr>
-<tr><td><strong>46</strong></td><td>9–13 Nov</td><td>Menus and settings</td><td>C</td></tr>
-<tr><td><strong>47</strong></td><td>16–20 Nov</td><td>Release candidate, external testing and security</td><td>D</td></tr>
-<tr><td><strong>48</strong></td><td>23–27 Nov</td><td>Release v1.0 (the MVP)</td><td>D</td></tr>
-<tr><td><strong>49</strong></td><td>30 Nov – 4 Dec</td><td>Handover week</td><td>D</td></tr>
+<tr><td><strong>36</strong></td><td>31 Aug – 4 Sep</td><td>GDD into tasks, project set up</td><td>1</td></tr>
+<tr><td><strong>37</strong></td><td>7–11 Sep</td><td>Tanks move — two players, one keyboard</td><td>1</td></tr>
+<tr><td><strong>38</strong></td><td>14–18 Sep</td><td>The bouncing shell</td><td>1</td></tr>
+<tr><td><strong>39</strong></td><td>21–25 Sep</td><td>Rounds, scoring and the five-second rule</td><td>1</td></tr>
+<tr><td><strong>40</strong></td><td>28 Sep – 2 Oct</td><td>Generated maze and data out of the code</td><td>2</td></tr>
+<tr><td><strong>41</strong></td><td>5–9 Oct</td><td>Power-ups and the HUD</td><td>2</td></tr>
+<tr><td>42</td><td>12–16 Oct</td><td>Autumn break — no project work</td><td>–</td></tr>
+<tr><td><strong>43</strong></td><td>19–23 Oct</td><td>Client review and prioritisation</td><td>2</td></tr>
+<tr><td><strong>44</strong></td><td>26–30 Oct</td><td>Feedback change and the chosen extra feature</td><td>3</td></tr>
+<tr><td><strong>45</strong></td><td>2–6 Nov</td><td>Testing week and pair debugging</td><td>3</td></tr>
+<tr><td><strong>46</strong></td><td>9–13 Nov</td><td>Menus and settings</td><td>3</td></tr>
+<tr><td><strong>47</strong></td><td>16–20 Nov</td><td>Release candidate, external testing and security</td><td>4</td></tr>
+<tr><td><strong>48</strong></td><td>23–27 Nov</td><td>Release v1.0 (the MVP)</td><td>4</td></tr>
+<tr><td><strong>49</strong></td><td>30 Nov – 4 Dec</td><td>Handover week</td><td>4</td></tr>
 </table><p class="muted">Handover no later than Fri 4 Dec 2026. The site has the detailed task instructions, the implementation help and the project journal.</p>
-<h1 class="page">Phase A — Core game: GDD into tasks, and a playable round</h1>
-<div class="wk"><h2>Week 36 · 31 Aug – 4 Sep — GDD into tasks, project set up</h2>
-<p class="feature">The GDD is split into an issue backlog, P0 is scoped with the client, and an empty Unity project compiles in a public repository.</p>
-<p class="task">☐&nbsp; Read the brief and your own GDD side by side and write a question list for the client.</p>
-<p class="task">☐&nbsp; Scope P0 with your instructor and split it into issues, each with a done-when condition.</p>
-<p class="task">☐&nbsp; Set up the Unity project with the agreed version and a public GitHub repository — run the privacy check.</p>
-<p class="task">☐&nbsp; Name the game team, hold the first weekly meeting and put the implementation plan into project-docs.</p>
-<p class="done"><strong>Done when:</strong> An outsider can see from the repository what is being built and in which order: the README describes the game in one paragraph, the milestone "MVP 4 Dec" holds the P0 issues, and the project compiles as an empty scene.</p>
-<p class="ev"><strong>In the Git repository before you tick the box:</strong> In the repo: a public repository whose README, P0 milestone and first commit say what is being built — plus the question list with answers and the meeting note in project-docs.</p>
+<h1 class="page">Phase 1 — Core game: a playable round</h1>
+<div class="wk u"><h2>Week 36 · 31 Aug – 4 Sep — GDD into tasks, project set up</h2>
+<p class="conn"><strong>How this week connects to the whole project:</strong> Your GDD already says what the game is, but not in which order it gets built. This week you scope the required core (P0) with your instructor, break it into GitHub issues and set up a public repository with an empty Unity project. From week 37 on, every feature starts from one of these issues.</p>
+<p class="goal"><strong>Week goal:</strong> Anyone who opens your public repository can see what gets built first: the P0 issues in the milestone "MVP 4 Dec".</p>
+<div class="tblock"><p class="task tcard"><strong>Work step 1 / 4 · Write a question list from the brief and your GDD</strong></p>
+<ol class="osat"><li>☐&nbsp; Read the brief. Underline every client requirement in the brief on this site.</li><li>☐&nbsp; Read your GDD beside it. Compare your GDD with the brief, section by section.</li><li>☐&nbsp; Turn the gaps into questions. Write a question for everything the GDD does not settle yet, for example which Unity version gets locked and where the MVP is published.</li><li>☐&nbsp; Record the answers. Keep the question list in <code>project-docs/</code> and write each answer beside its question. A question without an answer stays marked as open.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> The question list covers the gaps between the brief and the GDD, and every question is either answered or marked open.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> The question list in <code>project-docs/</code>. The open items go into the week 36 journal entry.</p>
 </div>
-<div class="wk"><h2>Week 37 · 7–11 Sep — Tanks move — two players, one keyboard</h2>
-<p class="feature">Two tanks move on one keyboard in a test arena and stop at walls. The game is playable for the first time.</p>
-<p class="task">☐&nbsp; Build the tank prefab (square body and round turret) with a Rigidbody2D and colliders.</p>
-<p class="task">☐&nbsp; Implement two-player movement on one keyboard: WASD and the arrow keys.</p>
-<p class="task">☐&nbsp; Write two test cases and number them T01 and T02: record the expected result before running them, then run them — plus the weekly meeting note.</p>
-<p class="done"><strong>Done when:</strong> Two players can move at the same time on one keyboard without the keys interfering with each other, and the tanks stop at a wall without jittering.</p>
-<p class="ev"><strong>In the Git repository before you tick the box:</strong> In the repo: a playable build with two tanks moving, test cases T01–T02 with results in tests.md, and the movement commits.</p>
+<div class="tblock"><p class="task tcard"><strong>Work step 2 / 4 · Scope P0 with your instructor and break it into issues</strong></p>
+<ol class="osat"><li>☐&nbsp; Sort the GDD features. Mark what a playable MVP needs: movement, shell, round, maze, 2–3 power-ups and a menu. Mark the rest as follow-up content (P1) or optional extra (P2).</li><li>☐&nbsp; Agree the required core (P0). Go through the list with your instructor and agree which features form P0.</li><li>☐&nbsp; Record the decision. Write the P0 scope and who approved it into the P0 field on the Plan page.</li><li>☐&nbsp; Break P0 into issue drafts. Write each piece of P0 as an issue title with a done-when condition. One issue is half a day to a day of work.</li><li>☐&nbsp; Walk the breakdown through. Go through the drafts with the game team and your instructor, and note their comments.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> The P0 scope is agreed with your instructor and recorded in the plan, and every piece of P0 is an issue draft with a done-when condition.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> The P0 scope and who approved it in the plan and in the week 36 journal entry. The drafts become GitHub issues in work step 3.</p>
 </div>
-<div class="wk"><h2>Week 38 · 14–18 Sep — The bouncing shell</h2>
-<p class="feature">The tanks shoot: a shell flies, ricochets off walls indefinitely and disappears after about 10 seconds. You can die to your own shell — the core tension of the game exists.</p>
-<p class="task">☐&nbsp; Build the Projectile prefab with a physics material: Bounciness 1, Friction 0.</p>
-<p class="task">☐&nbsp; Implement shooting: one shell per player on the field, slightly faster than the tank.</p>
-<p class="task">☐&nbsp; Implement a ~10 s despawn and hits — including on your own tank (friendly fire).</p>
-<p class="task">☐&nbsp; Write test cases T03–T05 before running them: direct hit, ricochet chain, despawn time.</p>
-<p class="done"><strong>Done when:</strong> The shell bounces off walls without losing speed, disappears in about 10 seconds, kills its own shooter too, and a new shell can only be fired once the previous one is gone.</p>
-<p class="ev"><strong>In the Git repository before you tick the box:</strong> In the repo: a video or image sequence of the ricocheting shell, test cases T03–T05 with results, and the Projectile prefab commit.</p>
+<div class="tblock"><p class="task tcard"><strong>Work step 3 / 4 · Set up the Unity project in a public GitHub repository</strong></p>
+<ol class="osat"><li>☐&nbsp; Create the Unity project. Use Unity Hub with the agreed version and the 2D template, and write the version into the plan. Check that an empty scene runs with Play.</li><li>☐&nbsp; Add the Unity .gitignore. Take <code>Unity.gitignore</code> from GitHub's gitignore collection, so that <code>Library/</code>, <code>Temp/</code> and build folders stay out of Git.</li><li>☐&nbsp; Create the public repository. Run <code>git init</code>, make the first commit, create a public GitHub repository and push. The README says in one paragraph which game, who builds it and by when.</li><li>☐&nbsp; Add project-docs and the GDD. Create <code>project-docs/</code> with the subfolders <code>meetings/</code> and <code>chains/</code>, and put your GDD in as <code>project-docs/gdd.md</code>.</li><li>☐&nbsp; Run the privacy check. Check the files and the commit history: no personal data, no school identifiers, and the author name only as agreed with your instructor.</li><li>☐&nbsp; Create the milestone and the issues. Create the milestone "MVP 4 Dec". Turn the required core (P0) drafts from work step 2 into GitHub issues, with the walkthrough comments on them.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> A fresh clone of the repository opens in Unity without errors by following the README alone, and the milestone "MVP 4 Dec" holds the P0 issues.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> Commit and push. The repository address and the hash of the first commit go into the week 36 journal entry.</p>
 </div>
-<div class="wk"><h2>Week 39 · 21–25 Sep — Rounds, scoring and the five-second rule</h2>
-<p class="feature">A hit destroys a tank, the round ends, a point is recorded and a new round starts. The GDD's five-second rule works: if both tanks die within five seconds, no point is awarded.</p>
-<p class="task">☐&nbsp; Implement tank destruction and round cleanup: shells removed, input cut from the dead tank.</p>
-<p class="task">☐&nbsp; Implement scoring, the GDD's five-second rule and the automatic round restart.</p>
-<p class="task">☐&nbsp; Write test cases T06–T08 before running them and play with the game team — note the round rhythm.</p>
-<p class="done"><strong>Done when:</strong> A whole round works without touching the editor: destruction, a point to the right player (or to neither, under the 5 s rule), and an automatic new round.</p>
-<p class="ev"><strong>In the Git repository before you tick the box:</strong> In the repo: a whole round without the editor: scoring, the 5 s rule tested (T06–T08) and the playtest note week39.md.</p>
+<div class="tblock"><p class="task tcard"><strong>Work step 4 / 4 · Name the game team and hold the first weekly meeting</strong></p>
+<ol class="osat"><li>☐&nbsp; Name the game team. You, two classmates and your instructor. Write the names into the Game team field on the Plan page.</li><li>☐&nbsp; Hold the first weekly meeting. Go through the issues with the game team: what is done, what happens next and what is stuck.</li><li>☐&nbsp; Write the meeting note. Save <code>project-docs/meetings/week36.md</code>: who attended and what was agreed, with issue numbers.</li><li>☐&nbsp; Commit the implementation plan. Download <code>gdd-implementation-plan.md</code> from the Plan page, save it in <code>project-docs/</code> and commit it.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> The meeting note names the attendees and the agreements with issue numbers, and the implementation plan is in <code>project-docs/</code>.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> <code>project-docs/meetings/week36.md</code> and <code>project-docs/gdd-implementation-plan.md</code>, committed and pushed.</p>
 </div>
-<h1 class="page">Phase B — Arena and powers: maze, power-ups and the review</h1>
-<div class="wk"><h2>Week 40 · 28 Sep – 2 Oct — Generated maze and data out of the code</h2>
-<p class="feature">The arena is generated with the depth-first search (DFS) algorithm: a 10×10 maze where every tile is reachable, and the tanks spawn fairly, at least 3 tiles apart. Arena data comes from outside the code.</p>
-<p class="task">☐&nbsp; Write the data store comparison (ScriptableObject / JSON / PlayerPrefs) before implementing anything.</p>
-<p class="task">☐&nbsp; Implement the maze generator with depth-first search (DFS) as its own class — draw the algorithm on paper first.</p>
-<p class="task">☐&nbsp; Build the arena from data and implement spawn validation: starting positions at least 3 tiles apart.</p>
-<p class="task">☐&nbsp; Write test cases T09–T10 before running them: traversability and spawn distance.</p>
-<p class="done"><strong>Done when:</strong> Every generated 10×10 maze is fully traversable (DFS guarantees it), the tanks start at least 3 tiles apart, and the arena size is read from data — you can change the size without touching code.</p>
-<p class="ev"><strong>In the Git repository before you tick the box:</strong> In the repo: the written data store comparison, the paper drawing of the depth-first search, generated mazes and test cases T09–T10.</p>
+<p class="done wkdone"><strong>End-of-week check:</strong> An outsider can see from the repository what is being built and in which order: the README describes the game in one paragraph, the milestone "MVP 4 Dec" holds the P0 issues, and the project compiles as an empty scene.</p>
+<p class="ev"><strong>In the Git repository before you tick the box:</strong> A public repository whose README, P0 milestone and first commit say what is being built — plus the question list with answers and the meeting note in project-docs.</p>
 </div>
-<div class="wk"><h2>Week 41 · 5–9 Oct — Power-ups and the HUD</h2>
-<p class="feature">Power-ups appear on the field roughly every 2 seconds in the centre of a tile, and speed boost, slowness and shield affect play. The tank and the HUD both show which power is active.</p>
-<p class="task">☐&nbsp; Define the power-ups as data: SpeedBoost, Slowness and Shield assets with their durations.</p>
-<p class="task">☐&nbsp; Implement spawning (~2 s interval, at tile centres), pickup and the one-power-at-a-time rule.</p>
-<p class="task">☐&nbsp; Show the active powers in the HUD and on the tank, and write test cases T11–T12 before running them.</p>
-<p class="done"><strong>Done when:</strong> Three powers work with their durations, a player can only hold one at a time (a new one is not picked up before the old one is spent — GDD), and a spectator can see both players' state from the HUD.</p>
-<p class="ev"><strong>In the Git repository before you tick the box:</strong> In the repo: three power-up assets as data, a HUD screenshot and test cases T11–T12 with results.</p>
+<div class="wk u"><h2>Week 37 · 7–11 Sep — Tanks move — two players, one keyboard</h2>
+<p class="conn"><strong>How this week connects to the whole project:</strong> The repository and the P0 issues from week 36 are ready, but nothing moves yet. Now two tanks drive on one keyboard through Unity's 2D physics, because the shell's ricochets and every later collision depend on it. Next week the same tanks get a weapon.</p>
+<p class="goal"><strong>Week goal:</strong> Two players drive their tanks at the same time on one keyboard, and the tanks stop cleanly at walls.</p>
+<div class="tblock"><p class="task tcard"><strong>Work step 1 / 3 · Build the tank prefab and place two tanks in a test arena</strong></p>
+<ol class="osat"><li>☐&nbsp; Draw the tank. Make a square body and a round turret with a barrel, about a third of a tile in size, as the GDD describes.</li><li>☐&nbsp; Add the physics components. Add a Rigidbody2D (Gravity Scale 0, Collision Detection Continuous, Interpolate) and a BoxCollider2D. Freeze rotation Z, or handle it, so collisions do not spin the tank.</li><li>☐&nbsp; Save it as a prefab. Save the tank in <code>Assets/Prefabs/</code>. Place two instances of it in the scene and give them different colours.</li><li>☐&nbsp; Build a test arena. Make a square of walls with BoxCollider2D, and set the camera so that the whole arena is visible.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> One tank prefab exists, and two instances of it in different colours stand in a walled test arena that the camera shows whole.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> The prefab and the scene, committed with a message that names the issue.</p>
 </div>
-<div class="wk"><h2>Week 43 · 19–23 Oct — Client review and prioritisation</h2>
-<p class="feature">The client has seen the game, the feedback is recorded in the client's own words, and the game team has made a prioritisation decision: which GDD extras fit into the remaining weeks. No new code is written this week.</p>
-<p class="task">☐&nbsp; Prepare a 10-minute demo of the playable build and run the review for the client.</p>
-<p class="task">☐&nbsp; Write the review note in two parts: the client's own words and your interpretation, kept separate.</p>
-<p class="task">☐&nbsp; Make the prioritisation decision with the game team and update the implementation plan and the backlog.</p>
-<p class="done"><strong>Done when:</strong> The note holds the client's own words, your interpretation separately, and a named decision: what gets built in week 44, what moves to P1/P2. The instructor has signed off on the decision.</p>
-<p class="ev"><strong>In the Git repository before you tick the box:</strong> In the repo: the review note in the client's words, the recorded prioritisation decision and the updated implementation plan.</p>
+<div class="tblock"><p class="task tcard"><strong>Work step 2 / 3 · Move two tanks with physics on one keyboard</strong></p>
+<ol class="osat"><li>☐&nbsp; Write one movement script. Create <code>TankMovement.cs</code> with serialised key fields, so the same script serves both players with different keys.</li><li>☐&nbsp; Read input, move with physics. Read the keys in <code>Update()</code> and move the tank through the Rigidbody2D in <code>FixedUpdate()</code>. Do not move it with transform calls.</li><li>☐&nbsp; Make the speed a variable. Start at about 2 tiles per second, as the GDD says. Make it a <code>[SerializeField]</code> float so that you can tune it by feel.</li><li>☐&nbsp; Map both players. Player 1: WASD. Player 2: arrow keys. Reserve the fire keys Space and M now, although nothing shoots yet.</li><li>☐&nbsp; Drive both tanks at once. Check that both tanks move at the same time and that neither half of the keyboard disturbs the other.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> Both tanks move at the same time on one keyboard without disturbing each other, and they stop at walls without jittering.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> Small commits that name the issue, for example "Tank movement: two players, one keyboard (#3)". Your input and Rigidbody2D settings go into the week 37 journal entry.</p>
 </div>
-<h1 class="page">Phase C — Finishing: feedback change, testing and menus</h1>
-<div class="wk"><h2>Week 44 · 26–30 Oct — Feedback change and the chosen extra feature</h2>
-<p class="feature">The change derived from the client's feedback is made on its own branch and merged through a pull request (PR), and the feature chosen in the review is playable. The game team has played the version and assessed it together.</p>
-<p class="task">☐&nbsp; Make the change derived from the feedback on its own branch and open a pull request (PR) that references the note.</p>
-<p class="task">☐&nbsp; Implement the feature chosen in the review, on top of the week 38 and 41 systems.</p>
-<p class="task">☐&nbsp; Run a game team playtest and record the shared assessment in a note.</p>
-<p class="task">☐&nbsp; Write test cases T13–T14 before running them and merge the pull request after review.</p>
-<p class="done"><strong>Done when:</strong> Main holds a merged PR whose description makes clear which feedback it answers; the feature works; the playtest note holds at least three shared observations and a shared assessment.</p>
-<p class="ev"><strong>In the Git repository before you tick the box:</strong> In the repo: a merged PR that references the feedback, the playable feature, the playtest note and test cases T13–T14.</p>
+<div class="tblock"><p class="task tcard"><strong>Work step 3 / 3 · Run test cases T01–T02 and hold the weekly meeting</strong></p>
+<ol class="osat"><li>☐&nbsp; Write the expected results. In <code>project-docs/tests.md</code>, write test case T01 (normal: both tanks move at once in different directions) and T02 (boundary: a tank hits a wall at full speed).</li><li>☐&nbsp; Run the test cases. Play both and write the actual result beside each expectation. T02 expects the tank to stop, not jitter and not pass through.</li><li>☐&nbsp; Check each result. If a result differs from the expectation, fix the cause, run the test case again and record the fix and the retest on the same row.</li><li>☐&nbsp; Show the tanks at the weekly meeting. Let the game team drive the tanks, and write <code>project-docs/meetings/week37.md</code> with the agreements and issue numbers.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> T01 and T02 each have an expected result written before the run and an actual result, and the meeting note is in the repository.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> <code>project-docs/tests.md</code> and <code>project-docs/meetings/week37.md</code>, committed. The results of T01–T02 go into the week 37 journal entry.</p>
 </div>
-<div class="wk"><h2>Week 45 · 2–6 Nov — Testing week and pair debugging</h2>
-<p class="feature">The test matrix has been run: at least 12 test cases with results, three complete debugging chains verified, and one bug solved in a debugging pair with a team member. The game gets no new features — it becomes reliable.</p>
-<p class="task">☐&nbsp; Complete the test matrix from the GDD's testing list: normal, boundary and error cases in balance.</p>
-<p class="task">☐&nbsp; Run every test — the old ones again too — and record the result of every row.</p>
-<p class="task">☐&nbsp; Solve one bug with a named debugging pair and record both sets of observations.</p>
-<p class="task">☐&nbsp; Finish three debugging chains with all six parts.</p>
-<p class="done"><strong>Done when:</strong> Every row of the matrix has an expectation recorded before the run and the result of the run; the three chains hold an observation, reproduction steps, the cause, the fix commit, a retest and a regression test; the pair note holds both names and both sets of observations.</p>
-<p class="ev"><strong>In the Git repository before you tick the box:</strong> In the repo: the run test matrix (≥12 rows), three complete debugging chains and the pair debugging note.</p>
+<p class="done wkdone"><strong>End-of-week check:</strong> Two players can move at the same time on one keyboard without the keys interfering with each other, and the tanks stop at a wall without jittering.</p>
+<p class="ev"><strong>In the Git repository before you tick the box:</strong> A playable build with two tanks moving, test cases T01–T02 with results in tests.md, and the movement commits.</p>
 </div>
-<div class="wk"><h2>Week 46 · 9–13 Nov — Menus and settings</h2>
-<p class="feature">The game has the menu path the GDD describes: a main menu (Play / Options / Leave), settings and a pause menu. Settings persist between sessions, and the players cannot pick the same colour.</p>
-<p class="task">☐&nbsp; Build the main menu and the pause menu per the GDD's user interface (UI) chapter: Play, Options, Leave and resume/restart/quit.</p>
-<p class="task">☐&nbsp; Implement the settings and save them to PlayerPrefs — block duplicate player colours.</p>
-<p class="task">☐&nbsp; Write test cases T15–T16 before running them: settings persistence and the duplicate colour block.</p>
-<p class="done"><strong>Done when:</strong> The game can be started, the settings changed and a match paused without touching the editor; the settings are still there on the next launch; the same player colour cannot be picked twice.</p>
-<p class="ev"><strong>In the Git repository before you tick the box:</strong> In the repo: the playable menu path, PlayerPrefs settings persistence (T15) and the duplicate colour block (T16).</p>
+<div class="wk u"><h2>Week 38 · 14–18 Sep — The bouncing shell</h2>
+<p class="conn"><strong>How this week connects to the whole project:</strong> The tanks from week 37 move through physics, so a shell can now bounce off the same walls. You build the GDD's core rule exactly: one shell per player, endless ricochets, about ten seconds of life and friendly fire. Every later shell variant, such as a triple shot, inherits this logic.</p>
+<p class="goal"><strong>Week goal:</strong> A shell ricochets off the walls without slowing down, disappears after about 10 seconds and can destroy its own shooter.</p>
+<div class="tblock"><p class="task tcard"><strong>Work step 1 / 4 · Build the bouncing Projectile prefab</strong></p>
+<ol class="osat"><li>☐&nbsp; Make the shell. A small circle with a Rigidbody2D (Gravity Scale 0, Linear Drag 0, Collision Detection Continuous) and a CircleCollider2D.</li><li>☐&nbsp; Create a Physics Material 2D. Create → 2D → Physics Material 2D with Bounciness 1 and Friction 0, and assign it to the shell's collider.</li><li>☐&nbsp; Remove friction from the walls. Give the walls a material with Friction 0 too, because friction eats speed from both parties.</li><li>☐&nbsp; Save the Projectile prefab. Save the shell in <code>Assets/Prefabs/</code> with a <code>Projectile.cs</code> script, which will hold its lifetime and hits.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> The Projectile prefab has Bounciness 1 and Friction 0 on the shell and on the walls, Linear Drag 0 and continuous collision detection.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> The Projectile prefab, committed with a message that names the issue. The physics material settings go into the week 38 journal entry.</p>
 </div>
-<h1 class="page">Phase D — Release and handover</h1>
-<div class="wk"><h2>Week 47 · 16–20 Nov — Release candidate, external testing and security</h2>
-<p class="feature">The first release candidate (RC1) exists — a build that would be released as it is if testing turns up nothing blocking — and an outside tester has got the game running on another machine from the written instructions alone. The security of your own repository has been reviewed before release.</p>
-<p class="task">☐&nbsp; Make the first release candidate (RC1) as build v1.0-rc1 and test it yourself in a clean folder.</p>
-<p class="task">☐&nbsp; Write the installation and gameplay guide: download, launch, controls, goal.</p>
-<p class="task">☐&nbsp; Arrange an outside tester on another machine with no spoken help, and record the findings.</p>
-<p class="task">☐&nbsp; Run a security review of your own repository with concrete file paths and commits.</p>
-<p class="done"><strong>Done when:</strong> The tester got all the way through a match without spoken help; every point where they hesitated is recorded as a fix list for the guide; the security review names the files and commits it checked. After the RC, only blocking bugs get fixed.</p>
-<p class="ev"><strong>In the Git repository before you tick the box:</strong> In the repo: the RC build, the written guide, the tester's findings in their own words and the security review with references.</p>
+<div class="tblock"><p class="task tcard"><strong>Work step 2 / 4 · Let each player fire one shell at a time</strong></p>
+<ol class="osat"><li>☐&nbsp; Write the shooting script. Create <code>TankShooting.cs</code>: Space for player 1 and M for player 2 spawn a shell at the barrel, in the barrel's direction.</li><li>☐&nbsp; Set the shell speed. Make the shell slightly faster than the tank, as the GDD says, and keep the speed in a serialised field.</li><li>☐&nbsp; Allow one shell at a time. Keep a reference to the player's live shell and block a new shot until that shell is destroyed.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> Each player can fire only when their previous shell is gone, and the shell leaves the barrel slightly faster than the tank moves.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> <code>TankShooting.cs</code>, committed with a message that names the issue. How you limited it to one shell goes into the week 38 journal entry.</p>
 </div>
-<div class="wk"><h2>Week 48 · 23–27 Nov — Release v1.0 (the MVP)</h2>
-<p class="feature">Ping Pong Tanks v1.0 (the MVP) is released: a GitHub Release on the agreed channel, a README that says everything needed, and a release tested in a clean environment. The content is frozen.</p>
-<p class="task">☐&nbsp; Fix only the release candidate's blocking bugs and move the tester's fix list into the guide.</p>
-<p class="task">☐&nbsp; Publish GitHub Release v1.0 with the build files and a scope description.</p>
-<p class="task">☐&nbsp; Test the release in a clean environment, finish the README and LICENSE, and freeze the content.</p>
-<p class="done"><strong>Done when:</strong> An outsider can download the release and play a match on a machine that has never had the project on it; the README matches the GDD's controls and rules; the release page states what the MVP contains and what was deliberately left out (P1/P2).</p>
-<p class="ev"><strong>In the Git repository before you tick the box:</strong> In the repo: GitHub Release v1.0, the clean-environment test report and the final README + LICENSE.</p>
+<div class="tblock"><p class="task tcard"><strong>Work step 3 / 4 · Make shells despawn after ~10 s and destroy any tank they hit</strong></p>
+<ol class="osat"><li>☐&nbsp; Add the lifetime. In <code>Projectile.cs</code>, destroy the shell on a timer of about 10 seconds, also while it keeps ricocheting.</li><li>☐&nbsp; Destroy any tank that is hit. When the shell hits a tank, including its shooter, destroy that tank. <code>Destroy</code> and <code>Debug.Log</code> are enough now; proper death comes in week 39.</li><li>☐&nbsp; Check friendly fire. Fire at a nearby wall and check that your own shell can destroy your tank.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> A shell disappears after about 10 seconds, and a hit destroys any tank, including the one that fired it.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> <code>Projectile.cs</code>, committed with a message that names the issue.</p>
 </div>
-<div class="wk"><h2>Week 49 · 30 Nov – 4 Dec — Handover week</h2>
-<p class="feature">The project is handed over: the documentation is complete and findable, the demo is rehearsed and the self-assessment written. The game is not touched — the work is made visible.</p>
-<p class="task">☐&nbsp; Finish the project documentation so every claim has an exact reference.</p>
-<p class="task">☐&nbsp; Rehearse the 8–10 minute demo and time it with a game team member.</p>
-<p class="task">☐&nbsp; Write the self-assessment against the meeting notes and hand over the MVP on Fri 4 Dec.</p>
-<p class="done"><strong>Done when:</strong> Every claim in the documentation has at least one exact reference (commit, test id, note, release); the demo stays inside its time and covers the technique, a bug fix and the Git history; the self-assessment references real meeting notes.</p>
-<p class="ev"><strong>In the Git repository before you tick the box:</strong> In the repo: the finished project documentation, the collected journal and AI log, and the self-assessment in project-docs.</p>
+<div class="tblock"><p class="task tcard"><strong>Work step 4 / 4 · Run test cases T03–T05 and playtest the ricochet</strong></p>
+<ol class="osat"><li>☐&nbsp; Write three expectations first. In <code>tests.md</code>: test case T03 (normal), a direct shot hits the opponent. T04 (boundary), five or more ricochets without slowing down. T05 (boundary), despawn at 10 s ±0.5 s.</li><li>☐&nbsp; Run the test cases. Run T03–T05 and record the actual results. Measure T05 also while the shell ricochets continuously.</li><li>☐&nbsp; Record any bug as a chain. If a test found a bug, write it up as your first debugging chain: observation, reproduction, cause, fix commit, retest and regression test.</li><li>☐&nbsp; Playtest the ricochet. Play with the game team: does the ricochet feel right? Write the feedback into <code>project-docs/meetings/week38.md</code>.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> T03–T05 each have an expectation written before the run and an actual result, and the ricochet feedback is in the meeting note.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> <code>tests.md</code> and <code>meetings/week38.md</code> committed, with a short video or image sequence of the ricocheting shell in <code>project-docs/</code>. The results go into the week 38 journal entry.</p>
+</div>
+<p class="done wkdone"><strong>End-of-week check:</strong> The shell bounces off walls without losing speed, disappears in about 10 seconds, kills its own shooter too, and a new shell can only be fired once the previous one is gone.</p>
+<p class="ev"><strong>In the Git repository before you tick the box:</strong> A video or image sequence of the ricocheting shell, test cases T03–T05 with results, and the Projectile prefab commit.</p>
+</div>
+<div class="wk u"><h2>Week 39 · 21–25 Sep — Rounds, scoring and the five-second rule</h2>
+<p class="conn"><strong>How this week connects to the whole project:</strong> Moving tanks and bouncing shells are still only a technical demo. This week a hit ends the round, the right player scores and the GDD's five-second rule decides draws. After it phase 1 is complete: a whole 1v1 round that the players run without touching the editor.</p>
+<p class="goal"><strong>Week goal:</strong> A whole round plays out without the editor: a hit ends it, the right player scores and a new round starts.</p>
+<div class="tblock"><p class="task tcard"><strong>Work step 1 / 3 · Destroy a hit tank and clean up the round</strong></p>
+<ol class="osat"><li>☐&nbsp; Take the hit tank out of play. Replace the week 38 <code>Destroy</code> with a proper death: the tank leaves play with a simple effect.</li><li>☐&nbsp; Cut the dead tank's input. Make sure a destroyed tank can no longer move or fire.</li><li>☐&nbsp; Clean up the shells. Remove the shells that are still on the field when the round ends.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> A hit tank disappears with an effect and no longer reacts to its keys, and no shells are left on the field when the round ends.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> Commits that name the issue.</p>
+</div>
+<div class="tblock"><p class="task tcard"><strong>Work step 2 / 3 · Score rounds with the five-second rule and restart them</strong></p>
+<ol class="osat"><li>☐&nbsp; Build a round manager. Create a GameManager that keeps the score and knows whether a round is running.</li><li>☐&nbsp; Open the five-second window. When the first tank dies, start a 5 s window. If the second tank dies inside it, the round ends with no point.</li><li>☐&nbsp; Award the point. Otherwise the survivor scores when the window closes, or at once if no shells are left on the field.</li><li>☐&nbsp; Restart the round. Put the tanks back at their starting positions, keep the scores and clean up the field, all automatically.</li><li>☐&nbsp; Show the score. Draw the score at the top of the screen. This is the first version of the HUD, the heads-up display drawn over the running match.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> Rounds end, score and restart without touching the editor, and two deaths within 5 s give no point.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> The GameManager, committed with a message that names the issue. How you built the 5 s rule and stored the scores goes into the week 39 journal entry.</p>
+</div>
+<div class="tblock"><p class="task tcard"><strong>Work step 3 / 3 · Run test cases T06–T08 and play rounds with the game team</strong></p>
+<ol class="osat"><li>☐&nbsp; Write three expectations first. In <code>tests.md</code>: test case T06 (normal), player 1 hits player 2 and scores. T07 (boundary), both die within 3 s: no point. T08 (boundary), both die 6 s apart.</li><li>☐&nbsp; Run the test cases. Run T06–T08 and record the actual results. In T08, the opponent of the first tank to die should score.</li><li>☐&nbsp; Play rounds with the game team. Play several whole rounds together without the editor.</li><li>☐&nbsp; Write the meeting note. In <code>project-docs/meetings/week39.md</code>, record whether the round rhythm matches the GDD's "quick, tactical matches".</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> T06–T08 have expectations written before the run and actual results, and the meeting note judges the round rhythm.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> <code>tests.md</code> and <code>meetings/week39.md</code>, committed. The results of T06–T08 go into the week 39 journal entry.</p>
+</div>
+<p class="done wkdone"><strong>End-of-week check:</strong> A whole round works without touching the editor: destruction, a point to the right player (or to neither, under the 5 s rule), and an automatic new round.</p>
+<p class="ev"><strong>In the Git repository before you tick the box:</strong> A whole round without the editor: scoring, the 5 s rule tested (T06–T08) and the playtest note week39.md.</p>
+</div>
+<h1 class="page">Phase 2 — Arena, powers and the review</h1>
+<div class="wk u"><h2>Week 40 · 28 Sep – 2 Oct — Generated maze and data out of the code</h2>
+<p class="conn"><strong>How this week connects to the whole project:</strong> Rounds work, but they are still played in the fixed test arena. Now the depth-first search (DFS) builds a 10×10 maze from data kept outside the code, and the tanks start fairly apart. The data store you choose here is used again for the power-ups next week.</p>
+<p class="goal"><strong>Week goal:</strong> The game generates a 10×10 maze in which every tile is reachable, and the tanks start at least 3 tiles apart.</p>
+<div class="tblock"><p class="task tcard"><strong>Work step 1 / 4 · Compare the data stores before you implement anything</strong></p>
+<ol class="osat"><li>☐&nbsp; Describe the three options. ScriptableObject (a Unity data asset edited in the editor), a JSON file (JSON is a plain-text data format) and PlayerPrefs (Unity's small store for player settings).</li><li>☐&nbsp; Compare what each one suits. For each option, write what kind of data it suits and what it makes harder, for example editing the data after the build.</li><li>☐&nbsp; Choose the store for arena data. Pick one option for the arena data and write down why, before any maze code exists.</li><li>☐&nbsp; Record the decision. Write the comparison into the maze issue or the week 40 journal entry. Put the choice and its reasoning into the Data store field on the Plan page.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> The comparison covers all three options, names the store chosen for arena data with its reason, and was written before the maze code.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> The comparison in the GitHub issue or the journal. The choice and its reasoning in the plan (<code>project-docs/gdd-implementation-plan.md</code>).</p>
+</div>
+<div class="tblock"><p class="task tcard"><strong>Work step 2 / 4 · Write the depth-first search (DFS) maze generator</strong></p>
+<ol class="osat"><li>☐&nbsp; Draw the algorithm on paper. On a small grid of your own, for example 6×6 cells, draw how the depth-first search (DFS) carves corridors and backs out of dead ends.</li><li>☐&nbsp; Write the generator as a plain class. Create <code>MazeGenerator.cs</code> as a plain C# class with no GameObject references, so that it can be tested without a scene.</li><li>☐&nbsp; Carve the corridors. Start from a random cell, move to a random unvisited neighbour, knock down the wall between them and back out of dead ends with a stack.</li><li>☐&nbsp; Check that every cell is visited. Generate a few mazes and confirm that the generator stops only when every cell has been visited.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> The generator produces a 10×10 maze in which every cell is visited, and you can explain each step of it from your paper drawing.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> <code>MazeGenerator.cs</code> committed, and a photo of the paper drawing in <code>project-docs/</code>. Explain the DFS in your own words in the week 40 journal entry.</p>
+</div>
+<div class="tblock"><p class="task tcard"><strong>Work step 3 / 4 · Build the arena from data with fair spawn positions</strong></p>
+<ol class="osat"><li>☐&nbsp; Build the walls and the floor. Write <code>MazeBuilder.cs</code> (a MonoBehaviour) that turns the generator's result into wall and floor objects.</li><li>☐&nbsp; Read the arena from data. Read the arena size and the tile types from the store you chose in work step 1, for example an <code>ArenaConfig</code> asset.</li><li>☐&nbsp; Validate the spawn. Draw the starting positions at random and reject any draw closer than 3 tiles, as the GDD requires.</li><li>☐&nbsp; Record how you measure. Write into the issue whether you measure the spawn distance as Manhattan distance or along the path, and why.</li><li>☐&nbsp; Park the other sizes. Create issues for the 5×5 and 25×25 arenas and mark them as follow-up content (P1).</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> Changing the arena size in the data changes the maze without any code change, and the tanks always start at least 3 tiles apart.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> <code>MazeBuilder.cs</code> and the arena data, committed. The distance measure goes into the week 40 journal entry.</p>
+</div>
+<div class="tblock"><p class="task tcard"><strong>Work step 4 / 4 · Run test cases T09–T10 for traversability and spawn distance</strong></p>
+<ol class="osat"><li>☐&nbsp; Write two expectations first. In <code>tests.md</code>: test case T09 (normal), 10 generations are all traversable. T10 (boundary), 20 spawn draws all end at least 3 tiles apart.</li><li>☐&nbsp; Choose how to verify traversability. Decide how you check T09, for example with a flood fill check in code or by playing through by hand, and write it on the row.</li><li>☐&nbsp; Run the test cases. Run T09 and T10 and record the actual results on their rows.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> T09 and T10 have expectations written before the run, a stated way of verifying and actual results.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> <code>project-docs/tests.md</code> committed, with screenshots of generated mazes. The results of T09–T10 go into the week 40 journal entry.</p>
+</div>
+<p class="done wkdone"><strong>End-of-week check:</strong> Every generated 10×10 maze is fully traversable (DFS guarantees it), the tanks start at least 3 tiles apart, and the arena size is read from data — you can change the size without touching code.</p>
+<p class="ev"><strong>In the Git repository before you tick the box:</strong> The written data store comparison, the paper drawing of the depth-first search, generated mazes and test cases T09–T10.</p>
+</div>
+<div class="wk u"><h2>Week 41 · 5–9 Oct — Power-ups and the HUD</h2>
+<p class="conn"><strong>How this week connects to the whole project:</strong> The maze from week 40 now gets the GDD's second core promise: chaotic power-ups. Each power-up is a data asset, not its own if branch, and the HUD shows who holds what. That keeps the extra power chosen in the week 43 review cheap to add.</p>
+<p class="goal"><strong>Week goal:</strong> Speed boost, slowness and shield appear on the field and change play, and both players can see from the HUD who holds which power.</p>
+<div class="tblock"><p class="task tcard"><strong>Work step 1 / 3 · Define the three power-ups as data assets</strong></p>
+<ol class="osat"><li>☐&nbsp; Define the power-up data. Create <code>PowerUpData</code> as a ScriptableObject with a name, an icon, a duration and an effect type.</li><li>☐&nbsp; Create the speed boost. <code>SpeedBoost.asset</code>: duration 10 s, speed ×1.2 (+20 %) for the player who picks it up.</li><li>☐&nbsp; Create the slowness. <code>Slowness.asset</code>: duration 10 s, speed ×0.8 (−20 %), targeting the opponent.</li><li>☐&nbsp; Create the shield. <code>Shield.asset</code>: lasts 15 s or absorbs one hit, whichever comes first.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> Three power-up assets exist with their durations and effects, and no power has its own if branch in the code.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> The <code>PowerUpData</code> script and the three assets in <code>Assets/Data/PowerUps/</code>, committed. Why you used a data asset goes into the week 41 journal entry.</p>
+</div>
+<div class="tblock"><p class="task tcard"><strong>Work step 2 / 3 · Spawn power-ups and apply one power at a time</strong></p>
+<ol class="osat"><li>☐&nbsp; Spawn on a timer. Write <code>PowerUpSpawner.cs</code>: about every 2 seconds, pick a free normal tile with no wall and no other pickup.</li><li>☐&nbsp; Place the pickup. Instantiate the pickup prefab in the centre of that tile, as the GDD says.</li><li>☐&nbsp; Pick up with a trigger. Give the pickup a trigger collider. A player who already holds a power does not pick up a new one, and it stays on the field.</li><li>☐&nbsp; Apply the effect at once. Start the effect immediately: the speed multiplier, the opponent's slowdown or the shield.</li><li>☐&nbsp; Time the effect. Write <code>PowerUpRunner.cs</code> that ends the effect after its duration, also when the tank dies in the middle of it.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> Power-ups appear about every 2 seconds at the centres of free tiles, a player holds at most one power, and every effect ends on time.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> The spawner, pickup and runner scripts, committed with messages that name the issue. How you timed the effects goes into the week 41 journal entry.</p>
+</div>
+<div class="tblock"><p class="task tcard"><strong>Work step 3 / 3 · Show active powers in the HUD and run test cases T11–T12</strong></p>
+<ol class="osat"><li>☐&nbsp; Show the power in the HUD. Put an icon of the active power next to that player's score.</li><li>☐&nbsp; Mark the tank. Give the tank a colour marker while a power is active, and a visible ring while the shield is on.</li><li>☐&nbsp; Write two expectations first. In <code>tests.md</code>: test case T11 (normal), a speed boost lasts 10 s and then reverts. T12 (error), a second pickup during an active power fails and stays on the field.</li><li>☐&nbsp; Run the test cases. Run T11 and T12 and record the actual results.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> A spectator can see both players' powers from the HUD and the tanks, and T11–T12 have expectations and actual results.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> A HUD screenshot and <code>tests.md</code>, committed. The results of T11–T12 go into the week 41 journal entry.</p>
+</div>
+<p class="done wkdone"><strong>End-of-week check:</strong> Three powers work with their durations, a player can only hold one at a time (a new one is not picked up before the old one is spent — GDD), and a spectator can see both players' state from the HUD.</p>
+<p class="ev"><strong>In the Git repository before you tick the box:</strong> Three power-up assets as data, a HUD screenshot and test cases T11–T12 with results.</p>
+</div>
+<div class="wk"><h2>Week 42 · 12–16 Oct — Autumn break</h2><p></p></div>
+<div class="wk u"><h2>Week 43 · 19–23 Oct — Client review and prioritisation</h2>
+<p class="conn"><strong>How this week connects to the whole project:</strong> Phases 1 and 2 have produced a whole playable match: movement, shell, rounds, maze and three powers. Now the client plays it, and you decide together what fits into the remaining weeks, because the GDD holds more than they can carry. No new code is written; this decision steers weeks 44–49.</p>
+<p class="goal"><strong>Week goal:</strong> The client has played the game, and a signed-off decision says what gets built in week 44 and what moves to P1 or P2.</p>
+<div class="tblock"><p class="task tcard"><strong>Work step 1 / 3 · Demo the playable build and let the client play it</strong></p>
+<ol class="osat"><li>☐&nbsp; Make a playable build. Build the game so that it runs outside the editor. The client does not see the editor view.</li><li>☐&nbsp; Plan a 10-minute demo. Put it in order: one round, then the maze generated twice, then the power-ups.</li><li>☐&nbsp; Let the client play. The client plays the game themselves, because the GDD promises a game that is easy to approach.</li><li>☐&nbsp; Write down the client's words. Write what the client says as quotes, not as your interpretation.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> The client has played the build themselves, and their comments are written down word for word.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> The quotes go into the review note in work step 2. What you demonstrated and how goes into the week 43 journal entry.</p>
+</div>
+<div class="tblock"><p class="task tcard"><strong>Work step 2 / 3 · Write the review note with the client's words kept apart</strong></p>
+<ol class="osat"><li>☐&nbsp; Create the review note. Create <code>project-docs/reviews/week43.md</code>.</li><li>☐&nbsp; Part 1: the client's words. Copy in the client's comments as quotes, exactly as they were said.</li><li>☐&nbsp; Part 2: your interpretation. Write what you think each comment means for the game, clearly apart from the quotes.</li><li>☐&nbsp; End with your proposal. Propose the feedback change for week 44 and the follow-up items (P1) that could fit, each with a rough estimate in working days.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> The note has the client's quotes and your interpretation in separate parts, and part 2 ends with your proposal.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> <code>project-docs/reviews/week43.md</code>, committed. The client's most important comment goes into the week 43 journal entry as a quote.</p>
+</div>
+<div class="tblock"><p class="task tcard"><strong>Work step 3 / 3 · Decide the priorities with the game team and update the plan</strong></p>
+<ol class="osat"><li>☐&nbsp; Go through the follow-up list. With the game team, go through the follow-up content (P1): laser, triple shot, special tiles, audio and the other GDD powers.</li><li>☐&nbsp; Choose one feature for week 44. Pick ONE feature that fits into roughly 2 working days, and name the feedback change from the review note.</li><li>☐&nbsp; Record what you leave out. Write down which features you are NOT building, and whether they stay P1 or move to the optional extras (P2).</li><li>☐&nbsp; Get your instructor's sign-off. Show the decision to your instructor and record in the review note that it was approved.</li><li>☐&nbsp; Update the plan and the backlog. Update the required core (P0) and follow-up sections of the plan and the issue milestones. Write <code>meetings/week43.md</code> as usual.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> A named decision says what gets built in week 44 and what moves to P1 or P2, and your instructor has signed it off.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> The decision in the review note and in the updated <code>project-docs/gdd-implementation-plan.md</code>, plus <code>meetings/week43.md</code>. The reasoning and what you left out go into the week 43 journal entry.</p>
+</div>
+<p class="done wkdone"><strong>End-of-week check:</strong> The note holds the client's own words, your interpretation separately, and a named decision: what gets built in week 44, what moves to P1/P2. The instructor has signed off on the decision.</p>
+<p class="ev"><strong>In the Git repository before you tick the box:</strong> The review note in the client's words, the recorded prioritisation decision and the updated implementation plan.</p>
+</div>
+<h1 class="page">Phase 3 — Complete and tested game</h1>
+<div class="wk u"><h2>Week 44 · 26–30 Oct — Feedback change and the chosen extra feature</h2>
+<p class="conn"><strong>How this week connects to the whole project:</strong> The review in week 43 named one feedback change and one extra feature. Now you build them on top of the week 38 and 41 systems, and the feedback change goes into main through a branch and a pull request. For the first time main holds a working game worth protecting.</p>
+<p class="goal"><strong>Week goal:</strong> The client's feedback is answered by a merged pull request, and the feature chosen in the review is playable.</p>
+<div class="tblock"><p class="task tcard"><strong>Work step 1 / 4 · Make the feedback change on a branch and open a pull request</strong></p>
+<ol class="osat"><li>☐&nbsp; Create a branch. Run <code>git checkout -b fix/review-week43</code>, so that main keeps working while you make the change.</li><li>☐&nbsp; Make the feedback change. Make the change named in the review note, and keep it small.</li><li>☐&nbsp; Open a pull request. Open a pull request (PR) to main. Its description quotes the feedback and refers to <code>project-docs/reviews/week43.md</code>.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> An open pull request to main holds only the feedback change, and its description makes clear which feedback it answers.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> The pull request in GitHub. Its number and the feedback it resolves go into the week 44 journal entry.</p>
+</div>
+<div class="tblock"><p class="task tcard"><strong>Work step 2 / 4 · Build the feature chosen in the review on the existing systems</strong></p>
+<ol class="osat"><li>☐&nbsp; Check the feature's issue. Open the GitHub issue for the feature chosen in week 43 and read its done-when condition.</li><li>☐&nbsp; Build on the existing systems. Triple shot: three standard shells in a fan, the middle one straight, the outer ones angled slightly outward (GDD). Another feature: build on the week 38 or 41 system.</li><li>☐&nbsp; Check it in a real match. Play the feature in a match and check it against the issue's done-when condition.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> The chosen feature works in a real match and uses the existing shell or power-up code.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> Commits that name the feature's issue. How the feature leans on the week 38 shell logic goes into the week 44 journal entry.</p>
+</div>
+<div class="tblock"><p class="task tcard"><strong>Work step 3 / 4 · Run a game team playtest and record a shared assessment</strong></p>
+<ol class="osat"><li>☐&nbsp; Play at least three rounds per pair. Every pair of players in the game team plays at least 3 rounds with the new version.</li><li>☐&nbsp; Record one observation each. Everyone writes down one observation themselves before you discuss.</li><li>☐&nbsp; Agree a shared assessment. Decide together: does the change work, and did anything break?</li><li>☐&nbsp; Write the playtest note. Save the observations and the shared assessment in <code>project-docs/meetings/week44-playtest.md</code>.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> The playtest note holds at least three observations and a shared assessment.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> <code>project-docs/meetings/week44-playtest.md</code>, committed. The main findings go into the week 44 journal entry.</p>
+</div>
+<div class="tblock"><p class="task tcard"><strong>Work step 4 / 4 · Run test cases T13–T14 and merge the reviewed pull request</strong></p>
+<ol class="osat"><li>☐&nbsp; Write two expectations first. In <code>tests.md</code>: test case T13 (normal), the outer shells of the triple shot ricochet independently. T14 (boundary), the triple shot against the one-shell rule.</li><li>☐&nbsp; Record your reading of the rule. Write down how you read the GDD's one-shell rule with a fan of shells, and test against that reading.</li><li>☐&nbsp; Run the test cases. Run T13 and T14 and record the actual results.</li><li>☐&nbsp; Get a review comment. Ask your instructor or a game team member to read the diff and comment on the pull request.</li><li>☐&nbsp; Merge and hold the weekly meeting. Merge the pull request into main and write <code>project-docs/meetings/week44.md</code>.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> T13–T14 have expectations and actual results, and main holds the merged pull request with its review comment.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> <code>tests.md</code> and <code>meetings/week44.md</code> committed; the merged pull request in GitHub. The results of T13–T14 go into the week 44 journal entry.</p>
+</div>
+<p class="done wkdone"><strong>End-of-week check:</strong> Main holds a merged PR whose description makes clear which feedback it answers; the feature works; the playtest note holds at least three shared observations and a shared assessment.</p>
+<p class="ev"><strong>In the Git repository before you tick the box:</strong> A merged PR that references the feedback, the playable feature, the playtest note and test cases T13–T14.</p>
+</div>
+<div class="wk u"><h2>Week 45 · 2–6 Nov — Testing week and pair debugging</h2>
+<p class="conn"><strong>How this week connects to the whole project:</strong> The feature weeks left test cases T01–T14 and the bugs you found along the way. This week they become one test matrix that you run as a whole, and three real bugs are written up as complete debugging chains. The game gets no new features, so the release candidate in week 47 starts from a tested game.</p>
+<p class="goal"><strong>Week goal:</strong> At least 12 test cases have been run with recorded results, and three bugs are documented from observation to regression test.</p>
+<div class="tblock"><p class="task tcard"><strong>Work step 1 / 4 · Complete the test matrix from the GDD's testing list</strong></p>
+<ol class="osat"><li>☐&nbsp; Collect the feature-week tests. Gather test cases T01–T14 in <code>project-docs/tests.md</code> as one matrix: id, class, expectation, result.</li><li>☐&nbsp; Go through the GDD's testing list. Look for missing tests: frame rate at 25×25 if you built it, spawn fairness over 20 draws and power-up frequency.</li><li>☐&nbsp; Add the missing test cases. Write the new rows with the expectation first, until the matrix has at least 12 test cases.</li><li>☐&nbsp; Balance the classes. Check that normal use, boundaries and error cases are roughly a third each, and add rows where a class is thin.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> The matrix has at least 12 test cases, each with an expectation written before the run, in roughly equal thirds of normal, boundary and error cases.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> <code>project-docs/tests.md</code>, committed.</p>
+</div>
+<div class="tblock"><p class="task tcard"><strong>Work step 2 / 4 · Run every test case again and record each result</strong></p>
+<ol class="osat"><li>☐&nbsp; Run every test case. Run every row of the matrix, test cases T01–T14 included.</li><li>☐&nbsp; Measure spawn fairness. Record the starting distances of 20 consecutive rounds and summarise the distribution.</li><li>☐&nbsp; Record every result. Write a result and a date on every row, including the embarrassing ones.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> Every row of the matrix has a dated result, and T01–T14 have been run again this week.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> <code>tests.md</code>, committed. A summary of the matrix (how many OK, how many fixed) goes into the week 45 journal entry.</p>
+</div>
+<div class="tblock"><p class="task tcard"><strong>Work step 3 / 4 · Solve one bug with a named debugging pair</strong></p>
+<ol class="osat"><li>☐&nbsp; Pick a real bug. Choose a bug from the playtests or from the test matrix.</li><li>☐&nbsp; Attach the debugger. Attach your IDE's debugger to Unity and set a breakpoint, for example in the collision handler.</li><li>☐&nbsp; Split the roles. A named team member sits beside you or joins remotely. One of you drives the debugger, the other writes.</li><li>☐&nbsp; Write the pair note. Record both names, both sets of observations, the breakpoints you used and the cause, in <code>project-docs/</code> (for example <code>meetings/week45-debug-pair.md</code>).</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> The pair note holds both names, both sets of observations, the breakpoints and the cause of the bug.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> The pair note in <code>project-docs/</code>, committed. What pair debugging showed about your own way of hunting bugs goes into the week 45 journal entry.</p>
+</div>
+<div class="tblock"><p class="task tcard"><strong>Work step 4 / 4 · Finish three complete debugging chains</strong></p>
+<ol class="osat"><li>☐&nbsp; Collect your chains. Keep one file per bug in <code>project-docs/chains/</code>, for example <code>C1-corner-passthrough.md</code>.</li><li>☐&nbsp; Check all six parts. Each chain has an observation, reproduction steps, the cause, the fix commit, a retest and a regression test.</li><li>☐&nbsp; Count the real bugs. If you have fewer than three real bugs, raise it with your instructor. Do not invent a bug.</li><li>☐&nbsp; Summarise at the weekly meeting. Tell the game team which areas of the matrix are strong and where the risk is, and write <code>meetings/week45.md</code>.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> Three chains in <code>project-docs/chains/</code> each have all six parts, or you have raised the lack of real bugs with your instructor.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> <code>project-docs/chains/</code> and <code>meetings/week45.md</code>, committed. The hardest bug and its cause go into the week 45 journal entry.</p>
+</div>
+<p class="done wkdone"><strong>End-of-week check:</strong> Every row of the matrix has an expectation recorded before the run and the result of the run; the three chains hold an observation, reproduction steps, the cause, the fix commit, a retest and a regression test; the pair note holds both names and both sets of observations.</p>
+<p class="ev"><strong>In the Git repository before you tick the box:</strong> The run test matrix (≥12 rows), three complete debugging chains and the pair debugging note.</p>
+</div>
+<div class="wk u"><h2>Week 46 · 9–13 Nov — Menus and settings</h2>
+<p class="conn"><strong>How this week connects to the whole project:</strong> Until now the game has started straight into a match. Now it gets the menu path from the GDD's user interface (UI) chapter, settings that persist and a pause that stops the timers. The outside tester in week 47 starts exactly here, so the menus must work the first time.</p>
+<p class="goal"><strong>Week goal:</strong> Players start a match, change the settings and pause from the menus alone, and the settings are still there on the next launch.</p>
+<div class="tblock"><p class="task tcard"><strong>Work step 1 / 3 · Build the main menu and the pause menu</strong></p>
+<ol class="osat"><li>☐&nbsp; Build the main menu. Follow the GDD's user interface (UI) chapter: Play at the top, Options in the middle, Leave at the bottom.</li><li>☐&nbsp; Choose scene or overlay. Make the menu its own scene or an overlay, and write down your choice and the reason.</li><li>☐&nbsp; Build the pause menu. Esc opens resume, restart and quit.</li><li>☐&nbsp; Stop the timers on pause. Handle <code>Time.timeScale</code> so that the power-up timers and the 5 s rule stop while the game is paused.</li><li>☐&nbsp; Walk the whole path. Start a match from the main menu, pause it, restart it and quit back to the menu, all without the editor.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> A player can start a match, pause it, restart it and quit from the menus without touching the editor.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> The menu and pause commits, with messages that name the issues. The scene or overlay decision goes into the week 46 journal entry.</p>
+</div>
+<div class="tblock"><p class="task tcard"><strong>Work step 2 / 3 · Save the settings and block duplicate tank colours</strong></p>
+<ol class="osat"><li>☐&nbsp; Add the arena size. Offer 10×10, the follow-up (P1) sizes if they were built, and Random, as the GDD says.</li><li>☐&nbsp; Add the player colours. Let each player pick a tank colour.</li><li>☐&nbsp; Block duplicate colours. Stop both players from picking the same colour, and show the user why it is blocked.</li><li>☐&nbsp; Check the audio decision. If audio was chosen in the week 43 prioritisation, add volume sliders. If not, leave them out.</li><li>☐&nbsp; Save to PlayerPrefs. Save the settings, and only the settings, to PlayerPrefs and load them on startup. Your week 40 comparison already said why arena data does not belong there.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> The settings are still there after the game is closed and opened again, and the same colour cannot be picked twice.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> Commits that name the issues. What you save to PlayerPrefs and why goes into the week 46 journal entry.</p>
+</div>
+<div class="tblock"><p class="task tcard"><strong>Work step 3 / 3 · Run test cases T15–T16 for saved settings and colours</strong></p>
+<ol class="osat"><li>☐&nbsp; Write two expectations first. In <code>tests.md</code>: test case T15 (normal), changed settings survive closing and reopening. T16 (error), picking the same colour for both is blocked with a visible reason.</li><li>☐&nbsp; Run T15. Change the settings, close the game, open it again and record the result.</li><li>☐&nbsp; Run T16. Try to pick the same colour for both players and record the result.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> T15 and T16 have expectations written before the run and actual results.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> <code>tests.md</code>, committed. The results of T15–T16 go into the week 46 journal entry.</p>
+</div>
+<p class="done wkdone"><strong>End-of-week check:</strong> The game can be started, the settings changed and a match paused without touching the editor; the settings are still there on the next launch; the same player colour cannot be picked twice.</p>
+<p class="ev"><strong>In the Git repository before you tick the box:</strong> The playable menu path, PlayerPrefs settings persistence (T15) and the duplicate colour block (T16).</p>
+</div>
+<h1 class="page">Phase 4 — Release and handover</h1>
+<div class="wk u"><h2>Week 47 · 16–20 Nov — Release candidate, external testing and security</h2>
+<p class="conn"><strong>How this week connects to the whole project:</strong> The game is complete and tested, but so far only you have started it. Now you build the first release candidate (RC1), and an outside tester starts it on another machine from your written guide alone. You also check the public repository for secrets before the release in week 48.</p>
+<p class="goal"><strong>Week goal:</strong> Someone outside the project starts the release candidate on another machine using only your written guide.</p>
+<div class="tblock"><p class="task tcard"><strong>Work step 1 / 4 · Build release candidate v1.0-rc1 and test it yourself</strong></p>
+<ol class="osat"><li>☐&nbsp; Build the release candidate. Make a Windows build, or the target agreed with your instructor, and name the version <code>v1.0-rc1</code>.</li><li>☐&nbsp; Test it in a clean folder. Copy the build into an empty folder, start it and play a whole match before you give it to anyone.</li><li>☐&nbsp; Record the build settings. Write down the target, the version and the build settings you used, and keep the build where the tester can download it.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> <code>v1.0-rc1</code> starts from a clean folder and a whole match can be played in it.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> The RC build settings go into the week 47 journal entry.</p>
+</div>
+<div class="tblock"><p class="task tcard"><strong>Work step 2 / 4 · Write the installation and gameplay guide</strong></p>
+<ol class="osat"><li>☐&nbsp; Choose the file. Write the guide in <code>README.md</code> or <code>INSTALL.md</code>.</li><li>☐&nbsp; Write download and launch. Tell where to download the build and how to start it.</li><li>☐&nbsp; Write the controls. Player 1: WASD + Space. Player 2: arrow keys + M. A table is the easiest to read.</li><li>☐&nbsp; Write the goal of the game. Explain in a few sentences how a round is won and scored.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> Someone who has never seen the game can find in the guide how to download, start and play it.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> The guide, committed to the repository.</p>
+</div>
+<div class="tblock"><p class="task tcard"><strong>Work step 3 / 4 · Let an outside tester start the game from the guide alone</strong></p>
+<ol class="osat"><li>☐&nbsp; Find an outside tester. Someone who is NOT in the game team, for example a friend or a family member, as the GDD suggests.</li><li>☐&nbsp; Use another machine. The tester downloads and starts the build on a machine that is not yours, using only the guide.</li><li>☐&nbsp; Do not help out loud. Watch silently and write down every point where the tester hesitates.</li><li>☐&nbsp; Write the test note. Record the tester's name, role and date and their own words as quotes, in <code>project-docs/</code> (for example <code>reviews/week47-outside-test.md</code>).</li><li>☐&nbsp; Sort the findings. Turn every hesitation into a fix for the guide. Fix now only the bugs that block playing or installing.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> The tester got through a whole match without spoken help, and every hesitation is on a fix list for the guide.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> The test note in <code>project-docs/</code>, committed. Where the tester hesitated and how you fixed the guide go into the week 47 journal entry.</p>
+</div>
+<div class="tblock"><p class="task tcard"><strong>Work step 4 / 4 · Review your repository's security with exact references</strong></p>
+<ol class="osat"><li>☐&nbsp; Search the history for secrets. Go through <code>git log</code> and the files for keys, passwords and tokens.</li><li>☐&nbsp; Check the .gitignore. Confirm that builds and user-specific files stay out of Git.</li><li>☐&nbsp; Check ProjectSettings. Confirm that <code>ProjectSettings/</code> holds no keys.</li><li>☐&nbsp; Look for personal data. Check every file and commit message for personal data.</li><li>☐&nbsp; Write the review with references. Record what you checked, with file paths and commits, and what you found or did not find. General prose is not enough.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> The security review names the files and commits it checked and what it found.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> The review in <code>project-docs/</code> (for example <code>security-review.md</code>), committed. Its findings go into the week 47 journal entry.</p>
+</div>
+<p class="done wkdone"><strong>End-of-week check:</strong> The tester got all the way through a match without spoken help; every point where they hesitated is recorded as a fix list for the guide; the security review names the files and commits it checked. After the RC, only blocking bugs get fixed.</p>
+<p class="ev"><strong>In the Git repository before you tick the box:</strong> The RC build, the written guide, the tester's findings in their own words and the security review with references.</p>
+</div>
+<div class="wk u"><h2>Week 48 · 23–27 Nov — Release v1.0 (the MVP)</h2>
+<p class="conn"><strong>How this week connects to the whole project:</strong> Release candidate RC1 and the tester's fix list from week 47 are your starting point. You fix only blocking bugs, release v1.0 on the agreed channel and freeze the content. That leaves the last week free for the handover.</p>
+<p class="goal"><strong>Week goal:</strong> Anyone can download Ping Pong Tanks v1.0 from the release page and play a match on a clean machine.</p>
+<div class="tblock"><p class="task tcard"><strong>Work step 1 / 3 · Fix only blocking bugs and update the guide</strong></p>
+<ol class="osat"><li>☐&nbsp; Go through the fix list. Open the week 47 fix list and the test note.</li><li>☐&nbsp; Fix blocking bugs only. Fix what blocks playing or installing. No new features, even if there is time: that time goes into the handover.</li><li>☐&nbsp; Update the guide. Move every guide fix from the tester's list into the README or <code>INSTALL.md</code>.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> Every blocking bug on the fix list is fixed and every guide fix is in the guide, and nothing else has changed.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> Commits that name the fixes they make.</p>
+</div>
+<div class="tblock"><p class="task tcard"><strong>Work step 2 / 3 · Publish release v1.0 with the build and its scope description</strong></p>
+<ol class="osat"><li>☐&nbsp; Build v1.0. Make the final build from the fixed release candidate and tag the commit <code>v1.0</code>.</li><li>☐&nbsp; Publish the release. Publish it as a GitHub Release, or on itch.io if your instructor chose that, with the build files attached.</li><li>☐&nbsp; Describe the scope. Write what the game contains (the required core, P0), what was deliberately left out (P1/P2), the controls and the known gaps.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> Release v1.0 is public with its build files, and its description separates what the MVP contains from what was left out.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> The release link goes into the week 48 journal entry.</p>
+</div>
+<div class="tblock"><p class="task tcard"><strong>Work step 3 / 3 · Test the release in a clean environment and freeze the content</strong></p>
+<ol class="osat"><li>☐&nbsp; Test in a clean environment. On a machine or user account that has never had the project, download the release, install it by the guide and play a match.</li><li>☐&nbsp; Write the test report. Record in <code>project-docs/</code> what you did and what happened.</li><li>☐&nbsp; Finish the README. Description, screenshot, controls, installation, the author under the agreed name, and the licences for graphics and audio.</li><li>☐&nbsp; Add the LICENSE. Add the LICENSE file your instructor decided on.</li><li>☐&nbsp; Freeze the content. Make the last content commit with the message "Content freeze v1.0". From here on, documentation only.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> The release plays on a clean machine by the guide, the README matches the GDD's controls and rules, and the content freeze commit exists.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> The clean-environment report, the README and the LICENSE, committed. The LICENSE decision and what ended up as follow-up or optional (P1/P2) go into the week 48 journal entry.</p>
+</div>
+<p class="done wkdone"><strong>End-of-week check:</strong> An outsider can download the release and play a match on a machine that has never had the project on it; the README matches the GDD's controls and rules; the release page states what the MVP contains and what was deliberately left out (P1/P2).</p>
+<p class="ev"><strong>In the Git repository before you tick the box:</strong> GitHub Release v1.0, the clean-environment test report and the final README + LICENSE.</p>
+</div>
+<div class="wk u"><h2>Week 49 · 30 Nov – 4 Dec — Handover week</h2>
+<p class="conn"><strong>How this week connects to the whole project:</strong> Thirteen weeks of commits, tests, notes and a release already exist. This week you make them findable with exact references, rehearse the demo and write the self-assessment. Nothing is produced afterwards: anything missing is recorded as missing.</p>
+<p class="goal"><strong>Week goal:</strong> The client receives the MVP and documentation in which every claim points to exact evidence.</p>
+<div class="tblock"><p class="task tcard"><strong>Work step 1 / 3 · Finish the project documentation with exact references</strong></p>
+<ol class="osat"><li>☐&nbsp; Check that the freeze holds. Check that v1.0 is on the release page and that nothing has been added to the game since the freeze.</li><li>☐&nbsp; Commit the journal and the AI log. Download the whole project journal and the AI log, and commit them to <code>project-docs/</code>.</li><li>☐&nbsp; Add exact references. Go through the journal, tests, chains and notes, and give each claim a commit hash, a test id or a note path.</li><li>☐&nbsp; Record gaps as gaps. If something is missing, write that it is missing. Do not patch it over or produce it afterwards.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> Every claim in the documentation has at least one exact reference, and anything missing is marked as missing.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> <code>project-docs/</code> with the journal and the AI log, committed.</p>
+</div>
+<div class="tblock"><p class="task tcard"><strong>Work step 2 / 3 · Rehearse and time the 8–10 minute demo</strong></p>
+<ol class="osat"><li>☐&nbsp; Plan the content. A match running, one technical solution (the depth-first search (DFS) maze or the power-up data), one fixed bug with its chain, the Git history and your checked use of AI.</li><li>☐&nbsp; Rehearse with a team member. Run the whole demo once with a game team member watching.</li><li>☐&nbsp; Time it. Keep it within 8–10 minutes, and cut until it fits.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> The demo stays within 8–10 minutes and covers the technique, a bug fix and the Git history.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> The structure of the demo goes into the week 49 journal entry.</p>
+</div>
+<div class="tblock"><p class="task tcard"><strong>Work step 3 / 3 · Write the self-assessment and hand over on Fri 4 Dec</strong></p>
+<ol class="osat"><li>☐&nbsp; Let someone else search. Go through the material with another person. Can they find things from the documentation alone?</li><li>☐&nbsp; Write the self-assessment. Base it on the meeting notes: how you worked in the team and what changed along the way. Save it in <code>project-docs/</code>.</li><li>☐&nbsp; Check the links. Make sure the repository, the release and <code>project-docs/</code> are in the state your links point at.</li><li>☐&nbsp; Hand over on Friday 4 December. Give the MVP and the project documentation to the client.</li></ol>
+<p class="done osa-done"><strong>Done when:</strong> The self-assessment refers to real meeting notes, and the client has received the MVP and the project documentation.</p>
+<p class="ev osa-done"><strong>Save your evidence:</strong> The self-assessment in <code>project-docs/</code>, committed. Its main points go into the week 49 journal entry.</p>
+</div>
+<p class="done wkdone"><strong>End-of-week check:</strong> Every claim in the documentation has at least one exact reference (commit, test id, note, release); the demo stays inside its time and covers the technique, a bug fix and the Git history; the self-assessment references real meeting notes.</p>
+<p class="ev"><strong>In the Git repository before you tick the box:</strong> The finished project documentation, the collected journal and AI log, and the self-assessment in project-docs.</p>
 </div>
 <h1 class="page">The final five days</h1>
 <p class="task"><strong>Mon 30 Nov</strong> · Content freeze — v1.0 is on the release page, journal and AI log committed</p>
@@ -155,6 +372,7 @@ th { background: #e9f2e9; }
 <p class="task"><strong>Thu 3 Dec</strong> · Buffer: review the material with another person + self-assessment</p>
 <p class="task"><strong>Fri 4 Dec</strong> · Handover: the MVP + the project documentation to the client</p>
 <h1 class="page">Glossary</h1><p class="muted">The identifiers and technical terms of this project in the order you meet them. Each one is also explained on the site where it first comes up.</p><table>
+<tr><td style="width:24%"><strong>work step</strong><br><span class="muted">week 36</span></td><td>One numbered item in this site's weekly guide, for example "Work step 2 / 4". A work step is not a GitHub issue: one work step can need several issues, and some work steps (a review, a test run) need none.</td></tr>
 <tr><td style="width:24%"><strong>GDD</strong><br><span class="muted">week 36</span></td><td><em>Game Design Document.</em> The design document you wrote before this project: what the game is, how a round plays out and which features it has. Here the GDD is the source of the work — you do not rewrite it, you build it.</td></tr>
 <tr><td style="width:24%"><strong>MVP</strong><br><span class="muted">week 36</span></td><td><em>Minimum Viable Product.</em> The smallest version of the game that contains the required playable core and can be handed to the client. In this project the MVP is the version released on 4 December 2026.</td></tr>
 <tr><td style="width:24%"><strong>P0</strong><br><span class="muted">week 36</span></td><td><em>Required core.</em> The features that must be finished, or there is nothing to hand over. P0 is built first and everything else waits for it.</td></tr>
@@ -162,7 +380,7 @@ th { background: #e9f2e9; }
 <tr><td style="width:24%"><strong>P2</strong><br><span class="muted">week 36</span></td><td><em>Optional extra.</em> Features that can be left out entirely without the project failing. They stay recorded as issues, so the decision to drop them is visible.</td></tr>
 <tr><td style="width:24%"><strong>repository</strong><br><span class="muted">week 36</span></td><td><em>repo for short.</em> The project folder that Git tracks and GitHub holds. Everything that counts as work — code, documents, tests — lives in the repository, not only on your own machine.</td></tr>
 <tr><td style="width:24%"><strong>commit</strong><br><span class="muted">week 36</span></td><td>One saved, described change in the repository. A commit has a message and an identifier such as 4f2a91c, so you can point at exactly what you did and when.</td></tr>
-<tr><td style="width:24%"><strong>GitHub issue</strong><br><span class="muted">week 36</span></td><td>A numbered task card in the repository, for example issue #14. It says what is to be done and when it is done, and it is closed by the commit that finishes it.</td></tr>
+<tr><td style="width:24%"><strong>GitHub issue</strong><br><span class="muted">week 36</span></td><td>A numbered task card in the repository for one change to the game, for example issue #14. It says what is to be done and when it is done, and it is closed by the commit that finishes it. One work step on this site can need several issues.</td></tr>
 <tr><td style="width:24%"><strong>milestone</strong><br><span class="muted">week 36</span></td><td>A named group of issues in GitHub with a target date — here "MVP 4 Dec". It shows at a glance how much of the required core is still open.</td></tr>
 <tr><td style="width:24%"><strong>backlog</strong><br><span class="muted">week 36</span></td><td>The list of issues that are not done yet, in priority order. Work is picked from the top of the backlog, not from whatever feels nicest.</td></tr>
 <tr><td style="width:24%"><strong>T01</strong><br><span class="muted">week 37</span></td><td><em>Test case identifier.</em> T means a test case and the number identifies it: T01 is the first test case, T02 the second. The expected result is written down before the test is run, and the identifier is what you refer to in commits and in the journal.</td></tr>
@@ -178,5 +396,5 @@ th { background: #e9f2e9; }
 <tr><td style="width:24%"><strong>RC</strong><br><span class="muted">week 47</span></td><td><em>release candidate.</em> A build that would be released as it is, if testing turns up nothing blocking. RC1 is the first release candidate; after it, only bugs that block playing or installing get fixed.</td></tr>
 <tr><td style="width:24%"><strong>content freeze</strong><br><span class="muted">week 48</span></td><td>The point after which nothing new is added to the game — only documentation. Here the content freeze is in week 48, so the last week is left for the handover.</td></tr>
 </table>
-<p class="muted" style="margin-top:10pt"><em>Remember: the tick boxes and fields on the site are stored in your browser only. They do not reach your instructor and they do not replace what is in Git.</em></p>
+<p class="muted" style="margin-top:1em"><em>Remember: the tick boxes and fields on the site are stored in your browser only. They do not reach your instructor and they do not replace what is in Git.</em></p>
 </body></html>

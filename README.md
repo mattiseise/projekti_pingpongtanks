@@ -21,6 +21,13 @@ on the site. The ePerusteet mapping that was originally built for it lives in
 | `app.js` | generic engine — **not edited per project** |
 | `styles.css` | appearance; only the `:root` palette is project-specific |
 | `kuvitukset.json` | text and colours for the generated SVG illustrations |
+| `assets/tyonkulku.svg`, `assets/sovelluksen-osat.svg`, `assets/sokkelo-tietovirta.svg` | hand-written illustrations (player workflow, game parts, week 40 maze data flow) — edit the SVG directly |
+| `assets/projektin-vaiheet.svg` | phase illustration generated from `vaiheet` in `sisalto.js` |
+
+The weeks use the engine's unified layout (`yhtenaisetViikot: true`, engine v2.7): each week shows how it
+connects to the whole project, the week goal, numbered work steps (`tehtavat`) and one end-of-week check.
+A *work step* is an item on the site, a *GitHub issue* is one change to the game, and the *working method*
+is the six steps on the Way of working page. Task ids are unchanged, so earlier ticks carry over.
 
 `app.js` reads its user-facing labels from `sisalto.js` (`tekstit`), with Finnish defaults.
 `tyokalut/tee_lataukset.js` does the same through `lataukset`. That is how this site runs in
@@ -40,6 +47,7 @@ browser. The site sends nothing to a server.
 ```
 npm install docx
 node tyokalut/tee_lataukset.js        # docx files + tyopaketti-print.html
+node tyokalut/tee_vaihekuva.js        # assets/projektin-vaiheet.svg from the phases
 python3 tyokalut/tee_kuvitukset.py    # SVG illustrations + favicons (needs Pillow)
 ```
 

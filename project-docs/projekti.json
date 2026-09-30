@@ -32,9 +32,14 @@
   },
   "vaiheet": [
     {
-      "tunnus": "A",
+      "tunnus": "1",
       "lyhyt": "Core",
-      "otsikko": "Core game: GDD into tasks, and a playable round",
+      "otsikko": "Core game: a playable round",
+      "kuvaus": "You break the GDD into a prioritised backlog and set up the Unity project, then build movement, the bouncing shell and a whole round with scoring. They come first because every later feature drives, shoots or scores on top of them.",
+      "kuvassa": [
+        "GDD → backlog → movement → shell → rounds",
+        "Week 39: a whole 1v1 round without the editor."
+      ],
       "viikot": [
         36,
         37,
@@ -44,9 +49,14 @@
       "vari": "#a16207"
     },
     {
-      "tunnus": "B",
+      "tunnus": "2",
       "lyhyt": "Arena & powers",
-      "otsikko": "Arena and powers: maze, power-ups and the review",
+      "otsikko": "Arena, powers and the review",
+      "kuvaus": "You replace the test arena with a generated maze and add three data-driven power-ups. In week 43 the client plays this version, and together you decide what fits into the remaining weeks.",
+      "kuvassa": [
+        "Maze → power-ups → the client plays it",
+        "Week 43: the remaining weeks are prioritised."
+      ],
       "viikot": [
         40,
         41,
@@ -56,9 +66,14 @@
       "vari": "#2f6b8f"
     },
     {
-      "tunnus": "C",
-      "lyhyt": "Finishing",
-      "otsikko": "Finishing: feedback change, testing and menus",
+      "tunnus": "3",
+      "lyhyt": "Complete game",
+      "otsikko": "Complete and tested game",
+      "kuvaus": "You answer the client's feedback through a pull request, run the whole test matrix and build the menu path. The game becomes reliable and complete before anyone outside the project tries it.",
+      "kuvassa": [
+        "Feedback change → test matrix → menus",
+        "Reliable and complete before an outsider tries it."
+      ],
       "viikot": [
         44,
         45,
@@ -67,9 +82,14 @@
       "vari": "#6d5aae"
     },
     {
-      "tunnus": "D",
+      "tunnus": "4",
       "lyhyt": "Release",
       "otsikko": "Release and handover",
+      "kuvaus": "An outside tester starts the release candidate from your written guide alone. You fix only blocking bugs, release v1.0 and hand the MVP and the documentation over on 4 December.",
+      "kuvassa": [
+        "RC1 → outside tester → v1.0 → handover",
+        "Anyone can download it and play from your guide."
+      ],
       "viikot": [
         47,
         48,
