@@ -24,9 +24,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap">
-  <link rel="stylesheet" href="styles.css?v2.7.1-20260930">
-  <script src="sisalto.js?v2.7.1-20260930" defer></script>
-  <script src="app.js?v2.7.1-20260930" defer></script>
+  <link rel="stylesheet" href="styles.css?v2.7.2-20260930">
+  <script src="sisalto.js?v2.7.2-20260930" defer></script>
+  <script src="app.js?v2.7.2-20260930" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#sisalto">Skip to content</a>
@@ -107,7 +107,7 @@
             <dt>Unity project (the agreed version)</dt><dd>Scenes, prefabs and scripts live in <code>Assets/</code> at the repository root. A prefab is a Unity object saved as a reusable template: the tank, the shell and the power-up pickup. Builds, the packaged runnable versions of the game, do not go into Git.</dd>
             <dt>C# scripts</dt><dd>Movement, shooting, rounds, the maze generator, the power-up system and the menus. You write the game's code yourself. The script names in the implementation help are suggestions.</dd>
             <dt>Unity 2D physics</dt><dd>Rigidbody2D, Collider2D and Physics Material 2D do the movement, the collisions and the ricochets. Moving objects past the physics breaks the ricochet, so it is used from week 37 on.</dd>
-            <dt>Data outside the code</dt><dd>The arena configuration and the power-up data are data assets, not if branches in code. You compare ScriptableObject, a JSON file and PlayerPrefs in week 40 and choose the store; JSON is a plain-text data format that people and programs can both read. The player settings go into PlayerPrefs in week 46.</dd>
+            <dt>Data outside the code</dt><dd>The arena configuration and the power-up data are data, not if branches in code. You compare ScriptableObject, a JSON file and PlayerPrefs in week 40 and choose the store for both; JSON is a plain-text data format that people and programs can both read. Player settings go into PlayerPrefs in week 46, as agreed. If the week 40 comparison clearly favours another store for them, agree the change with your instructor before week 46.</dd>
             <dt>Git and GitHub</dt><dd>A public repository: the Unity project, the issues and the milestone "MVP 4 Dec", small commits, pull requests from week 44 on, and the release. <code>.gitignore</code> keeps <code>Library/</code>, <code>Temp/</code> and builds out of Git.</dd>
             <dt>Build and release</dt><dd>A Windows build or the target agreed with your instructor. Release candidate <code>v1.0-rc1</code> in week 47, and v1.0 in week 48 as a GitHub Release or on itch.io, as your instructor decides.</dd>
             <dt>Graphics and sound</dt><dd>Simple graphics you draw yourself: a square body, a round turret and tile textures. Sprite packs only with the source and the licence in a CREDITS file. Sound only if the week 43 prioritisation picks it.</dd>
@@ -121,10 +121,10 @@
             <dt>The brief (on this site)</dt><dd>The client's requirements, the required core and what stays out of scope. Check here what must be built.</dd>
             <dt>Your GDD <code>project-docs/gdd.md</code></dt><dd>What the game is and how it plays. You do not rewrite it. If a rule changes, for example player 2's fire key after a playtest, record the change in the GDD and in the plan.</dd>
             <dt>Implementation plan <code>project-docs/gdd-implementation-plan.md</code></dt><dd>Your decisions and the instructor's, with reasons: the MVP goal, the P0 scope, the data store, the game team and the open items. Fill it in on the Plan page, download it and commit it.</dd>
-            <dt>GitHub issue</dt><dd>One change to the game: what to do and its done-when condition. The commit that finishes it closes it. The milestone "MVP 4 Dec" groups the required issues.</dd>
+            <dt>GitHub issue</dt><dd>One change to the game: what to do and its done-when condition. The commit that finishes it closes it. The milestone "MVP 4 Dec" groups the required issues. What the weekly meeting agrees is always recorded on the issues it concerns.</dd>
             <dt>Test matrix <code>project-docs/tests.md</code></dt><dd>Every test case, numbered T01, T02 and so on: the expected result written before the run, the actual result, the fix and the retest.</dd>
             <dt>Debugging chains <code>project-docs/chains/</code></dt><dd>One file per real bug: observation, reproduction steps, cause, fix commit, retest and regression test.</dd>
-            <dt>Notes <code>project-docs/meetings/</code> and <code>project-docs/reviews/</code></dt><dd>Weekly meeting and playtest notes, and the review notes with the client's own words.</dd>
+            <dt>Notes <code>project-docs/meetings/</code> and <code>project-docs/reviews/</code></dt><dd>A meeting note <code>meetings/weekNN.md</code> only in weeks where a work step asks for one, the playtest notes, and the review notes with the client's own words. People appear only by role, for example instructor, tester A or game team member B. If your instructor needs names or someone's exact words, send them in Teams.</dd>
             <dt>Project journal <code>project-docs/project-journal.md</code></dt><dd>Once a week: what you did and how, why, and exactly where the work is. You write it on this site, download it and commit it. The repository is public, so no personal data goes into the journal.</dd>
             <dt>AI log</dt><dd>Significant AI use: what you asked, what you used, changed or rejected, and how you checked it.</dd>
             <dt>README and the install guide</dt><dd>For players: download, launch, controls and rules. User documentation and project documentation are separate files and are not mixed.</dd>
@@ -134,16 +134,16 @@
 
         <details class="view-section project-reference">
           <summary>Requirement, suggestion or your decision?</summary>
-          <p><strong>Requirement</strong> comes from the brief or from your GDD's rules, and it must be built: two players on one keyboard, one shell per tank with endless ricochets and about ten seconds of life, the five-second rule, a generated maze, power-ups that the players can see, a menu path and a v1.0 that a stranger can start from the guide. The features are sorted into three priority levels in week 36. <strong>P0</strong> is the required core: it must be finished, or there is nothing to hand over. <strong>P1</strong> is important follow-up content, built only once P0 works. <strong>P2</strong> is optional extra that can be left out.</p>
-          <p><strong>Agreed implementation</strong> is fixed: Unity and C#, Unity's 2D physics, a public GitHub repository with issues and small commits, feedback changes on a branch through a pull request, and data kept outside the code. <strong>Suggestion</strong> is a starting point from this site, such as the folder structure and the script names in the implementation help. You may do it another way if you record why.</p>
-          <p><strong>Your decision</strong> is justified in the plan or in the journal, for example the data store, how you measure the spawn distance, how you build the five-second rule, and whether the menu is its own scene or an overlay. <strong>Agreed with your instructor</strong> are the Unity version, the licence, the release channel and your public name, plus the approval of the P0 scope in week 36 and of the prioritisation in week 43. An empty field in the plan is the right answer until the item has been agreed.</p>
+          <p><strong>Requirement</strong> comes from the brief or from your GDD's rules, and it must be built: two players on one keyboard, one shell per tank with endless ricochets and about ten seconds of life, the five-second rule, a new generated maze every round, power-ups that the players can see, a menu path and a v1.0 that a stranger can start from the guide. The features are sorted into three priority levels in week 36. <strong>P0</strong> is the required core: it must be finished, or there is nothing to hand over. <strong>P1</strong> is important follow-up content, built only once P0 works. <strong>P2</strong> is optional extra that can be left out.</p>
+          <p><strong>Agreed implementation</strong> is fixed: Unity and C#, Unity's 2D physics, a public GitHub repository with issues and small commits, feedback changes on a branch through a pull request, and data kept outside the code. Player settings go into PlayerPrefs in week 46, as agreed. If the week 40 comparison clearly favours another store for them, agree the change with your instructor before week 46. <strong>Suggestion</strong> is a starting point from this site, such as the folder structure and the script names in the implementation help. You may do it another way if you record why.</p>
+          <p><strong>Your decision</strong> is justified in the plan or in the journal, for example the store for arena and power-up data (week 40), how you measure the spawn distance, how you build the five-second rule, and whether the menu is its own scene or an overlay. <strong>Agreed with your instructor</strong> are the Unity version, the licence, the release channel and your public name, plus the approval of the P0 scope in week 36 and of the prioritisation in week 43. An empty field in the plan is the right answer until the item has been agreed.</p>
           <a href="#view-toimeksianto" data-open-view="toimeksianto">Open the brief →</a>
         </details>
 
         <details class="view-section project-reference">
           <summary>What is judged in this project?</summary>
           <p>This is a game project, not a competence demonstration, so there is no evidence matrix on this site. Your implementation is judged against the brief and your own GDD. What counts is the engineering, not how fun the game is: code you can explain, test cases with the expectation written before the run, three complete debugging chains, a history of small commits and a release that a stranger can start.</p>
-          <p>You build the game alone, but the game team (you, two classmates and your instructor) makes the teamwork visible: the weekly meetings, the playtests, the debugging pair and the prioritisation. The client plays the game in the week 43 review, an outside tester tries the release candidate in week 47, and you hand the MVP and the project documentation over on Friday 4 December.</p>
+          <p>You build the game alone, but the game team (you, two classmates and your instructor) makes the teamwork visible: the weekly meetings, the playtests, the debugging pair and the prioritisation. The client, your instructor, plays the game in the week 43 review, an outside tester tries the release candidate in week 47, and you hand the MVP and the project documentation over on Friday 4 December.</p>
           <a href="#view-toimeksianto" data-open-view="toimeksianto">Open the brief →</a>
         </details>
 
@@ -188,6 +188,7 @@
           <p>The design lives or dies on its core loop, so follow the GDD's own rules to the letter: one shell per tank, endless ricochets, roughly ten seconds of life, and no point awarded if both tanks die within five seconds of each other. The bouncing shell is the soul of this game — if the ricochet feels wrong, nothing else matters. A round of Ping Pong Tanks should take seconds, not minutes — quick deaths, quick restarts. Randomly generated mazes are what keep the matches fresh — no two rounds should look the same. And chaotic power-ups keep every match fresh — but the player must always see who has what.</p>
           <p>I will not wait until December to see the game. Halfway through, I want to see the game and decide with you what actually fits before the deadline — the GDD holds more ideas than thirteen weeks can carry, and cutting together is part of the job. When I give feedback, act on it in a branch and show me the merge: feedback only counts when I can point at the commit that answers it. When you tell me the game is chaotic but fair — that balance is proven with a test log, not with a feeling.</p>
           <p>The Minimum Viable Product (MVP) — the smallest version of the game that contains the required playable core — is due on Friday 4 December 2026. Keep the user interface out of the way: low clutter — menus should get the players into the match, not stand in their way. Before you call it released, hand the build to someone outside the project on another machine: if a stranger cannot start the game from your written instructions alone, it is not released — it is just on your machine. Version 1.0 means I can hand the link to anyone at school and it just works. After that, the last week belongs to the handover — in the final week you are not building the game anymore, you are proving what you know.</p>
+          <p><strong>Who is the client?</strong> The client in this brief is your instructor, who commissioned the game. Your instructor receives your question list in week 36 and plays the game as the client in the week 43 review.</p>
         </div>
 
         <div class="card view-section">
@@ -204,9 +205,9 @@
         <div class="grid-2 view-section">
           <div class="card">
             <p class="section-label section-label-accent">Agreed implementation</p>
-            <p style="margin-top:8px">Unity (the version is locked with your instructor in week 36 — the GDD's "Unity 5" gets checked) and C#, 2D physics with Unity's own Rigidbody and Collider components. A public GitHub repository, work tracked as issues and small commits. Feedback changes are built on their own branch and merged through a pull request (PR) — see week 44. Arena and power-up data is kept outside the code. <strong>Your decision:</strong> the storage format, which you compare and choose in week 40.</p>
+            <p style="margin-top:8px">Unity (the version is locked with your instructor in week 36 — the GDD's "Unity 5" gets checked) and C#, 2D physics with Unity's own Rigidbody and Collider components. A public GitHub repository, work tracked as issues and small commits. Feedback changes are built on their own branch and merged through a pull request (PR) — see week 44. Arena and power-up data is kept outside the code. <strong>Your decision:</strong> the store for arena and power-up data, which you compare and choose in week 40. Player settings go into PlayerPrefs in week 46, as agreed. If the week 40 comparison clearly favours another store for them, agree the change with your instructor before week 46.</p>
             <p style="margin-top:8px"><strong>Priority levels.</strong> P0 is the required core: the features that must be finished, or there is nothing to hand over. P1 is important follow-up content that gets built only once P0 works, and P2 is optional extra that can be left out.</p>
-            <p style="margin-top:8px"><strong>Requirement · P0 for this project:</strong> a two-player match, a bouncing shell, rounds and scoring with the 5 s rule, a procedurally generated 10×10 maze, three power-ups, a menu path and a released v1.0. Released as a GitHub Release (or on itch.io — the instructor decides).</p>
+            <p style="margin-top:8px"><strong>Requirement · P0 for this project:</strong> a two-player match, a bouncing shell, rounds and scoring with the 5 s rule, a procedurally generated 10×10 maze that is new every round, three power-ups, a menu path and a released v1.0. Released as a GitHub Release (or on itch.io — the instructor decides).</p>
           </div>
           <div class="card">
             <p class="section-label">Requirement · hold the scope</p>
@@ -258,6 +259,7 @@
         </ol>
         <p class="rule-note"><strong>Rule of thumb:</strong> if you cannot explain the change, the work is not finished.</p>
         <p class="rule-note">Open only the current week. Read how the week connects to the whole project and the week goal, do the work steps in order, then do the end-of-week check and fill in the week's project journal.</p>
+        <p class="rule-note"><strong>Weekly meeting:</strong> on Mondays, 15 minutes with the game team. Record what you agree on the GitHub issues it concerns; that is always the primary place. Write a separate <code>project-docs/meetings/weekNN.md</code> only in weeks where a work step asks for one. In the repository, people appear only by role, for example instructor or game team member B.</p>
 
         <figure class="view-figure view-section">
           <div class="image-stage"><img src="assets/tyokierto.svg" width="1672" height="941" alt="The loop for one GitHub issue: issue, build, playtest, commit, record."></div>
@@ -701,7 +703,7 @@
           <section class="view-section">
             <div class="section-heading-row"><h2>Weekly tasks</h2><span class="week-status" data-week-status>0 / 3</span></div>
             <div class="task-list">
-              <label class="task-row"><input type="checkbox" data-task="41-1"><span class="task-box" aria-hidden="true"></span><span class="task-text">Define the three power-ups as data assets</span></label>
+              <label class="task-row"><input type="checkbox" data-task="41-1"><span class="task-box" aria-hidden="true"></span><span class="task-text">Define the three power-ups as data</span></label>
               <label class="task-row"><input type="checkbox" data-task="41-2"><span class="task-box" aria-hidden="true"></span><span class="task-text">Spawn power-ups and apply one power at a time</span></label>
               <label class="task-row"><input type="checkbox" data-task="41-3"><span class="task-box" aria-hidden="true"></span><span class="task-text">Show active powers in the HUD and run test cases T11–T12</span></label>
             </div>
@@ -929,7 +931,7 @@
             <div class="task-list">
               <label class="task-row"><input type="checkbox" data-task="45-1"><span class="task-box" aria-hidden="true"></span><span class="task-text">Complete the test matrix from the GDD's testing list</span></label>
               <label class="task-row"><input type="checkbox" data-task="45-2"><span class="task-box" aria-hidden="true"></span><span class="task-text">Run every test case again and record each result</span></label>
-              <label class="task-row"><input type="checkbox" data-task="45-3"><span class="task-box" aria-hidden="true"></span><span class="task-text">Solve one bug with a named debugging pair</span></label>
+              <label class="task-row"><input type="checkbox" data-task="45-3"><span class="task-box" aria-hidden="true"></span><span class="task-text">Solve one bug with a debugging pair</span></label>
               <label class="task-row"><input type="checkbox" data-task="45-4"><span class="task-box" aria-hidden="true"></span><span class="task-text">Finish three complete debugging chains</span></label>
             </div>
           </section>
@@ -1099,7 +1101,7 @@
 
           <div class="outcome-grid">
             <div class="card"><p class="section-label">Done when</p><p class="checkpoint">Before you continue: check the week's done-when condition.</p></div>
-            <div class="card"><p class="section-label section-label-accent">Show</p><p class="evidence">The RC build, the written guide, the tester's findings in their own words and the security review with references.</p></div>
+            <div class="card"><p class="section-label section-label-accent">Show</p><p class="evidence">The RC build, the written guide, the tester's findings by role and the security review with references.</p></div>
           </div>
 
           <section class="week-journal" data-week-journal="47">
@@ -1298,7 +1300,7 @@
           <article>
             <p class="section-label">Agreed way of working</p>
             <h3>5 · Game team and weekly meeting</h3>
-            <p>Weekly meeting on Mondays (15 min): what got finished, what is happening this week, what is stuck. Notes go in <code>project-docs/meetings/</code>.</p>
+            <p>Weekly meeting on Mondays (15 min): what got finished, what is happening this week, what is stuck. The agreements go into the issues they concern. A note in <code>project-docs/meetings/</code> only when a work step asks for one.</p>
           </article>
           <article>
             <p class="section-label">Requirement · from your GDD</p>
@@ -1324,7 +1326,7 @@
           <div class="plan-row"><span class="plan-tag plan-tag-oma">MINE</span><label class="plan-row-field">MVP goal in your own words<textarea rows="3" data-plan-field="mvpTavoite" placeholder="What can a player do in the version released on 4 December? Do not copy the GDD — condense it."></textarea></label><span class="plan-row-week">week 36</span></div>
           <div class="plan-row"><span class="plan-tag plan-tag-oma">MINE</span><label class="plan-row-field">P0 scope — you propose, your instructor approves (week 36)<textarea rows="4" data-plan-field="p0Rajaus" placeholder="List the features that ARE in the MVP. Everything else is P1 or P2."></textarea></label><span class="plan-row-week">week 36</span></div>
           <div class="plan-row"><span class="plan-tag plan-tag-oma">MINE</span><label class="plan-row-field">Data store choice and reasoning<textarea rows="3" data-plan-field="tietovarasto" placeholder="ScriptableObject vs JSON vs PlayerPrefs — what goes where and why (week 40)."></textarea></label><span class="plan-row-week">week 40</span></div>
-          <div class="plan-row"><span class="plan-tag plan-tag-oma">MINE</span><label class="plan-row-field">Game team<input type="text" data-plan-field="peliryhma" placeholder="You + 2 classmates + the instructor — names"></label><span class="plan-row-week">week 36</span></div>
+          <div class="plan-row"><span class="plan-tag plan-tag-oma">MINE</span><label class="plan-row-field">Game team (roles, not names)<input type="text" data-plan-field="peliryhma" placeholder="You + game team members A and B + the instructor — names go to your instructor in Teams"></label><span class="plan-row-week">week 36</span></div>
           <p class="plan-calibration"><strong>Not enough:</strong> "the MVP is a fun tank game", or an AI-written summary with none of your own features. <strong>Enough:</strong> "In the MVP two players play matches in a 10×10 maze: a bouncing shell, scoring with the 5 s rule, speed/slow/shield and a menu — no themes and no missiles, those are P1."</p>
 
           <div class="plan-row"><span class="plan-tag plan-tag-ohjaaja">INSTRUCTOR</span><label class="plan-row-field">Unity version (locked)<input type="text" data-plan-field="unityVersio" placeholder="Ask your instructor — the GDD's Unity 5 gets checked"></label><span class="plan-row-week">open item</span></div>

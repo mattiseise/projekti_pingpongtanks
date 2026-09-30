@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="880" height="640" viewBox="0 0 880 640" role="img" aria-labelledby="title desc">
 <title id="title">How the parts of Ping Pong Tanks fit together</title>
-<desc id="desc">Illustration, not a screenshot. The scene holds what the players see: the menus, two tank prefabs, the shells, the maze walls and floor, the power-up pickups and the HUD with the score and the active powers. The C# scripts control those objects: movement and shooting, the shell's ricochet, lifetime and hits, the round manager with the score, the five-second rule and the restart, the maze generator that uses depth-first search as a plain C# class with a builder, the power-up system with spawning, one power at a time and timers, and the menus and settings. The data kept outside the code is read by the scripts: the arena configuration with the size and tile types, three power-up data assets with duration and effect, and the saved settings in PlayerPrefs. You choose the store for arena data in week 40, ScriptableObject or JSON, and the settings go to PlayerPrefs in week 46. The release path runs from the Git repository with the project and project-docs, to a build for the agreed target, to release candidate v1.0-rc1 that an outsider tests, and to release v1.0 with the written guide.</desc>
+<desc id="desc">Illustration, not a screenshot. The scene holds what the players see: the menus, two tank prefabs, the shells, the maze walls and floor, the power-up pickups and the HUD with the score and the active powers. The C# scripts control those objects: movement and shooting, the shell's ricochet, lifetime and hits, the round manager with the score, the five-second rule and the restart, the maze generator that uses depth-first search as a plain C# class with a builder, the power-up system with spawning, one power at a time and timers, and the menus and settings. The data kept outside the code is read by the scripts: the arena configuration with the size and tile types, three power-up data assets with duration and effect, and the saved settings in PlayerPrefs. You choose the store for arena and power-up data in week 40, ScriptableObject or JSON, and the settings go to PlayerPrefs in week 46, as agreed. The release path runs from the Git repository with the project and project-docs, to a build for the agreed target, to release candidate v1.0-rc1 that an outsider tests, and to release v1.0 with the written guide.</desc>
 <rect width="880" height="640" fill="#ffffff"/>
 <defs>
   <marker id="nuoli" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#5c5347"/></marker>
@@ -69,11 +69,12 @@
 <text x="624" y="280" fill="#241f1a" font-size="15" font-weight="700">Saved settings</text>
 <text x="624" y="298" fill="#241f1a" font-size="13">PlayerPrefs: size, colours</text>
 <rect x="612" y="324" width="224" height="138" rx="8" fill="#ffffff" stroke="#a16207" stroke-width="1.5" stroke-dasharray="6 4"/>
-<text x="624" y="350" fill="#241f1a" font-size="14" font-weight="700">You choose the store</text>
-<text x="624" y="372" fill="#241f1a" font-size="13">for arena data in week 40:</text>
-<text x="624" y="392" fill="#241f1a" font-size="13">ScriptableObject or JSON.</text>
-<text x="624" y="420" fill="#241f1a" font-size="13">The settings go into</text>
-<text x="624" y="440" fill="#241f1a" font-size="13">PlayerPrefs in week 46.</text>
+<text x="624" y="348" fill="#241f1a" font-size="14" font-weight="700">You choose the store</text>
+<text x="624" y="368" fill="#241f1a" font-size="13">for arena and power-up data</text>
+<text x="624" y="386" fill="#241f1a" font-size="13">in week 40: ScriptableObject</text>
+<text x="624" y="404" fill="#241f1a" font-size="13">or JSON.</text>
+<text x="624" y="428" fill="#241f1a" font-size="13">Settings go into PlayerPrefs</text>
+<text x="624" y="446" fill="#241f1a" font-size="13">in week 46, as agreed.</text>
 
 <!-- arrows: data → scripts → scene -->
 <path d="M598 284H570" stroke="#5c5347" stroke-width="2" marker-end="url(#nuoli)"/>

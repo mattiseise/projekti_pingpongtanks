@@ -37,12 +37,12 @@ window.NAYTTOPROJEKTI = {
     kuva: "assets/tyonkulku.svg",
     leveys: 880,
     korkeus: 676,
-    alt: "Illustration of the player's workflow in four numbered panels. 1: the players download version 1.0, start it with the written guide and choose Play in the main menu, or set the arena size and the tank colours in Options. 2: two players share one keyboard, player 1 with WASD and Space, player 2 with the arrow keys and M. 3: in a generated maze the shells ricochet off the walls, one hit destroys a tank, and power-ups appear on the field while the HUD shows who holds which. 4: the survivor scores a point, nobody scores if both tanks die within five seconds, and the next round starts at once. An arrow leads from panel 4 back to panel 3.",
+    alt: "Illustration of the player's workflow in four numbered panels. 1: the players download version 1.0, start it with the written guide and choose Play in the main menu, or set the arena size and the tank colours in Options. 2: two players share one keyboard, player 1 with WASD and Space, player 2 with the arrow keys and M. 3: in a generated maze the shells ricochet off the walls, one hit destroys a tank, and power-ups appear on the field while the HUD shows who holds which. 4: the survivor scores a point, nobody scores if both tanks die within five seconds, and the next round starts at once in a new maze. An arrow leads from panel 4 back to panel 3.",
     kohdat: [
       { n: 1, teksti: "The players download v1.0, start it with the written guide and choose Play in the main menu. Options sets the arena size and the tank colours." },
       { n: 2, teksti: "Two players share one keyboard: player 1 drives with WASD and fires with Space, player 2 uses the arrow keys and M." },
       { n: 3, teksti: "Shells ricochet off the maze walls, and one hit destroys a tank, even your own. Power-ups appear on the field, and the HUD (heads-up display) shows who holds which." },
-      { n: 4, teksti: "The survivor scores a point. If both tanks die within five seconds, nobody scores. The next round starts at once." }
+      { n: 4, teksti: "The survivor scores a point. If both tanks die within five seconds, nobody scores. The next round starts at once in a new maze." }
     ]
   },
 
@@ -300,7 +300,7 @@ window.NAYTTOPROJEKTI = {
     tekstit: { kuvaotsikko: "What gets built in each phase?", viikot: "Weeks", tyoviikot: "Work weeks", viikko: "week", viikotLyhyt: "weeks", loma: "Break" }
   },
   vaiheetJohdanto: "The core round comes first, because the shell, the round and every later feature build on the tanks' physics. The maze and the power-ups then turn the round into the GDD's full match, and the client plays that version in week 43 before the rest is decided. Feedback, testing and menus make the game complete, and the release phase proves that a stranger can start it. The game is playable at the end of every week, a little better each time.",
-  vaiheetHuomio: "13 project weeks, 31 Aug – 4 Dec 2026. Week 42 is the autumn break: no project work and no replacement tasks. The game team's weekly meeting is on Mondays (15 min). v1.0 is released in week 48, so the last week is left for the handover.",
+  vaiheetHuomio: "13 project weeks, 31 Aug – 4 Dec 2026. Week 42 is the autumn break: no project work and no replacement tasks. The game team's weekly meeting is on Mondays (15 min), and its agreements go into the issues. v1.0 is released in week 48, so the last week is left for the handover.",
 
   viikkoNimet: {
     36: "GDD → backlog",
@@ -452,7 +452,8 @@ window.NAYTTOPROJEKTI = {
       "",
       arvo("peliryhma"),
       "",
-      "Weekly meeting on Mondays (15 min). Notes: `project-docs/meetings/weekNN.md`.",
+      "Weekly meeting on Mondays (15 min). Agreements are recorded in the issues they",
+      "concern. A note `project-docs/meetings/weekNN.md` only when a work step asks for one.",
       "",
       "## 6. Controls — requirement (GDD, chapter 3)",
       "",
@@ -512,7 +513,7 @@ window.NAYTTOPROJEKTI = {
       aloitusVko: 36,
       kysymyksia: 8,
       vertailuVko: 40,
-      katselmointiVkot: "43 ja 47",
+      katselmointiVkot: "43",
       testiVko: 45,
       testeja: 12,
       ketjuja: 3,
@@ -531,8 +532,8 @@ window.NAYTTOPROJEKTI = {
       p0: "Pakollinen perusversio (P0): kahden pelaajan ottelu samalla näppäimistöllä, kimpoava ammus GDD:n säännöillä, kierros ja pisteet 5 sekunnin säännöllä, DFS-generoitu 10×10-sokkelo reilulla spawnilla, kolme power-upia datavetoisesti, valikkopolku ja julkaistu v1.0.",
       roolit: [
         ["Opiskelija", "Toteuttaa pelin itse kirjoittamansa GDD:n pohjalta, pitää projektipäiväkirjaa ja AI-lokia, kirjoittaa käyttäjädokumentaation englanniksi."],
-        ["Ohjaaja / opettaja (tilaaja)", "Rajaa P0:n viikolla 36, vastaa avoimiin asioihin (Unity-versio, lisenssi, julkaisukanava, tekijänimi), katselmoi viikoilla 43 ja 47, tarkistaa laadun tarkistuspisteissä."],
-        ["Peliryhmä (2 luokkakaveria)", "Viikkopalaverit, playtestit viikoilla 39/44, debug-pari viikolla 45. Nimet kirjataan toteutussuunnitelmaan viikolla 36."],
+        ["Ohjaaja / opettaja (tilaaja)", "Rajaa P0:n viikolla 36, vastaa avoimiin asioihin (Unity-versio, lisenssi, julkaisukanava, tekijänimi), katselmoi pelin tilaajana viikolla 43 (viikolla 47 julkaisuehdokkaan testaa ulkopuolinen testaaja, ei tilaaja), tarkistaa laadun tarkistuspisteissä."],
+        ["Peliryhmä (2 luokkakaveria)", "Viikkopalaverit, playtestit viikoilla 39/44, debug-pari viikolla 45. Julkiseen repoon ja toteutussuunnitelmaan kirjataan vain roolit (pelitiimin jäsen A ja B); nimet opiskelija lähettää tarvittaessa ohjaajalle Teamsissa."],
         ["Ulkopuolinen testaaja", "Testaa julkaisuehdokkaan toisella koneella pelkän kirjallisen ohjeen avulla viikolla 47 (GDD:n mukaisesti esim. kaveri tai perheenjäsen)."]
       ],
       tarkistuspisteet: [
@@ -600,7 +601,7 @@ window.NAYTTOPROJEKTI = {
           osat: [
             ["Sort the GDD features", "Mark what a playable MVP needs: movement, shell, round, maze, 2–3 power-ups and a menu. Mark the rest as follow-up content (P1) or optional extra (P2)."],
             ["Agree the required core (P0)", "Go through the list with your instructor and agree which features form P0."],
-            ["Record the decision", "Write the P0 scope and who approved it into the P0 field on the Plan page."],
+            ["Record the decision", "Write the P0 scope and who approved it, by role, into the P0 field on the Plan page."],
             ["Break P0 into issue drafts", "Write each piece of P0 as an issue title with a done-when condition. One issue is half a day to a day of work."],
             ["Walk the breakdown through", "Go through the drafts with the game team and your instructor, and note their comments."]
           ],
@@ -625,13 +626,13 @@ window.NAYTTOPROJEKTI = {
         "36-4": {
           miksi: "The game team makes the teamwork in a solo project visible, and the plan holds the decisions you build on.",
           osat: [
-            ["Name the game team", "You, two classmates and your instructor. Write the names into the Game team field on the Plan page."],
+            ["Name the game team", "You, two classmates and your instructor. Write roles, not names, into the Game team field on the Plan page: game team members A and B, instructor."],
             ["Hold the first weekly meeting", "Go through the issues with the game team: what is done, what happens next and what is stuck."],
-            ["Write the meeting note", "Save `project-docs/meetings/week36.md`: who attended and what was agreed, with issue numbers."],
+            ["Write the meeting note", "Save `project-docs/meetings/week36.md`: who attended, by role, and what was agreed, with issue numbers."],
             ["Commit the implementation plan", "Download `gdd-implementation-plan.md` from the Plan page, save it in `project-docs/` and commit it."]
           ],
-          valmis: "The meeting note names the attendees and the agreements with issue numbers, and the implementation plan is in `project-docs/`.",
-          tallenna: "`project-docs/meetings/week36.md` and `project-docs/gdd-implementation-plan.md`, committed and pushed."
+          valmis: "The meeting note lists the attendees by role and the agreements with issue numbers, and the implementation plan is in `project-docs/`.",
+          tallenna: "`project-docs/meetings/week36.md` and `project-docs/gdd-implementation-plan.md`, committed and pushed. People appear in the repository only by role; if your instructor needs the names, send them in Teams."
         }
       },
       help: {
@@ -847,12 +848,12 @@ window.NAYTTOPROJEKTI = {
     },
     40: {
       type: "feature",
-      feature: "The game generates a 10×10 maze in which every tile is reachable, and the tanks start at least 3 tiles apart.",
+      feature: "Every round starts in a newly generated 10×10 maze in which every tile is reachable, and the tanks start at least 3 tiles apart.",
       excerpt: "Randomly generated mazes are what keep the matches fresh — no two rounds should look the same.",
       connection: "Rounds work, but they are still played in the fixed test arena. Now the depth-first search (DFS) builds a 10×10 maze from data kept outside the code, and the tanks start fairly apart. The data store you choose here is used again for the power-ups next week.",
-      deliverable: "MazeGenerator (DFS), 10×10 working (5×5 and 25×25 as P1 issues), spawn validation, arena configuration in a ScriptableObject or JSON + a written data store comparison. 2 recorded test cases.",
+      deliverable: "MazeGenerator (DFS), 10×10 working (5×5 and 25×25 as P1 issues), a new maze every round, spawn validation, arena configuration in a ScriptableObject or JSON + a written data store comparison. 2 recorded test cases.",
       why: "DFS generation is the algorithmically hardest part of the project and the most visible piece of structured programming in it. The data store comparison is the kind of decision that stays invisible unless you write it down, even if you actually made it.",
-      done: "Every generated 10×10 maze is fully traversable (DFS guarantees it), the tanks start at least 3 tiles apart, and the arena size is read from data — you can change the size without touching code.",
+      done: "Every generated 10×10 maze is fully traversable (DFS guarantees it), the tanks start at least 3 tiles apart, and the arena size is read from data — you can change the size without touching code — and every round starts in a newly generated maze.",
       record: "In the week 40 entry: how DFS proceeds in your own words (not a copied explanation), the outcome of the data store comparison with reasoning, and the results of test cases T09–T10.",
       skills: ["algorithms (DFS)", "data structures", "ScriptableObject / JSON"],
       termit: ["DFS", "JSON"],
@@ -862,10 +863,11 @@ window.NAYTTOPROJEKTI = {
           osat: [
             ["Describe the three options", "ScriptableObject (a Unity data asset edited in the editor), a JSON file (JSON is a plain-text data format) and PlayerPrefs (Unity's small store for player settings)."],
             ["Compare what each one suits", "For each option, write what kind of data it suits and what it makes harder, for example editing the data after the build."],
-            ["Choose the store for arena data", "Pick one option for the arena data and write down why, before any maze code exists."],
-            ["Record the decision", "Write the comparison into the maze issue or the week 40 journal entry. Put the choice and its reasoning into the Data store field on the Plan page."]
+            ["Choose the store for arena data", "Pick one option for the arena and power-up data and write down why, before any maze code exists."],
+            ["Record the decision", "Write the comparison into the maze issue or the week 40 journal entry. Put the choice and its reasoning into the Data store field on the Plan page."],
+            ["Check the agreed settings store", "Player settings go into PlayerPrefs in week 46, as agreed. If the week 40 comparison clearly favours another store for them, agree the change with your instructor before week 46."]
           ],
-          valmis: "The comparison covers all three options, names the store chosen for arena data with its reason, and was written before the maze code.",
+          valmis: "The comparison covers all three options, names the store chosen for arena and power-up data with its reason, and was written before the maze code.",
           tallenna: "The comparison in the GitHub issue or the journal. The choice and its reasoning in the plan (`project-docs/gdd-implementation-plan.md`).",
           sanat: ["JSON"]
         },
@@ -888,9 +890,10 @@ window.NAYTTOPROJEKTI = {
             ["Read the arena from data", "Read the arena size and the tile types from the store you chose in work step 1, for example an `ArenaConfig` asset."],
             ["Validate the spawn", "Draw the starting positions at random and reject any draw closer than 3 tiles, as the GDD requires."],
             ["Record how you measure", "Write into the issue whether you measure the spawn distance as Manhattan distance or along the path, and why."],
-            ["Park the other sizes", "Create issues for the 5×5 and 25×25 arenas and mark them as follow-up content (P1)."]
+            ["Park the other sizes", "Create issues for the 5×5 and 25×25 arenas and mark them as follow-up content (P1)."],
+            ["Generate a new maze every round", "At the start of every round, generate and build a new maze. The seed can be random, so that no two rounds look the same."]
           ],
-          valmis: "Changing the arena size in the data changes the maze without any code change, and the tanks always start at least 3 tiles apart.",
+          valmis: "Changing the arena size in the data changes the maze without any code change, the tanks always start at least 3 tiles apart, and every round starts in a newly generated maze.",
           tallenna: "`MazeBuilder.cs` and the arena data, committed. The distance measure goes into the week 40 journal entry.",
           sanat: ["GDD"],
           apu: {
@@ -899,7 +902,7 @@ window.NAYTTOPROJEKTI = {
               "Keep the three parts apart: the data says what to build, the generator decides the corridors, and the builder creates the objects.",
               "Because the generator has no GameObject references, the traversability check in work step 4 can run without a scene."
             ],
-            images: [["assets/sokkelo-tietovirta.svg", "Illustration of the maze data flow. The arena data, for example an ArenaConfig asset with the size 10×10 and the tile types, is read by MazeGenerator, a plain C# class that runs the depth-first search and returns the open and closed walls of every cell. MazeBuilder, a MonoBehaviour, turns that result into wall and floor objects in the scene. The spawn check then draws the starting positions and rejects any draw closer than 3 tiles. Changing the size in the data changes the maze without a code change.", "Illustration of the data flow, not a screenshot. The names are suggestions from the implementation help."]]
+            images: [["assets/sokkelo-tietovirta.svg", "Illustration of the maze data flow. The arena data, for example an ArenaConfig asset with the size 10×10 and the tile types, is read by MazeGenerator, a plain C# class that runs the depth-first search and returns the open and closed walls of every cell. MazeBuilder, a MonoBehaviour, turns that result into wall and floor objects in the scene. The spawn check then draws the starting positions and rejects any draw closer than 3 tiles, and every round starts in a newly generated maze. Changing the size in the data changes the maze without a code change.", "Illustration of the data flow, not a screenshot. The names are suggestions from the implementation help."]]
           }
         },
         "40-4": {
@@ -933,23 +936,23 @@ window.NAYTTOPROJEKTI = {
       type: "feature",
       feature: "Speed boost, slowness and shield appear on the field and change play, and both players can see from the HUD who holds which power.",
       excerpt: "Chaotic power-ups keep every match fresh — but the player must always see who has what.",
-      connection: "The maze from week 40 now gets the GDD's second core promise: chaotic power-ups. Each power-up is a data asset, not its own if branch, and the HUD shows who holds what. That keeps the extra power chosen in the week 43 review cheap to add.",
+      connection: "The maze from week 40 now gets the GDD's second core promise: chaotic power-ups. Each power-up is data in the store you chose in week 40, not its own if branch, and the HUD shows who holds what. That keeps the extra power chosen in the week 43 review cheap to add.",
       deliverable: "The power-up system: spawning (~2 s interval, only into free normal tiles), pickup, one power at a time (GDD), duration timers, a HUD icon and a tank indicator. Speed +20 %/10 s, slowness −20 %/10 s on the opponent, shield 15 s or one hit. 2 recorded test cases.",
-      why: "Power-ups are the only content system the players actually see. Hard-coded, every new power is a new risk; data-driven, a new power is one asset. That difference is exactly what maintainable code means.",
+      why: "Power-ups are the only content system the players actually see. Hard-coded, every new power is a new risk; data-driven, a new power is one data entry. That difference is exactly what maintainable code means.",
       done: "Three powers work with their durations, a player can only hold one at a time (a new one is not picked up before the old one is spent — GDD), and a spectator can see both players' state from the HUD.",
-      record: "In the week 41 entry: the power-up data structure (why a data asset), how the duration timers are implemented, and the results of test cases T11–T12.",
-      skills: ["ScriptableObject architecture", "timers", "HUD"],
+      record: "In the week 41 entry: the power-up data structure (why data and not code), how the duration timers are implemented, and the results of test cases T11–T12.",
+      skills: ["data-driven design", "timers", "HUD"],
       tehtavat: {
         "41-1": {
-          miksi: "As data, each power is one asset instead of a new if branch, so a new power stays cheap and safe to add.",
+          miksi: "As data, each power is one data entry instead of a new if branch, so a new power stays cheap and safe to add.",
           osat: [
-            ["Define the power-up data", "Create `PowerUpData` as a ScriptableObject with a name, an icon, a duration and an effect type."],
-            ["Create the speed boost", "`SpeedBoost.asset`: duration 10 s, speed ×1.2 (+20 %) for the player who picks it up."],
-            ["Create the slowness", "`Slowness.asset`: duration 10 s, speed ×0.8 (−20 %), targeting the opponent."],
-            ["Create the shield", "`Shield.asset`: lasts 15 s or absorbs one hit, whichever comes first."]
+            ["Define the power-up data", "Define `PowerUpData` with a name, an icon, a duration and an effect type, in the data store you chose in week 40 (for example a ScriptableObject)."],
+            ["Create the speed boost", "`SpeedBoost` (for example `SpeedBoost.asset`): duration 10 s, speed ×1.2 (+20 %) for the player who picks it up."],
+            ["Create the slowness", "`Slowness` (for example `Slowness.asset`): duration 10 s, speed ×0.8 (−20 %), targeting the opponent."],
+            ["Create the shield", "`Shield` (for example `Shield.asset`): lasts 15 s or absorbs one hit, whichever comes first."]
           ],
-          valmis: "Three power-up assets exist with their durations and effects, and no power has its own if branch in the code.",
-          tallenna: "The `PowerUpData` script and the three assets in `Assets/Data/PowerUps/`, committed. Why you used a data asset goes into the week 41 journal entry."
+          valmis: "Three power-ups are defined as data with their durations and effects, and no power has its own if branch in the code.",
+          tallenna: "The power-up data in your chosen store (for example the `PowerUpData` script and three assets in `Assets/Data/PowerUps/`), committed. Why data and not code goes into the week 41 journal entry."
         },
         "41-2": {
           miksi: "Power-ups only add fair chaos if they appear in reachable places and follow the GDD's one-power rule.",
@@ -979,17 +982,17 @@ window.NAYTTOPROJEKTI = {
       },
       help: {
         title: "A data-driven power-up",
-        tree: "Assets/Scripts/PowerUps/\n├─ PowerUpData.cs     ← ScriptableObject definition\n├─ PowerUpSpawner.cs  ← timer + free tile draw\n├─ PowerUpPickup.cs   ← trigger on the field\n└─ PowerUpRunner.cs   ← times the active power on the tank\n\nAssets/Data/PowerUps/\n├─ SpeedBoost.asset  (duration 10, multiplier 1.2)\n├─ Slowness.asset    (duration 10, multiplier 0.8, target: opponent)\n└─ Shield.asset      (duration 15, absorbs 1 hit)",
+        tree: "Assets/Scripts/PowerUps/\n├─ PowerUpData.cs     ← data definition (ScriptableObject example)\n├─ PowerUpSpawner.cs  ← timer + free tile draw\n├─ PowerUpPickup.cs   ← trigger on the field\n└─ PowerUpRunner.cs   ← times the active power on the tank\n\nAssets/Data/PowerUps/   ← with JSON: one powerups.json instead\n├─ SpeedBoost.asset  (duration 10, multiplier 1.2)\n├─ Slowness.asset    (duration 10, multiplier 0.8, target: opponent)\n└─ Shield.asset      (duration 15, absorbs 1 hit)",
         actions: [
           "Define PowerUpData: icon, duration and effect type (enum) — the Runner reads the data and knows nothing special about individual powers.",
           "Slowness targets the opponent: the Runner needs a reference to both tanks (through the GameManager).",
           "Shield listens for hits: one hit consumes the shield instead of destroying the tank."
         ],
-        code: "POWER-UP CHECKLIST\n[ ] every power is an .asset, not an if branch in code\n[ ] spawn only into a free normal tile, at the tile centre\n[ ] one power / player; a new one does not replace the old (GDD)\n[ ] the duration ends cleanly even if the tank dies mid-effect\n[ ] the HUD shows the power of both players",
+        code: "POWER-UP CHECKLIST\n[ ] every power is data (.asset or JSON), not an if branch in code\n[ ] spawn only into a free normal tile, at the tile centre\n[ ] one power / player; a new one does not replace the old (GDD)\n[ ] the duration ends cleanly even if the tank dies mid-effect\n[ ] the HUD shows the power of both players",
         test: "Pick up a speed boost and die mid-effect: the new round starts at normal speed and no timer is left running.",
-        links: [["Unity Learn: ScriptableObjects", "https://learn.unity.com/tutorial/introduction-to-scriptable-objects"]]
+        links: [["Unity Learn: ScriptableObjects", "https://learn.unity.com/tutorial/introduction-to-scriptable-objects"], ["Unity Manual: JsonUtility", "https://docs.unity3d.com/ScriptReference/JsonUtility.html"]]
       },
-      example: "PowerUpData asset SpeedBoost: duration 10, multiplier 1.2, icon. Journal: \"Targeting slowness at the opponent required a tank registry on the GameManager — I considered a static reference but rejected it because…\"",
+      example: "PowerUpData entry SpeedBoost: duration 10, multiplier 1.2, icon. Journal: \"Targeting slowness at the opponent required a tank registry on the GameManager — I considered a static reference but rejected it because…\"",
       notEnough: "Three separate if branches in the PlayerController and a power that stays active when the tank dies. A system without data is not a system."
     },
     43: {
@@ -1033,7 +1036,7 @@ window.NAYTTOPROJEKTI = {
             ["Choose one feature for week 44", "Pick ONE feature that fits into roughly 2 working days, and name the feedback change from the review note."],
             ["Record what you leave out", "Write down which features you are NOT building, and whether they stay P1 or move to the optional extras (P2)."],
             ["Get your instructor's sign-off", "Show the decision to your instructor and record in the review note that it was approved."],
-            ["Update the plan and the backlog", "Update the required core (P0) and follow-up sections of the plan and the issue milestones. Write `meetings/week43.md` as usual."]
+            ["Update the plan and the backlog", "Update the required core (P0) and follow-up sections of the plan and the issue milestones. Write `meetings/week43.md`."]
           ],
           valmis: "A named decision says what gets built in week 44 and what moves to P1 or P2, and your instructor has signed it off.",
           tallenna: "The decision in the review note and in the updated `project-docs/gdd-implementation-plan.md`, plus `meetings/week43.md`. The reasoning and what you left out go into the week 43 journal entry.",
@@ -1051,7 +1054,7 @@ window.NAYTTOPROJEKTI = {
       deliverable: "A PR: the feedback change (branch → main) whose description references the review note; the chosen feature (e.g. triple shot) playable; the game team's playtest note with a shared assessment. 2 recorded test cases.",
       why: "Feedback that does not turn into a commit is politeness. And branch work right now — when main is for the first time a working game worth protecting — is the most genuine possible situation to learn it in.",
       done: "Main holds a merged PR whose description makes clear which feedback it answers; the feature works; the playtest note holds at least three shared observations and a shared assessment.",
-      record: "In the week 44 entry: the PR number and which feedback it resolves, how the feature leans on the week 38 shell logic, the main playtest findings, and the results of test cases T13–T14.",
+      record: "In the week 44 entry: the PR number and which feedback it resolves, how the feature leans on the week 38 or 41 systems, the main playtest findings, and the results of test cases T13–T14.",
       skills: ["branch and pull request", "joining existing code", "playtesting"],
       termit: ["branch", "PR"],
       tehtavat: {
@@ -1074,7 +1077,7 @@ window.NAYTTOPROJEKTI = {
             ["Check it in a real match", "Play the feature in a match and check it against the issue's done-when condition."]
           ],
           valmis: "The chosen feature works in a real match and uses the existing shell or power-up code.",
-          tallenna: "Commits that name the feature's issue. How the feature leans on the week 38 shell logic goes into the week 44 journal entry.",
+          tallenna: "Commits that name the feature's issue. How the feature leans on the week 38 or 41 systems goes into the week 44 journal entry.",
           sanat: ["GDD"]
         },
         "44-3": {
@@ -1083,7 +1086,7 @@ window.NAYTTOPROJEKTI = {
             ["Play at least three rounds per pair", "Every pair of players in the game team plays at least 3 rounds with the new version."],
             ["Record one observation each", "Everyone writes down one observation themselves before you discuss."],
             ["Agree a shared assessment", "Decide together: does the change work, and did anything break?"],
-            ["Write the playtest note", "Save the observations and the shared assessment in `project-docs/meetings/week44-playtest.md`."]
+            ["Write the playtest note", "Save the observations by role (for example game team member A) and the shared assessment in `project-docs/meetings/week44-playtest.md`."]
           ],
           valmis: "The playtest note holds at least three observations and a shared assessment.",
           tallenna: "`project-docs/meetings/week44-playtest.md`, committed. The main findings go into the week 44 journal entry."
@@ -1091,8 +1094,8 @@ window.NAYTTOPROJEKTI = {
         "44-4": {
           miksi: "The test cases show that the new feature follows the GDD's rules, and a reviewed merge is the proof the brief asks for.",
           osat: [
-            ["Write two expectations first", "In `tests.md`: test case T13 (normal), the outer shells of the triple shot ricochet independently. T14 (boundary), the triple shot against the one-shell rule."],
-            ["Record your reading of the rule", "Write down how you read the GDD's one-shell rule with a fan of shells, and test against that reading."],
+            ["Write two expectations first", "In `tests.md`: test case T13 (normal), the chosen feature in normal play. T14 (boundary), the feature against a GDD rule. For a triple shot: independent ricochets, and the one-shell rule."],
+            ["Record your reading of the rule", "Write down how you read the GDD rule that T14 tests, for a triple shot the one-shell rule with a fan of shells, and test against that reading."],
             ["Run the test cases", "Run T13 and T14 and record the actual results."],
             ["Get a review comment", "Ask your instructor or a game team member to read the diff and comment on the pull request."],
             ["Merge and hold the weekly meeting", "Merge the pull request into main and write `project-docs/meetings/week44.md`."]
@@ -1102,7 +1105,7 @@ window.NAYTTOPROJEKTI = {
           sanat: ["PR", "T01", "GDD"]
         }
       },
-      example: "PR #21 \"HUD: larger power-up icon + tank colour indicator — answers the review feedback 'could not tell which power-up I had' (reviews/week43.md)\". Playtest note: 3 names, 5 observations, a shared assessment.",
+      example: "PR #21 \"HUD: larger power-up icon + tank colour indicator — answers the review feedback 'could not tell which power-up I had' (reviews/week43.md)\". Playtest note: game team members A–C, 5 observations, a shared assessment.",
       notEnough: "A fix committed straight to main without a PR, and \"we played a bit\" without recorded observations. Neither shows the branch work or the shared assessment this week is about."
     },
     45: {
@@ -1112,7 +1115,7 @@ window.NAYTTOPROJEKTI = {
       connection: "The feature weeks left test cases T01–T14 and the bugs you found along the way. This week they become one test matrix that you run as a whole, and three real bugs are written up as complete debugging chains. The game gets no new features, so the release candidate in week 47 starts from a tested game.",
       deliverable: "A run test matrix (≥12 test cases: normal / boundary / error in roughly equal thirds), 3 complete debugging chains, a debugging pair note, regression tests for the fixed bugs.",
       why: "Testing is read from the log, not from what you say about it. If the chains have not been recorded along the way, there is still time this week — but do not invent bugs: if there are no real ones, that is a problem to raise, not to fake.",
-      done: "Every row of the matrix has an expectation recorded before the run and the result of the run; the three chains hold an observation, reproduction steps, the cause, the fix commit, a retest and a regression test; the pair note holds both names and both sets of observations.",
+      done: "Every row of the matrix has an expectation recorded before the run and the result of the run; the three chains hold an observation, reproduction steps, the cause, the fix commit, a retest and a regression test; the pair note holds both roles and both sets of observations.",
       record: "In the week 45 entry: a summary of the matrix (how many OK / fixed), the hardest bug you found and its cause, and what pair debugging revealed about your own way of hunting for bugs.",
       skills: ["test design", "debugger", "regression testing", "pair work"],
       termit: ["regression test", "debugging chain"],
@@ -1145,10 +1148,10 @@ window.NAYTTOPROJEKTI = {
           osat: [
             ["Pick a real bug", "Choose a bug from the playtests or from the test matrix."],
             ["Attach the debugger", "Attach your IDE's debugger to Unity and set a breakpoint, for example in the collision handler."],
-            ["Split the roles", "A named team member sits beside you or joins remotely. One of you drives the debugger, the other writes."],
-            ["Write the pair note", "Record both names, both sets of observations, the breakpoints you used and the cause, in `project-docs/` (for example `meetings/week45-debug-pair.md`)."]
+            ["Split the roles", "A game team member sits beside you or joins remotely. One of you drives the debugger, the other writes."],
+            ["Write the pair note", "Record both roles (you and game team member B), both sets of observations, the breakpoints you used and the cause, in `project-docs/` (for example `meetings/week45-debug-pair.md`)."]
           ],
-          valmis: "The pair note holds both names, both sets of observations, the breakpoints and the cause of the bug.",
+          valmis: "The pair note holds both roles, both sets of observations, the breakpoints and the cause of the bug.",
           tallenna: "The pair note in `project-docs/`, committed. What pair debugging showed about your own way of hunting bugs goes into the week 45 journal entry."
         },
         "45-4": {
@@ -1237,7 +1240,7 @@ window.NAYTTOPROJEKTI = {
       feature: "Someone outside the project starts the release candidate on another machine using only your written guide.",
       excerpt: "If a stranger cannot start the game from your written instructions alone, it is not released — it is just on your machine.",
       connection: "The game is complete and tested, but so far only you have started it. Now you build the first release candidate (RC1), and an outside tester starts it on another machine from your written guide alone. You also check the public repository for secrets before the release in week 48.",
-      deliverable: "An RC build, an installation and gameplay guide, the outside tester's observations (name, role, date, their own words), and a security review of your own repository with concrete references.",
+      deliverable: "An RC build, an installation and gameplay guide, the outside tester's observations (role, date and every hesitation, in your own words), and a security review of your own repository with concrete references.",
       why: "A release only the author can start is not a release. And a public repository without a security check is a risk that materialises right before the deadline — which is why the review happens now, not in week 48.",
       done: "The tester got all the way through a match without spoken help; every point where they hesitated is recorded as a fix list for the guide; the security review names the files and commits it checked. After the RC, only blocking bugs get fixed.",
       record: "In the week 47 entry: where the tester hesitated and how you fixed the guide, the findings of the security review (what you found, what you did not), and the RC build settings.",
@@ -1272,11 +1275,11 @@ window.NAYTTOPROJEKTI = {
             ["Find an outside tester", "Someone who is NOT in the game team, for example a friend or a family member, as the GDD suggests."],
             ["Use another machine", "The tester downloads and starts the build on a machine that is not yours, using only the guide."],
             ["Do not help out loud", "Watch silently and write down every point where the tester hesitates."],
-            ["Write the test note", "Record the tester's name, role and date and their own words as quotes, in `project-docs/` (for example `reviews/week47-outside-test.md`)."],
+            ["Write the test note", "Record the tester's role (for example tester A, a family member), the date and every hesitation in your own words, in `project-docs/` (for example `reviews/week47-outside-test.md`)."],
             ["Sort the findings", "Turn every hesitation into a fix for the guide. Fix now only the bugs that block playing or installing."]
           ],
           valmis: "The tester got through a whole match without spoken help, and every hesitation is on a fix list for the guide.",
-          tallenna: "The test note in `project-docs/`, committed. Where the tester hesitated and how you fixed the guide go into the week 47 journal entry.",
+          tallenna: "The test note in `project-docs/`, committed. Where the tester hesitated and how you fixed the guide go into the week 47 journal entry. If your instructor needs the tester's name or exact words, send them in Teams.",
           sanat: ["GDD"]
         },
         "47-4": {
@@ -1292,7 +1295,7 @@ window.NAYTTOPROJEKTI = {
           tallenna: "The review in `project-docs/` (for example `security-review.md`), committed. Its findings go into the week 47 journal entry."
         }
       },
-      example: "Test note: \"Tester: my father, 12 Nov — 'Which key shoots for player two?' → a controls table added to the guide. Got through a match without help on the second attempt.\" Security review: \"git log checked, 214 commits, no keys; .gitignore covers Library/, Temp/, Build/; PlayerPrefs holds no personal data.\"",
+      example: "Test note: \"Tester A (family member), 12 Nov: hesitated over which key fires for player two → a controls table added to the guide. Got through a match without help on the second attempt.\" Security review: \"git log checked, 214 commits, no keys; .gitignore covers Library/, Temp/, Build/; PlayerPrefs holds no personal data.\"",
       notEnough: "A friend tried the game on your machine with you guiding them. That tests neither the guide nor the build — the two things this week is about."
     },
     48: {

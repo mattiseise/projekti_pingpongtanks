@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" role="img" aria-labelledby="title desc">
 <title id="title">How the maze data flows</title>
-<desc id="desc">Illustration, not a screenshot. The arena data, for example an ArenaConfig asset with the size 10×10 and the tile types, is kept in the store you chose in week 40. MazeGenerator is a plain C# class that runs the depth-first search and returns the walls of every cell. MazeBuilder is a MonoBehaviour that turns that result into wall and floor objects. In the scene the spawn check draws the starting positions and rejects any draw closer than 3 tiles. Changing the size in the data gives a new maze without a code change, and because the generator holds no GameObjects, it can be tested without a scene.</desc>
+<desc id="desc">Illustration, not a screenshot. The arena data, for example an ArenaConfig asset with the size 10×10 and the tile types, is kept in the store you chose in week 40. MazeGenerator is a plain C# class that runs the depth-first search and returns the walls of every cell. MazeBuilder is a MonoBehaviour that turns that result into wall and floor objects. In the scene the spawn check draws the starting positions and rejects any draw closer than 3 tiles, and every round starts in a newly generated maze. Changing the size in the data gives a new maze without a code change, and because the generator holds no GameObjects, it can be tested without a scene.</desc>
 <rect width="880" height="420" fill="#ffffff"/>
 <defs>
   <marker id="nuoli" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#5c5347"/></marker>
@@ -40,6 +40,7 @@
 <text x="676" y="172" fill="#241f1a" font-size="13">+ spawn check:</text>
 <text x="676" y="194" fill="#241f1a" font-size="13">tanks at least</text>
 <text x="676" y="216" fill="#241f1a" font-size="13">3 tiles apart</text>
+<text x="676" y="246" fill="#5c5347" font-size="13">new maze every round</text>
 
 <rect x="32" y="296" width="396" height="92" rx="10" fill="#ffffff" stroke="#a16207" stroke-width="1.5" stroke-dasharray="6 4"/>
 <text x="48" y="326" fill="#241f1a" font-size="15" font-weight="700">Change the size in the data</text>

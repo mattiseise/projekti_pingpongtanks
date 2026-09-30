@@ -6,8 +6,8 @@
   "paivaton": false,
   "generoitu": "2026-09-30",
   "lahde": {
-    "sisalto.js": "a9cb58c840fdd8c3",
-    "index.html": "cb4c76260960df70"
+    "sisalto.js": "e24a8af6dd542d08",
+    "index.html": "fcca1c49c948c664"
   },
   "viikot": [
     36,
@@ -91,8 +91,8 @@
         {
           "id": "36-4",
           "teksti": "Name the game team and hold the first weekly meeting",
-          "valmis": "The meeting note names the attendees and the agreements with issue numbers, and the implementation plan is in `project-docs/`.",
-          "tallenna": "`project-docs/meetings/week36.md` and `project-docs/gdd-implementation-plan.md`, committed and pushed."
+          "valmis": "The meeting note lists the attendees by role and the agreements with issue numbers, and the implementation plan is in `project-docs/`.",
+          "tallenna": "`project-docs/meetings/week36.md` and `project-docs/gdd-implementation-plan.md`, committed and pushed. People appear in the repository only by role; if your instructor needs the names, send them in Teams."
         }
       ],
       "nayta": "A public repository whose README, P0 milestone and first commit say what is being built — plus the question list with answers and the meeting note in project-docs.",
@@ -335,7 +335,7 @@
         {
           "id": "40-1",
           "teksti": "Compare the data stores before you implement anything",
-          "valmis": "The comparison covers all three options, names the store chosen for arena data with its reason, and was written before the maze code.",
+          "valmis": "The comparison covers all three options, names the store chosen for arena and power-up data with its reason, and was written before the maze code.",
           "tallenna": "The comparison in the GitHub issue or the journal. The choice and its reasoning in the plan (`project-docs/gdd-implementation-plan.md`)."
         },
         {
@@ -347,7 +347,7 @@
         {
           "id": "40-3",
           "teksti": "Build the arena from data with fair spawn positions",
-          "valmis": "Changing the arena size in the data changes the maze without any code change, and the tanks always start at least 3 tiles apart.",
+          "valmis": "Changing the arena size in the data changes the maze without any code change, the tanks always start at least 3 tiles apart, and every round starts in a newly generated maze.",
           "tallenna": "`MazeBuilder.cs` and the arena data, committed. The distance measure goes into the week 40 journal entry."
         },
         {
@@ -358,8 +358,8 @@
         }
       ],
       "nayta": "The written data store comparison, the paper drawing of the depth-first search, generated mazes and test cases T09–T10.",
-      "tuotos": "MazeGenerator (DFS), 10×10 working (5×5 and 25×25 as P1 issues), spawn validation, arena configuration in a ScriptableObject or JSON + a written data store comparison. 2 recorded test cases.",
-      "valmis": "Every generated 10×10 maze is fully traversable (DFS guarantees it), the tanks start at least 3 tiles apart, and the arena size is read from data — you can change the size without touching code.",
+      "tuotos": "MazeGenerator (DFS), 10×10 working (5×5 and 25×25 as P1 issues), a new maze every round, spawn validation, arena configuration in a ScriptableObject or JSON + a written data store comparison. 2 recorded test cases.",
+      "valmis": "Every generated 10×10 maze is fully traversable (DFS guarantees it), the tanks start at least 3 tiles apart, and the arena size is read from data — you can change the size without touching code — and every round starts in a newly generated maze.",
       "tarkistukset": [
         {
           "id": "tiedosto:MazeGenerator.cs",
@@ -401,9 +401,9 @@
       "tehtavat": [
         {
           "id": "41-1",
-          "teksti": "Define the three power-ups as data assets",
-          "valmis": "Three power-up assets exist with their durations and effects, and no power has its own if branch in the code.",
-          "tallenna": "The `PowerUpData` script and the three assets in `Assets/Data/PowerUps/`, committed. Why you used a data asset goes into the week 41 journal entry."
+          "teksti": "Define the three power-ups as data",
+          "valmis": "Three power-ups are defined as data with their durations and effects, and no power has its own if branch in the code.",
+          "tallenna": "The power-up data in your chosen store (for example the `PowerUpData` script and three assets in `Assets/Data/PowerUps/`), committed. Why data and not code goes into the week 41 journal entry."
         },
         {
           "id": "41-2",
@@ -513,7 +513,7 @@
           "id": "44-2",
           "teksti": "Build the feature chosen in the review on the existing systems",
           "valmis": "The chosen feature works in a real match and uses the existing shell or power-up code.",
-          "tallenna": "Commits that name the feature's issue. How the feature leans on the week 38 shell logic goes into the week 44 journal entry."
+          "tallenna": "Commits that name the feature's issue. How the feature leans on the week 38 or 41 systems goes into the week 44 journal entry."
         },
         {
           "id": "44-3",
@@ -590,8 +590,8 @@
         },
         {
           "id": "45-3",
-          "teksti": "Solve one bug with a named debugging pair",
-          "valmis": "The pair note holds both names, both sets of observations, the breakpoints and the cause of the bug.",
+          "teksti": "Solve one bug with a debugging pair",
+          "valmis": "The pair note holds both roles, both sets of observations, the breakpoints and the cause of the bug.",
           "tallenna": "The pair note in `project-docs/`, committed. What pair debugging showed about your own way of hunting bugs goes into the week 45 journal entry."
         },
         {
@@ -603,7 +603,7 @@
       ],
       "nayta": "The run test matrix (≥12 rows), three complete debugging chains and the pair debugging note.",
       "tuotos": "A run test matrix (≥12 test cases: normal / boundary / error in roughly equal thirds), 3 complete debugging chains, a debugging pair note, regression tests for the fixed bugs.",
-      "valmis": "Every row of the matrix has an expectation recorded before the run and the result of the run; the three chains hold an observation, reproduction steps, the cause, the fix commit, a retest and a regression test; the pair note holds both names and both sets of observations.",
+      "valmis": "Every row of the matrix has an expectation recorded before the run and the result of the run; the three chains hold an observation, reproduction steps, the cause, the fix commit, a retest and a regression test; the pair note holds both roles and both sets of observations.",
       "tarkistukset": [
         {
           "id": "tiedosto:meetings/week45.md",
@@ -702,7 +702,7 @@
           "id": "47-3",
           "teksti": "Let an outside tester start the game from the guide alone",
           "valmis": "The tester got through a whole match without spoken help, and every hesitation is on a fix list for the guide.",
-          "tallenna": "The test note in `project-docs/`, committed. Where the tester hesitated and how you fixed the guide go into the week 47 journal entry."
+          "tallenna": "The test note in `project-docs/`, committed. Where the tester hesitated and how you fixed the guide go into the week 47 journal entry. If your instructor needs the tester's name or exact words, send them in Teams."
         },
         {
           "id": "47-4",
@@ -711,8 +711,8 @@
           "tallenna": "The review in `project-docs/` (for example `security-review.md`), committed. Its findings go into the week 47 journal entry."
         }
       ],
-      "nayta": "The RC build, the written guide, the tester's findings in their own words and the security review with references.",
-      "tuotos": "An RC build, an installation and gameplay guide, the outside tester's observations (name, role, date, their own words), and a security review of your own repository with concrete references.",
+      "nayta": "The RC build, the written guide, the tester's findings by role and the security review with references.",
+      "tuotos": "An RC build, an installation and gameplay guide, the outside tester's observations (role, date and every hesitation, in your own words), and a security review of your own repository with concrete references.",
       "valmis": "The tester got all the way through a match without spoken help; every point where they hesitated is recorded as a fix list for the guide; the security review names the files and commits it checked. After the RC, only blocking bugs get fixed.",
       "tarkistukset": [
         {
