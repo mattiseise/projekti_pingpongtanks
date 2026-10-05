@@ -223,6 +223,7 @@ window.NAYTTOPROJEKTI = {
      ovat suomeksi. Opettajan dokumentointipohjat pysyvät suomeksi. */
   lataukset: {
     lang: "en",
+    resurssienPerusosoite: "https://mattiseise.github.io/projekti_pingpongtanks/",
     sanastoOtsikko: "Glossary",
     sanastoJohdanto: "The identifiers and technical terms of this project in the order you meet them. Each one is also explained on the site where it first comes up.",
     sanastoViikko: (w) => `week ${w}`,
@@ -582,7 +583,7 @@ window.NAYTTOPROJEKTI = {
       record: "In the week 36 entry: the P0 scope and who approved it, the open items on your question list, the repository address and the hash of the first commit.",
       skills: ["breaking work down", "version control", "reading requirements"],
       termit: ["work step", "P0", "P1", "P2", "GitHub issue", "milestone", "backlog"],
-      resources: [["Open the implementation plan", "#view-suunnitelma", false]],
+      resources: [["Open the implementation plan", "#view-suunnitelma", false], ["GitHub Desktop: picture guide without Git commands", "https://mattiseise.github.io/projektikoontisivu/ohjeet/github-desktop/en/?projekti=pingpongtanks#asennus", false]],
       tehtavat: {
         "36-1": {
           miksi: "The questions show what the GDD does not settle yet, so they get answered before you build on a guess.",
@@ -613,15 +614,28 @@ window.NAYTTOPROJEKTI = {
           miksi: "The repository is where all your work lives and is judged. It is public from the first day, so it must start clean.",
           osat: [
             ["Create the Unity project", "Use Unity Hub with the agreed version and the 2D template, and write the version into the plan. Check that an empty scene runs with Play."],
-            ["Add the Unity .gitignore", "Take `Unity.gitignore` from GitHub's gitignore collection, so that `Library/`, `Temp/` and build folders stay out of Git."],
-            ["Create the public repository", "Run `git init`, make the first commit, create a public GitHub repository and push. The README says in one paragraph which game, who builds it and by when."],
+            ["Add the Unity .gitignore", "Save GitHub's `Unity.gitignore` in the project folder as `.gitignore`, so that `Library/`, `Temp/` and build folders stay out of Git. Step 4 of the picture guide shows how."],
+            ["Create the public repository", "Write the README paragraph: which game, who builds it, by when. Add the folder to GitHub Desktop (picture guide route B), commit, choose Publish repository and untick Keep this code private."],
             ["Add project-docs and the GDD", "Create `project-docs/` with the subfolders `meetings/` and `chains/`, and put your GDD in as `project-docs/gdd.md`."],
             ["Run the privacy check", "Check the files and the commit history: no personal data, no school identifiers, and the author name only as agreed with your instructor."],
             ["Create the milestone and the issues", "Create the milestone \"MVP 4 Dec\". Turn the required core (P0) drafts from work step 2 into GitHub issues, with the walkthrough comments on them."]
           ],
           valmis: "A fresh clone of the repository opens in Unity without errors by following the README alone, and the milestone \"MVP 4 Dec\" holds the P0 issues.",
           tallenna: "Commit and push. The repository address and the hash of the first commit go into the week 36 journal entry.",
-          sanat: ["repository", "commit", "milestone", "MVP", "GDD"]
+          sanat: ["repository", "commit", "milestone", "MVP", "GDD"],
+          apu: {
+            otsikko: "GitHub Desktop or command-line Git",
+            vinkit: [
+              "Before the first commit, the Changes list in GitHub Desktop must not show `Library/` or `Temp/`. If it does, `.gitignore` is missing or not in the project's root folder.",
+              "Command-line Git works too: `git init`, the first commit, a public repository on GitHub and `git push`."
+            ],
+            links: [
+              ["GitHub Desktop: install and sign in", "https://mattiseise.github.io/projektikoontisivu/ohjeet/github-desktop/en/?projekti=pingpongtanks#asennus"],
+              ["GitHub Desktop: add the existing project folder (route B)", "https://mattiseise.github.io/projektikoontisivu/ohjeet/github-desktop/en/?projekti=pingpongtanks#olemassa"],
+              ["GitHub Desktop: publish the repository", "https://mattiseise.github.io/projektikoontisivu/ohjeet/github-desktop/en/?projekti=pingpongtanks#julkaise"],
+              ["GitHub Desktop: clone for the fresh-clone test (route C)", "https://mattiseise.github.io/projektikoontisivu/ohjeet/github-desktop/en/?projekti=pingpongtanks#kloonaa"]
+            ]
+          }
         },
         "36-4": {
           miksi: "The game team makes the teamwork in a solo project visible, and the plan holds the decisions you build on.",
@@ -640,13 +654,13 @@ window.NAYTTOPROJEKTI = {
         tree: "pingpongtanks/\n├─ Assets/\n│  ├─ Scenes/\n│  ├─ Scripts/\n│  └─ Prefabs/\n├─ ProjectSettings/\n├─ Packages/\n├─ project-docs/\n│  ├─ gdd.md\n│  ├─ gdd-implementation-plan.md\n│  ├─ meetings/\n│  └─ tests.md\n├─ README.md\n└─ .gitignore   ← Unity-specific!",
         actions: [
           "Create the project from Unity Hub with the agreed version (2D template).",
-          "Get a Unity .gitignore (github.com/github/gitignore → Unity.gitignore) — Library/, Temp/ and builds do not go into Git.",
-          "git init, first commit, create a public repository on GitHub and push.",
+          "Save GitHub's Unity.gitignore (github.com/github/gitignore) in the project folder as .gitignore — Library/, Temp/ and builds do not go into Git.",
+          "GitHub Desktop: add the project folder (picture guide route B), commit and publish the repository as public. Command-line Git works too: git init, commit, push.",
           "Put the GDD in the repository: project-docs/gdd.md."
         ],
         code: "START-OF-PROJECT CHECKLIST\n[ ] Unity version agreed and written into the plan\n[ ] project opens and an empty scene runs (Play)\n[ ] .gitignore blocks Library/ and build folders\n[ ] README: which game, who builds it, by when\n[ ] milestone MVP 4 Dec + P0 issues\n[ ] privacy check done",
-        test: "Clone the repository into another folder and open it in Unity: the project opens without errors following the README alone.",
-        links: [["Unity.gitignore (GitHub)", "https://github.com/github/gitignore/blob/main/Unity.gitignore"]]
+        test: "Clone the repository into another folder (picture guide route C) and open it in Unity: the project opens without errors following the README alone.",
+        links: [["Unity.gitignore (GitHub)", "https://github.com/github/gitignore/blob/main/Unity.gitignore"], ["GitHub Desktop picture guide", "https://mattiseise.github.io/projektikoontisivu/ohjeet/github-desktop/en/?projekti=pingpongtanks#asennus"]]
       },
       example: "The milestone \"MVP 4 Dec\" holds 14 issues, one of which is #3 \"Tank moves with WASD — done when the tank moves and stops at a wall in the test arena\". The question list has 6 questions for the client.",
       notEnough: "\"I made the repo and read the GDD\" without a P0 decision, done-when conditions and a privacy check. A breakdown that does not exist is not a breakdown — it is a delay.",
@@ -1061,7 +1075,7 @@ window.NAYTTOPROJEKTI = {
         "44-1": {
           miksi: "Feedback only counts when the client can point at the commit that answers it, and a branch keeps main working while you change the game.",
           osat: [
-            ["Create a branch", "Run `git checkout -b fix/review-week43`, so that main keeps working while you make the change."],
+            ["Create a branch", "Create the branch `fix/review-week43`: in GitHub Desktop choose Current Branch → New Branch, or run `git checkout -b`. Main keeps working while you make the change."],
             ["Make the feedback change", "Make the change named in the review note, and keep it small."],
             ["Open a pull request", "Open a pull request (PR) to main. Its description quotes the feedback and refers to `project-docs/reviews/week43.md`."]
           ],
