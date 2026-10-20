@@ -4,10 +4,10 @@
   "nimi": "Ping Pong Tanks",
   "kieli": "en",
   "paivaton": false,
-  "generoitu": "2026-10-01",
+  "generoitu": "2026-10-20",
   "lahde": {
-    "sisalto.js": "e24a8af6dd542d08",
-    "index.html": "8a04af292bf66b51"
+    "sisalto.js": "38d248792750efa4",
+    "index.html": "4c557e50e5e99693"
   },
   "viikot": [
     36,
